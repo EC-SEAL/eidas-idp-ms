@@ -15,39 +15,43 @@
                 <jpda.listen>true</jpda.listen>
                 <Env.EIDAS_PROPERTIES>CurrentFamilyName,CurrentGivenName,DateOfBirth,PersonIdentifier</Env.EIDAS_PROPERTIES>
                 <Env.SP_COUNTRY>GR</Env.SP_COUNTRY>
-                <Env.SP_FAIL_PAGE>https://www.google.com</Env.SP_FAIL_PAGE>
-                <Env.SP_SUCCESS_PAGE>https://www.google.gr</Env.SP_SUCCESS_PAGE>
-                <Env.METADATA_URL>http://localhost:8090/metadata</Env.METADATA_URL>
-                <Env.RETURN_URL>http://localhost:8090/login</Env.RETURN_URL>
-                <Env.EIDAS_NODE_URL>http://84.205.248.180/EidasNode/ServiceProvider/</Env.EIDAS_NODE_URL>
-                <Env.SP_BACKEND>http://www.google.com</Env.SP_BACKEND>
-                <Env.SP_METADATA_URL>http://138.68.103.237:8090/metadata</Env.SP_METADATA_URL>
-                <Env.SP_RETURN_URL>http://138.68.103.237:8090/eidasResponse</Env.SP_RETURN_URL>
+                
+                
+                
+                
+                
+                
+                
+                
                 <Env.SP_LOGO>img/logo.png</Env.SP_LOGO>
                 <Env.SP_CONFIG_REPOSITORY>/configEidas/</Env.SP_CONFIG_REPOSITORY>
                 <Env.SP_SECRET>secret</Env.SP_SECRET>
                 <Env.AUTH_DURATION>1800</Env.AUTH_DURATION>
-                <Env.SESSION_MANAGER_URL>http://dss1.aegean.gr:8090</Env.SESSION_MANAGER_URL>
+                <Env.SESSION_MANAGER_URL>https://esmo-gateway.eu</Env.SESSION_MANAGER_URL>
                 <Env.KEY_PASS>selfsignedpass</Env.KEY_PASS>
                 
                 <Env.JWT_CERT_ALIAS>selfsigned</Env.JWT_CERT_ALIAS>
                 <Env.ASYNC_SIGNATURE>true</Env.ASYNC_SIGNATURE>
                 <Env.HTTPSIG_CERT_ALIAS>1</Env.HTTPSIG_CERT_ALIAS>
-                <Env.KEYSTORE_PATH>/home/nikos/NetBeansProjects/session-mng/src/test/resources/testKeys/keystore.jks</Env.KEYSTORE_PATH>
+                <Env.KEYSTORE_PATH>/home/nikos/NetBeansProjects/seal.eidas.idp/src/test/resources/testKeys/keystore.jks</Env.KEYSTORE_PATH>
                 <Env.STORE_PASS>keystorepass</Env.STORE_PASS>
-                <Env.ESMO_SERVICE_DESCRIPTION>bar</Env.ESMO_SERVICE_DESCRIPTION>
-                <Env.ESMO_EXPOSE_URL>bar</Env.ESMO_EXPOSE_URL>
-                <Env.ESMO_DEFAULT_NAME>bar</Env.ESMO_DEFAULT_NAME>
-                <Env.ESMO_SUPPORTED_SIG_ALGORITHMS>bar</Env.ESMO_SUPPORTED_SIG_ALGORITHMS>
-                <Env.ESMO_SUPPORTED_ENC_ALGORITHMS>bar</Env.ESMO_SUPPORTED_ENC_ALGORITHMS>
-                <Env.ACM_URL>bar</Env.ACM_URL>
-                <Env.NO_EIDAS_PROPERTIES>CurrentFamilyName,CurrentGivenName,DateOfBirth,PersonIdentifier</Env.NO_EIDAS_PROPERTIES>
-                <Env.NO_AUTH_URL>https://auth.dataporten-test.uninett.no/oauth/authori$</Env.NO_AUTH_URL>
-                <Env.NO_TOKEN_URL>https://auth.dataporten-test.uninett.no/oauth/token</Env.NO_TOKEN_URL>
-                <Env.NO_REDIRECT_URL>http://localhost:8080/idp/oidc</Env.NO_REDIRECT_URL>
-                <Env.NO_CLIENT_ID>0383672b-b749-4d13-8f37-ef0892d5d439</Env.NO_CLIENT_ID>
-                <Env.NO_CLIENT_SECRET>fc1556d5-2a49-44f8-90ac-7be62516922b</Env.NO_CLIENT_SECRET>
-                <Env.NO_USER_INFO_URL>https://auth.dataporten-test.uninett.no/openid/userinfo</Env.NO_USER_INFO_URL>
+                <Env.SEAL_SUPPORTED_SIG_ALGORITHMS>RSA</Env.SEAL_SUPPORTED_SIG_ALGORITHMS>
+                <Env.SEAL_SUPPORTED_ENC_ALGORITHMS>RSA</Env.SEAL_SUPPORTED_ENC_ALGORITHMS>
+                <Env.RESPONSE_SENDER_ID>eIDAS-IdP</Env.RESPONSE_SENDER_ID>
+                <Env.RESPONSE_RECEIVER>API_GW</Env.RESPONSE_RECEIVER>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 
                 
             </properties>

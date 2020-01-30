@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+
+    </head>
+    <body>
+        <form name="myRedirectForm" action="" th:action="${callback}" method="post">
+            <input name="token" type="hidden" value="" th:value="${token}" />
+            <noscript>
+            <input type="submit" value="Click here to continue" />
+            </noscript>
+        </form>
+        <script type="text/javascript">
+
+            (function () {
+                document.forms["myRedirectForm"].submit();
+            })();
+
+        </script>
+    </body>
+</html>

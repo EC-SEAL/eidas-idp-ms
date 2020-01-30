@@ -12,7 +12,6 @@ import gr.uagean.loginWebApp.model.pojo.SecurityKeyType;
 import gr.uagean.loginWebApp.service.EsmoMetadataService;
 import gr.uagean.loginWebApp.service.KeyStoreService;
 import gr.uagean.loginWebApp.service.ParameterService;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
@@ -20,12 +19,10 @@ import java.nio.charset.StandardCharsets;
 import java.security.KeyStoreException;
 import java.util.Base64;
 import java.util.HashMap;
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ResourceUtils;
 
 /**
  *
@@ -64,19 +61,15 @@ public class EntityMetadataServiceImpl implements EsmoMetadataService {
 
     @Override
     public EntityMetadata getMetadata() throws IOException, KeyStoreException {
-        // load file from /src/resources
-//        File inputFile = ResourceUtils.getFile("classpath:static/img/uaegeanI4m.png"); // new ClassPathResource("uaegeanI4m.png")
-//                .getFile();
         InputStream resource = new ClassPathResource(
                 "static/img/uaegeanI4m.png").getInputStream();
         byte[] fileContent = IOUtils.toByteArray(resource);//FileUtils.readFileToByteArray(inputFile);
         String encodedImage = Base64
                 .getEncoder()
                 .encodeToString(fileContent);
-//        String encodedImage = "";
         return new EntityMetadata("https://aegean.gr/esmo/gw/idp/metadata", paramServ.getParam("ESMO_DEFAULT_NAME"), this.displayNames, encodedImage,
                 new String[]{"Greece"}, "SAML", new String[]{"ACM"}, paramServ.getParam("EIDAS_PROPERTIES").split(","),
-                this.endpoints, keyTypes, true, paramServ.getParam("ESMO_SUPPORTED_SIG_ALGORITHMS").split(","), true, paramServ.getParam("ESMO_SUPPORTED_ENC_ALGORITHMS").split(","), null);
+                this.endpoints, keyTypes, true, paramServ.getParam("SEAL_SUPPORTED_SIG_ALGORITHMS").split(","), true, paramServ.getParam("SEAL_SUPPORTED_ENC_ALGORITHMS").split(","), null);
     }
 
 }

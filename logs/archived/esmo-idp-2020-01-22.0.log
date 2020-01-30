@@ -1,0 +1,861 @@
+2020-01-22 15:17:28,102 INFO org.springframework.boot.StartupInfoLogger [main] Starting LoginWebAppApplication on nikos with PID 6912 (/home/nikos/NetBeansProjects/seal.eidas.idp/target/classes started by nikos in /home/nikos/NetBeansProjects/seal.eidas.idp)
+2020-01-22 15:17:28,117 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-01-22 15:17:29,964 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2020-01-22 15:17:29,990 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-22 15:17:29,991 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-01-22 15:17:29,991 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-22 15:17:30,142 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-01-22 15:17:30,144 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1929 ms
+2020-01-22 15:17:30,344 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'keycloakSecurityContextRequestFilter' configured for use
+2020-01-22 15:17:30,346 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'keycloakAuthenticationProcessingFilter' configured for use
+2020-01-22 15:17:30,347 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'keycloakPreAuthActionsFilter' configured for use
+2020-01-22 15:17:30,348 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'keycloakAuthenticatedActionsRequestFilter' configured for use
+2020-01-22 15:17:30,351 DEBUG org.keycloak.adapters.tomcat.AbstractKeycloakAuthenticatorValve [main] Using org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver to resolve Keycloak configuration on a per-request basis.
+2020-01-22 15:17:30,465 INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor [main] Autowired annotation is not supported on static fields: private static final org.slf4j.Logger gr.uagean.loginWebApp.controllers.GRControllers.LOG
+2020-01-22 15:17:30,485 INFO com.google.code.ssm.config.DefaultAddressProvider [main] Defined values 172.17.0.1:11211 will be used as memcached addresses
+2020-01-22 15:17:30,954 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@d13baac, org.springframework.security.web.context.SecurityContextPersistenceFilter@4a9860, org.springframework.security.web.header.HeaderWriterFilter@71179b6f, org.springframework.security.web.csrf.CsrfFilter@1e3ff233, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@411a5965, org.springframework.security.web.authentication.logout.LogoutFilter@6436e181, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@57545c3f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5ae1c281, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@29a33620, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@4e83a98, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@17aa8a11, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4c302f38, org.springframework.security.web.session.SessionManagementFilter@526e8108, org.springframework.security.web.access.ExceptionTranslationFilter@60743cdb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@61ffd148]
+2020-01-22 15:17:31,074 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-22 15:17:31,442 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-01-22 15:17:31,483 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-22 15:17:31,488 INFO org.springframework.boot.StartupInfoLogger [main] Started LoginWebAppApplication in 4.253 seconds (JVM running for 4.877)
+2020-01-22 15:18:32,557 INFO org.springframework.boot.StartupInfoLogger [main] Starting TestSessisonManagerConnection on nikos with PID 7010 (started by nikos in /home/nikos/NetBeansProjects/seal.eidas.idp)
+2020-01-22 15:18:32,560 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: test
+2020-01-22 15:18:34,732 INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor [main] Autowired annotation is not supported on static fields: private static final org.slf4j.Logger gr.uagean.loginWebApp.controllers.GRControllers.LOG
+2020-01-22 15:18:34,749 INFO com.google.code.ssm.config.DefaultAddressProvider [main] Defined values 172.17.0.1:11211 will be used as memcached addresses
+2020-01-22 15:18:35,226 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a916402, org.springframework.security.web.context.SecurityContextPersistenceFilter@71b639d0, org.springframework.security.web.header.HeaderWriterFilter@4fe533ff, org.springframework.security.web.csrf.CsrfFilter@5afbd567, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@1a47a1e8, org.springframework.security.web.authentication.logout.LogoutFilter@254449bb, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@6d2a2560, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5d5b9ecb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@56f730b2, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@62d1dc3c, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@3811510, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@24eeac69, org.springframework.security.web.session.SessionManagementFilter@4e83a98, org.springframework.security.web.access.ExceptionTranslationFilter@20a7953c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@49fa1d74]
+2020-01-22 15:18:35,721 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-22 15:18:36,104 INFO org.springframework.mock.web.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2020-01-22 15:18:36,105 INFO org.springframework.web.servlet.FrameworkServlet [main] Initializing Servlet ''
+2020-01-22 15:18:36,117 INFO org.springframework.web.servlet.FrameworkServlet [main] Completed initialization in 11 ms
+2020-01-22 15:18:36,146 INFO org.springframework.boot.StartupInfoLogger [main] Started TestSessisonManagerConnection in 4.196 seconds (JVM running for 5.235)
+2020-01-22 15:18:38,274 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-22 15:18:38,279 DEBUG org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter [SpringContextShutdownHook] Unregistering deployment
+2020-01-22 15:18:55,458 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-1] adminRequest http://localhost:8080/
+2020-01-22 15:18:55,470 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Using provider 'secret' for authentication of client 'sealTest'
+2020-01-22 15:18:55,476 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider secret
+2020-01-22 15:18:55,486 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider jwt
+2020-01-22 15:18:55,488 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider secret-jwt
+2020-01-22 15:18:55,490 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider secret
+2020-01-22 15:18:55,497 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider jwt
+2020-01-22 15:18:55,498 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider secret-jwt
+2020-01-22 15:18:55,506 DEBUG org.keycloak.adapters.KeycloakDeployment [http-nio-8080-exec-1] resolveUrls
+2020-01-22 15:18:55,508 DEBUG org.keycloak.adapters.KeycloakDeploymentBuilder [http-nio-8080-exec-1] Use authServerUrl: https://dss1.aegean.gr/auth, tokenUrl: https://dss1.aegean.gr/auth/realms/test/protocol/openid-connect/token, relativeUrls: NEVER
+2020-01-22 15:18:55,521 DEBUG org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve [http-nio-8080-exec-1] AuthenticatedActionsValve.invoke /
+2020-01-22 15:18:55,523 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-1] AuthenticatedActionsValve.invoke http://localhost:8080/
+2020-01-22 15:18:55,524 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-1] Policy enforcement is disabled.
+2020-01-22 15:18:55,527 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-22 15:18:55,528 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-01-22 15:18:55,540 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 12 ms
+2020-01-22 15:18:55,572 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Using provider 'secret' for authentication of client 'sealTest'
+2020-01-22 15:18:55,573 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider secret
+2020-01-22 15:18:55,574 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider jwt
+2020-01-22 15:18:55,574 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider secret-jwt
+2020-01-22 15:18:55,576 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider secret
+2020-01-22 15:18:55,576 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider jwt
+2020-01-22 15:18:55,577 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider secret-jwt
+2020-01-22 15:18:55,578 DEBUG org.keycloak.adapters.KeycloakDeployment [http-nio-8080-exec-1] resolveUrls
+2020-01-22 15:18:55,580 DEBUG org.keycloak.adapters.KeycloakDeploymentBuilder [http-nio-8080-exec-1] Use authServerUrl: https://dss1.aegean.gr/auth, tokenUrl: https://dss1.aegean.gr/auth/realms/test/protocol/openid-connect/token, relativeUrls: NEVER
+2020-01-22 15:18:55,581 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-1] adminRequest http://localhost:8080/
+2020-01-22 15:18:55,593 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-1] adminRequest http://localhost:8080/
+2020-01-22 15:18:55,624 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-1] adminRequest http://localhost:8080/error
+2020-01-22 15:19:10,813 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-2] adminRequest http://localhost:8080/idp/authenticate?msToken=eyJhbGciOiJSUzI1NiJ9.eyJzZXNzaW9uSWQiOiJhNzdhYTAyYi03Zjc5LTRhYTgtOTg5MC0xOThmZWFiMjU3NTciLCJzZW5kZXIiOiJBQ01tczAwMSIsInJlY2VpdmVyIjoiQVBtczAwMyIsImlzcyI6IiIsImp0aSI6Ijg5MjUxZTBlLWVmNzItNDNjYS1hMTdlLTNmZjJiMzQ2NDAwMiIsImlhdCI6MTU3OTY5OTExOCwiZXhwIjoxNTc5Njk5NDE4fQ.XiUrOF8BhmeaF9iKIkHJ3Gii4t2fyWm-R6uzGRWBRr0oU32a9tsCTrdkH0gbEwQUBAbYZz2vvY5n-cDYkrSTurNEnW3nhBb1_p0MrxbKOtXfBHyvGPKwF-8gRm24cd2AIr7mB5lZtNw5wPlGbzhNdSf6CwE64Zz-JHh284OlEjR9m4Ku9zwl_WjaQV-XheGZ_doMGc84YhXjZq0Yo5c2osA4liWKJ3EoKJyUzXYmKZFIix35XtAzuiiMaXVBbjm-RY44lhIVkZzhVqATJ_R8XgEoTalAZVXVMPnZPWHv4-Vrfz-q5KEVDE4IfllIPWwnzT9nj6CQRDx-jsD-VyypCw
+2020-01-22 15:19:10,814 DEBUG org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve [http-nio-8080-exec-2] AuthenticatedActionsValve.invoke /idp/authenticate
+2020-01-22 15:19:10,814 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-2] AuthenticatedActionsValve.invoke http://localhost:8080/idp/authenticate?msToken=eyJhbGciOiJSUzI1NiJ9.eyJzZXNzaW9uSWQiOiJhNzdhYTAyYi03Zjc5LTRhYTgtOTg5MC0xOThmZWFiMjU3NTciLCJzZW5kZXIiOiJBQ01tczAwMSIsInJlY2VpdmVyIjoiQVBtczAwMyIsImlzcyI6IiIsImp0aSI6Ijg5MjUxZTBlLWVmNzItNDNjYS1hMTdlLTNmZjJiMzQ2NDAwMiIsImlhdCI6MTU3OTY5OTExOCwiZXhwIjoxNTc5Njk5NDE4fQ.XiUrOF8BhmeaF9iKIkHJ3Gii4t2fyWm-R6uzGRWBRr0oU32a9tsCTrdkH0gbEwQUBAbYZz2vvY5n-cDYkrSTurNEnW3nhBb1_p0MrxbKOtXfBHyvGPKwF-8gRm24cd2AIr7mB5lZtNw5wPlGbzhNdSf6CwE64Zz-JHh284OlEjR9m4Ku9zwl_WjaQV-XheGZ_doMGc84YhXjZq0Yo5c2osA4liWKJ3EoKJyUzXYmKZFIix35XtAzuiiMaXVBbjm-RY44lhIVkZzhVqATJ_R8XgEoTalAZVXVMPnZPWHv4-Vrfz-q5KEVDE4IfllIPWwnzT9nj6CQRDx-jsD-VyypCw
+2020-01-22 15:19:10,814 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-2] Policy enforcement is disabled.
+2020-01-22 15:19:10,817 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-2] adminRequest http://localhost:8080/idp/authenticate?msToken=eyJhbGciOiJSUzI1NiJ9.eyJzZXNzaW9uSWQiOiJhNzdhYTAyYi03Zjc5LTRhYTgtOTg5MC0xOThmZWFiMjU3NTciLCJzZW5kZXIiOiJBQ01tczAwMSIsInJlY2VpdmVyIjoiQVBtczAwMyIsImlzcyI6IiIsImp0aSI6Ijg5MjUxZTBlLWVmNzItNDNjYS1hMTdlLTNmZjJiMzQ2NDAwMiIsImlhdCI6MTU3OTY5OTExOCwiZXhwIjoxNTc5Njk5NDE4fQ.XiUrOF8BhmeaF9iKIkHJ3Gii4t2fyWm-R6uzGRWBRr0oU32a9tsCTrdkH0gbEwQUBAbYZz2vvY5n-cDYkrSTurNEnW3nhBb1_p0MrxbKOtXfBHyvGPKwF-8gRm24cd2AIr7mB5lZtNw5wPlGbzhNdSf6CwE64Zz-JHh284OlEjR9m4Ku9zwl_WjaQV-XheGZ_doMGc84YhXjZq0Yo5c2osA4liWKJ3EoKJyUzXYmKZFIix35XtAzuiiMaXVBbjm-RY44lhIVkZzhVqATJ_R8XgEoTalAZVXVMPnZPWHv4-Vrfz-q5KEVDE4IfllIPWwnzT9nj6CQRDx-jsD-VyypCw
+2020-01-22 15:19:10,822 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-2] adminRequest http://localhost:8080/idp/authenticate?msToken=eyJhbGciOiJSUzI1NiJ9.eyJzZXNzaW9uSWQiOiJhNzdhYTAyYi03Zjc5LTRhYTgtOTg5MC0xOThmZWFiMjU3NTciLCJzZW5kZXIiOiJBQ01tczAwMSIsInJlY2VpdmVyIjoiQVBtczAwMyIsImlzcyI6IiIsImp0aSI6Ijg5MjUxZTBlLWVmNzItNDNjYS1hMTdlLTNmZjJiMzQ2NDAwMiIsImlhdCI6MTU3OTY5OTExOCwiZXhwIjoxNTc5Njk5NDE4fQ.XiUrOF8BhmeaF9iKIkHJ3Gii4t2fyWm-R6uzGRWBRr0oU32a9tsCTrdkH0gbEwQUBAbYZz2vvY5n-cDYkrSTurNEnW3nhBb1_p0MrxbKOtXfBHyvGPKwF-8gRm24cd2AIr7mB5lZtNw5wPlGbzhNdSf6CwE64Zz-JHh284OlEjR9m4Ku9zwl_WjaQV-XheGZ_doMGc84YhXjZq0Yo5c2osA4liWKJ3EoKJyUzXYmKZFIix35XtAzuiiMaXVBbjm-RY44lhIVkZzhVqATJ_R8XgEoTalAZVXVMPnZPWHv4-Vrfz-q5KEVDE4IfllIPWwnzT9nj6CQRDx-jsD-VyypCw
+2020-01-22 15:19:10,870 INFO gr.uagean.loginWebApp.controllers.RestControllers [http-nio-8080-exec-2] got the token:eyJhbGciOiJSUzI1NiJ9.eyJzZXNzaW9uSWQiOiJhNzdhYTAyYi03Zjc5LTRhYTgtOTg5MC0xOThmZWFiMjU3NTciLCJzZW5kZXIiOiJBQ01tczAwMSIsInJlY2VpdmVyIjoiQVBtczAwMyIsImlzcyI6IiIsImp0aSI6Ijg5MjUxZTBlLWVmNzItNDNjYS1hMTdlLTNmZjJiMzQ2NDAwMiIsImlhdCI6MTU3OTY5OTExOCwiZXhwIjoxNTc5Njk5NDE4fQ.XiUrOF8BhmeaF9iKIkHJ3Gii4t2fyWm-R6uzGRWBRr0oU32a9tsCTrdkH0gbEwQUBAbYZz2vvY5n-cDYkrSTurNEnW3nhBb1_p0MrxbKOtXfBHyvGPKwF-8gRm24cd2AIr7mB5lZtNw5wPlGbzhNdSf6CwE64Zz-JHh284OlEjR9m4Ku9zwl_WjaQV-XheGZ_doMGc84YhXjZq0Yo5c2osA4liWKJ3EoKJyUzXYmKZFIix35XtAzuiiMaXVBbjm-RY44lhIVkZzhVqATJ_R8XgEoTalAZVXVMPnZPWHv4-Vrfz-q5KEVDE4IfllIPWwnzT9nj6CQRDx-jsD-VyypCw
+2020-01-22 15:19:12,190 INFO gr.uagean.loginWebApp.controllers.RestControllers [http-nio-8080-exec-2] got the responseCode:OK
+2020-01-22 15:19:12,886 DEBUG org.keycloak.adapters.springsecurity.management.HttpSessionManager [http-nio-8080-exec-2] Session created: 54D4259B0697EDFF6017A1671BDBEE46
+2020-01-22 15:19:13,053 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-3] adminRequest http://localhost:8080/idp/protected
+2020-01-22 15:19:13,055 DEBUG org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve [http-nio-8080-exec-3] AuthenticatedActionsValve.invoke /idp/protected
+2020-01-22 15:19:13,055 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-3] AuthenticatedActionsValve.invoke http://localhost:8080/idp/protected
+2020-01-22 15:19:13,056 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-3] Policy enforcement is disabled.
+2020-01-22 15:19:13,060 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-3] adminRequest http://localhost:8080/idp/protected
+2020-01-22 15:19:13,068 DEBUG org.keycloak.adapters.springsecurity.authentication.KeycloakAuthenticationEntryPoint [http-nio-8080-exec-3] Redirecting to login URI /sso/login
+2020-01-22 15:19:13,073 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-4] adminRequest http://localhost:8080/sso/login
+2020-01-22 15:19:13,074 DEBUG org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve [http-nio-8080-exec-4] AuthenticatedActionsValve.invoke /sso/login
+2020-01-22 15:19:13,075 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-4] AuthenticatedActionsValve.invoke http://localhost:8080/sso/login
+2020-01-22 15:19:13,076 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-4] Policy enforcement is disabled.
+2020-01-22 15:19:13,080 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-4] adminRequest http://localhost:8080/sso/login
+2020-01-22 15:19:13,080 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-8080-exec-4] Request is to process authentication
+2020-01-22 15:19:13,081 DEBUG org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter [http-nio-8080-exec-4] Attempting Keycloak authentication
+2020-01-22 15:19:13,093 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-4] --> authenticate()
+2020-01-22 15:19:13,098 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-4] try bearer
+2020-01-22 15:19:13,103 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-4] try query paramter auth
+2020-01-22 15:19:13,103 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-4] try oauth
+2020-01-22 15:19:13,104 DEBUG org.keycloak.adapters.springsecurity.token.SpringSecurityTokenStore [http-nio-8080-exec-4] Checking if org.keycloak.adapters.springsecurity.authentication.SpringSecurityRequestAuthenticator@3438e627 is cached
+2020-01-22 15:19:13,106 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-4] there was no code
+2020-01-22 15:19:13,106 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-4] redirecting to auth server
+2020-01-22 15:19:13,109 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-4] callback uri: http://localhost:8080/sso/login
+2020-01-22 15:19:13,116 DEBUG org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter [http-nio-8080-exec-4] Auth outcome: NOT_ATTEMPTED
+2020-01-22 15:19:13,116 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator$1 [http-nio-8080-exec-4] Sending redirect to login page: https://dss1.aegean.gr/auth/realms/test/protocol/openid-connect/auth?response_type=code&client_id=sealTest&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fsso%2Flogin&state=6180c2fb-ae54-4ac5-b6dc-d3c2d7d82d5d&login=true&scope=openid
+2020-01-22 15:19:42,965 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-5] adminRequest http://localhost:8080/sso/login?state=6180c2fb-ae54-4ac5-b6dc-d3c2d7d82d5d&session_state=a0173038-3d7d-4d77-9430-c9d7cd00a72f&code=992aa41d-3fa1-4ba1-b55e-fb7aadd1dafb.a0173038-3d7d-4d77-9430-c9d7cd00a72f.eceda444-e4a7-400e-8d2e-2cd2f59cb242
+2020-01-22 15:19:42,965 DEBUG org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve [http-nio-8080-exec-5] AuthenticatedActionsValve.invoke /sso/login
+2020-01-22 15:19:42,965 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-5] AuthenticatedActionsValve.invoke http://localhost:8080/sso/login?state=6180c2fb-ae54-4ac5-b6dc-d3c2d7d82d5d&session_state=a0173038-3d7d-4d77-9430-c9d7cd00a72f&code=992aa41d-3fa1-4ba1-b55e-fb7aadd1dafb.a0173038-3d7d-4d77-9430-c9d7cd00a72f.eceda444-e4a7-400e-8d2e-2cd2f59cb242
+2020-01-22 15:19:42,966 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-5] Policy enforcement is disabled.
+2020-01-22 15:19:42,967 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-5] adminRequest http://localhost:8080/sso/login?state=6180c2fb-ae54-4ac5-b6dc-d3c2d7d82d5d&session_state=a0173038-3d7d-4d77-9430-c9d7cd00a72f&code=992aa41d-3fa1-4ba1-b55e-fb7aadd1dafb.a0173038-3d7d-4d77-9430-c9d7cd00a72f.eceda444-e4a7-400e-8d2e-2cd2f59cb242
+2020-01-22 15:19:42,967 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-8080-exec-5] Request is to process authentication
+2020-01-22 15:19:42,967 DEBUG org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter [http-nio-8080-exec-5] Attempting Keycloak authentication
+2020-01-22 15:19:42,968 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-5] --> authenticate()
+2020-01-22 15:19:42,968 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-5] try bearer
+2020-01-22 15:19:42,969 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-5] try query paramter auth
+2020-01-22 15:19:42,969 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-5] try oauth
+2020-01-22 15:19:42,969 DEBUG org.keycloak.adapters.springsecurity.token.SpringSecurityTokenStore [http-nio-8080-exec-5] Checking if org.keycloak.adapters.springsecurity.authentication.SpringSecurityRequestAuthenticator@6b95cfc9 is cached
+2020-01-22 15:19:42,970 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-5] there was a code, resolving
+2020-01-22 15:19:42,972 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-5] checking state cookie for after code
+2020-01-22 15:19:42,973 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-5] ** reseting application state cookie
+2020-01-22 15:19:43,579 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-5] Verifying tokens
+2020-01-22 15:19:43,603 TRACE org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-5] 		access_token: eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKSVkyNENrb0YzbFAyS0ZBOTZrRnJ6dWp2TDlOQTVyRURSTDJFanlOa3hrIn0.eyJqdGkiOiI0YjAzMDc4MC0yZTI4LTRlZTEtYjM1NS1jOGQyOGYxNmQyYWEiLCJleHAiOjE1Nzk2OTk0ODMsIm5iZiI6MCwiaWF0IjoxNTc5Njk5MTgzLCJpc3MiOiJodHRwczovL2RzczEuYWVnZWFuLmdyL2F1dGgvcmVhbG1zL3Rlc3QiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMWIzYzIxZDMtMThmOC00ZmE3LWEzZjgtODJjNDhkMGQxNWJiIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic2VhbFRlc3QiLCJhdXRoX3RpbWUiOjE1Nzk2OTkxODIsInNlc3Npb25fc3RhdGUiOiJhMDE3MzAzOC0zZDdkLTRkNzctOTQzMC1jOWQ3Y2QwMGE3MmYiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiLOkc6dzpTOoc6VzpHOoywgQU5EUkVBUyDOoM6VzqTOoc6fzqUsIFBFVFJPVSIsInByZWZlcnJlZF91c2VybmFtZSI6ImdyL2dyL2VybWlzLTExMDc2NjY5IiwiZ2l2ZW5fbmFtZSI6Is6Rzp3OlM6hzpXOkc6jLCBBTkRSRUFTIiwiZmFtaWx5X25hbWUiOiLOoM6VzqTOoc6fzqUsIFBFVFJPVSIsImVtYWlsIjoiZ3IvZ3IvZXJtaXMtMTEwNzY2NjlAZWlkYXMuZ3IifQ.signature
+2020-01-22 15:19:43,605 TRACE org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-5] 		id_token: eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKSVkyNENrb0YzbFAyS0ZBOTZrRnJ6dWp2TDlOQTVyRURSTDJFanlOa3hrIn0.eyJqdGkiOiJhZDEzZGQzZC01MzkzLTRiYWEtOWU1Yi1kZjQ4ZTFlM2I0ZTAiLCJleHAiOjE1Nzk2OTk0ODMsIm5iZiI6MCwiaWF0IjoxNTc5Njk5MTgzLCJpc3MiOiJodHRwczovL2RzczEuYWVnZWFuLmdyL2F1dGgvcmVhbG1zL3Rlc3QiLCJhdWQiOiJzZWFsVGVzdCIsInN1YiI6IjFiM2MyMWQzLTE4ZjgtNGZhNy1hM2Y4LTgyYzQ4ZDBkMTViYiIsInR5cCI6IklEIiwiYXpwIjoic2VhbFRlc3QiLCJhdXRoX3RpbWUiOjE1Nzk2OTkxODIsInNlc3Npb25fc3RhdGUiOiJhMDE3MzAzOC0zZDdkLTRkNzctOTQzMC1jOWQ3Y2QwMGE3MmYiLCJhY3IiOiIxIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiLOkc6dzpTOoc6VzpHOoywgQU5EUkVBUyDOoM6VzqTOoc6fzqUsIFBFVFJPVSIsInByZWZlcnJlZF91c2VybmFtZSI6ImdyL2dyL2VybWlzLTExMDc2NjY5IiwiZ2l2ZW5fbmFtZSI6Is6Rzp3OlM6hzpXOkc6jLCBBTkRSRUFTIiwiZmFtaWx5X25hbWUiOiLOoM6VzqTOoc6fzqUsIFBFVFJPVSIsImVtYWlsIjoiZ3IvZ3IvZXJtaXMtMTEwNzY2NjlAZWlkYXMuZ3IifQ.signature
+2020-01-22 15:19:43,616 TRACE org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-5] 		refresh_token: eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2NGYzNjg4Ny1jMzYwLTQwYjItOTJhMi00ZDRlZDhmY2Q3ZWMifQ.eyJqdGkiOiI4M2YyNTllMC04N2JlLTRjNTgtYmM4ZS01MzgyNmFjM2UwOTIiLCJleHAiOjE1Nzk3MDA5ODMsIm5iZiI6MCwiaWF0IjoxNTc5Njk5MTgzLCJpc3MiOiJodHRwczovL2RzczEuYWVnZWFuLmdyL2F1dGgvcmVhbG1zL3Rlc3QiLCJhdWQiOiJodHRwczovL2RzczEuYWVnZWFuLmdyL2F1dGgvcmVhbG1zL3Rlc3QiLCJzdWIiOiIxYjNjMjFkMy0xOGY4LTRmYTctYTNmOC04MmM0OGQwZDE1YmIiLCJ0eXAiOiJSZWZyZXNoIiwiYXpwIjoic2VhbFRlc3QiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiJhMDE3MzAzOC0zZDdkLTRkNzctOTQzMC1jOWQ3Y2QwMGE3MmYiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUifQ.signature
+2020-01-22 15:19:43,697 TRACE org.keycloak.adapters.rotation.JWKPublicKeyLocator [http-nio-8080-exec-5] Going to send request to retrieve new set of realm public keys for client sealTest
+2020-01-22 15:19:43,759 DEBUG org.keycloak.adapters.rotation.JWKPublicKeyLocator [http-nio-8080-exec-5] Realm public keys successfully retrieved for client sealTest. New kids: [JIY24CkoF3lP2KFA96kFrzujvL9NA5rEDRL2EjyNkxk]
+2020-01-22 15:19:43,768 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-5] Token Verification succeeded!
+2020-01-22 15:19:43,769 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-5] successful authenticated
+2020-01-22 15:19:43,771 TRACE org.keycloak.adapters.RefreshableKeycloakSecurityContext [http-nio-8080-exec-5] checking whether to refresh.
+2020-01-22 15:19:43,772 TRACE org.keycloak.adapters.AdapterUtils [http-nio-8080-exec-5] use realm role mappings
+2020-01-22 15:19:43,773 TRACE org.keycloak.adapters.AdapterUtils [http-nio-8080-exec-5] Setting roles: 
+2020-01-22 15:19:43,774 TRACE org.keycloak.adapters.AdapterUtils [http-nio-8080-exec-5]    role: offline_access
+2020-01-22 15:19:43,775 TRACE org.keycloak.adapters.AdapterUtils [http-nio-8080-exec-5]    role: uma_authorization
+2020-01-22 15:19:43,776 DEBUG org.keycloak.adapters.springsecurity.token.SpringSecurityTokenStore [http-nio-8080-exec-5] Saving account info org.keycloak.adapters.springsecurity.account.SimpleKeycloakAccount@37c8453d
+2020-01-22 15:19:43,777 DEBUG org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-5] User 'gr/gr/ermis-11076669' invoking 'http://localhost:8080/sso/login?state=6180c2fb-ae54-4ac5-b6dc-d3c2d7d82d5d&session_state=a0173038-3d7d-4d77-9430-c9d7cd00a72f&code=992aa41d-3fa1-4ba1-b55e-fb7aadd1dafb.a0173038-3d7d-4d77-9430-c9d7cd00a72f.eceda444-e4a7-400e-8d2e-2cd2f59cb242' on client 'sealTest'
+2020-01-22 15:19:43,777 DEBUG org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-5] AUTHENTICATED
+2020-01-22 15:19:43,778 DEBUG org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter [http-nio-8080-exec-5] Auth outcome: AUTHENTICATED
+2020-01-22 15:19:43,788 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-8080-exec-5] Authentication success. Updating SecurityContextHolder to contain: org.keycloak.adapters.springsecurity.token.KeycloakAuthenticationToken@e55a51cc: Principal: gr/gr/ermis-11076669; Credentials: [PROTECTED]; Authenticated: true; Details: org.keycloak.adapters.springsecurity.account.SimpleKeycloakAccount@37c8453d; Granted Authorities: ROLE_offline_access, ROLE_uma_authorization
+2020-01-22 15:19:43,797 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-6] adminRequest http://localhost:8080/
+2020-01-22 15:19:43,797 DEBUG org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve [http-nio-8080-exec-6] AuthenticatedActionsValve.invoke /
+2020-01-22 15:19:43,797 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-6] AuthenticatedActionsValve.invoke http://localhost:8080/
+2020-01-22 15:19:43,798 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-6] Policy enforcement is disabled.
+2020-01-22 15:19:43,799 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-6] adminRequest http://localhost:8080/
+2020-01-22 15:19:43,799 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-6] AuthenticatedActionsValve.invoke http://localhost:8080/
+2020-01-22 15:19:43,800 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-6] Policy enforcement is disabled.
+2020-01-22 15:19:43,801 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-6] adminRequest http://localhost:8080/
+2020-01-22 15:19:43,803 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-6] adminRequest http://localhost:8080/error
+2020-01-22 15:31:31,083 INFO org.springframework.boot.StartupInfoLogger [main] Starting LoginWebAppApplication on nikos with PID 7767 (/home/nikos/NetBeansProjects/seal.eidas.idp/target/classes started by nikos in /home/nikos/NetBeansProjects/seal.eidas.idp)
+2020-01-22 15:31:31,087 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-01-22 15:31:32,698 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2020-01-22 15:31:32,723 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-22 15:31:32,724 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-01-22 15:31:32,726 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-22 15:31:32,813 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-01-22 15:31:32,813 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1599 ms
+2020-01-22 15:31:33,015 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'keycloakSecurityContextRequestFilter' configured for use
+2020-01-22 15:31:33,016 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'keycloakAuthenticationProcessingFilter' configured for use
+2020-01-22 15:31:33,017 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'keycloakPreAuthActionsFilter' configured for use
+2020-01-22 15:31:33,018 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'keycloakAuthenticatedActionsRequestFilter' configured for use
+2020-01-22 15:31:33,020 DEBUG org.keycloak.adapters.tomcat.AbstractKeycloakAuthenticatorValve [main] Using org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver to resolve Keycloak configuration on a per-request basis.
+2020-01-22 15:31:33,140 INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor [main] Autowired annotation is not supported on static fields: private static final org.slf4j.Logger gr.uagean.loginWebApp.controllers.GRControllers.LOG
+2020-01-22 15:31:33,160 INFO com.google.code.ssm.config.DefaultAddressProvider [main] Defined values 172.17.0.1:11211 will be used as memcached addresses
+2020-01-22 15:31:33,538 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4b515eab, org.springframework.security.web.context.SecurityContextPersistenceFilter@3513c84c, org.springframework.security.web.header.HeaderWriterFilter@566f1852, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@30c4e352, org.springframework.security.web.authentication.logout.LogoutFilter@5d1b1c2a, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@149b0577, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7bc6935c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1dcedc93, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@5f96f6a2, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@48df4071, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@66c9b52f, org.springframework.security.web.session.SessionManagementFilter@2e4389ed, org.springframework.security.web.access.ExceptionTranslationFilter@327e5be5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5b000fe6]
+2020-01-22 15:31:33,656 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-22 15:31:33,879 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-01-22 15:31:33,920 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-22 15:31:33,924 INFO org.springframework.boot.StartupInfoLogger [main] Started LoginWebAppApplication in 3.574 seconds (JVM running for 4.059)
+2020-01-22 15:37:39,181 INFO org.springframework.boot.StartupInfoLogger [main] Starting LoginWebAppApplication on nikos with PID 8128 (/home/nikos/NetBeansProjects/seal.eidas.idp/target/classes started by nikos in /home/nikos/NetBeansProjects/seal.eidas.idp)
+2020-01-22 15:37:39,187 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-01-22 15:37:40,856 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2020-01-22 15:37:40,893 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-22 15:37:40,894 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-01-22 15:37:40,894 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-22 15:37:40,978 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-01-22 15:37:40,979 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1669 ms
+2020-01-22 15:37:41,147 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'keycloakSecurityContextRequestFilter' configured for use
+2020-01-22 15:37:41,147 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'keycloakAuthenticationProcessingFilter' configured for use
+2020-01-22 15:37:41,148 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'keycloakPreAuthActionsFilter' configured for use
+2020-01-22 15:37:41,149 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'keycloakAuthenticatedActionsRequestFilter' configured for use
+2020-01-22 15:37:41,151 DEBUG org.keycloak.adapters.tomcat.AbstractKeycloakAuthenticatorValve [main] Using org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver to resolve Keycloak configuration on a per-request basis.
+2020-01-22 15:37:41,247 INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor [main] Autowired annotation is not supported on static fields: private static final org.slf4j.Logger gr.uagean.loginWebApp.controllers.GRControllers.LOG
+2020-01-22 15:37:41,262 INFO com.google.code.ssm.config.DefaultAddressProvider [main] Defined values 172.17.0.1:11211 will be used as memcached addresses
+2020-01-22 15:37:41,585 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@27f3f512, org.springframework.security.web.context.SecurityContextPersistenceFilter@3d40a3b4, org.springframework.security.web.header.HeaderWriterFilter@2f677247, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@188598ad, org.springframework.security.web.authentication.logout.LogoutFilter@4e3f2908, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@2721044, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@59fc6d05, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7c40ffef, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@ebe067d, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@3a4ab7f7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5e593b08, org.springframework.security.web.session.SessionManagementFilter@7a1b8a46, org.springframework.security.web.access.ExceptionTranslationFilter@1775c4e7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6dce59e]
+2020-01-22 15:37:41,692 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-22 15:37:41,879 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-01-22 15:37:41,907 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-22 15:37:41,912 INFO org.springframework.boot.StartupInfoLogger [main] Started LoginWebAppApplication in 3.423 seconds (JVM running for 3.82)
+2020-01-22 15:37:58,291 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-1] adminRequest http://localhost:8080/idp/authenticate?msToken=eyJhbGciOiJSUzI1NiJ9.eyJzZXNzaW9uSWQiOiI4MjJkOWQwOS04ZTBjLTRmNjMtYTIwMC1mNzZjYWMzODc3MDIiLCJzZW5kZXIiOiJBQ01tczAwMSIsInJlY2VpdmVyIjoiQVBtczAwMyIsImlzcyI6IiIsImp0aSI6ImFjN2JlYzA5LTBkMWYtNGY0Zi04YzYyLTlkN2EwNTRlODBhNCIsImlhdCI6MTU3OTYwMTM2OCwiZXhwIjoxNTc5NjAxNjY4fQ.bfLXGseEimFML2kv3CJg8KGKfsPTd3SyqaVc_VhJP-mB1ePGVpiWxwdC6ZcauPHHzW09Sd2evtdegeVEz5aTgJZF-8NN6TZND42Bw4pZceAkVP9IeFh2FYF8tVCAW6E4byAex6pz0z8Kfj3R6ln98wfpgfVv7xAPe4CpXyN59srwlDCiadpWeoOIE-iqpK6cK11dzMOngKJNVGirCRil2nXLFePrTqjfzKUqEfWa0tXj1EJG8559p6u6211G-Tvxy0aORLkeoAO5fjrygEw0d5Rv95VFDqtmMuJHc1X6XekxxD1Zvs6A0KgOskGCrKipt-2mpt8I-8H39iLXlh3taw
+2020-01-22 15:37:58,300 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Using provider 'secret' for authentication of client 'sealTest'
+2020-01-22 15:37:58,303 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider secret
+2020-01-22 15:37:58,304 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider jwt
+2020-01-22 15:37:58,306 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider secret-jwt
+2020-01-22 15:37:58,307 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider secret
+2020-01-22 15:37:58,308 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider jwt
+2020-01-22 15:37:58,309 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider secret-jwt
+2020-01-22 15:37:58,317 DEBUG org.keycloak.adapters.KeycloakDeployment [http-nio-8080-exec-1] resolveUrls
+2020-01-22 15:37:58,319 DEBUG org.keycloak.adapters.KeycloakDeploymentBuilder [http-nio-8080-exec-1] Use authServerUrl: https://dss1.aegean.gr/auth, tokenUrl: https://dss1.aegean.gr/auth/realms/test/protocol/openid-connect/token, relativeUrls: NEVER
+2020-01-22 15:37:58,326 DEBUG org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve [http-nio-8080-exec-1] AuthenticatedActionsValve.invoke /idp/authenticate
+2020-01-22 15:37:58,327 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-1] AuthenticatedActionsValve.invoke http://localhost:8080/idp/authenticate?msToken=eyJhbGciOiJSUzI1NiJ9.eyJzZXNzaW9uSWQiOiI4MjJkOWQwOS04ZTBjLTRmNjMtYTIwMC1mNzZjYWMzODc3MDIiLCJzZW5kZXIiOiJBQ01tczAwMSIsInJlY2VpdmVyIjoiQVBtczAwMyIsImlzcyI6IiIsImp0aSI6ImFjN2JlYzA5LTBkMWYtNGY0Zi04YzYyLTlkN2EwNTRlODBhNCIsImlhdCI6MTU3OTYwMTM2OCwiZXhwIjoxNTc5NjAxNjY4fQ.bfLXGseEimFML2kv3CJg8KGKfsPTd3SyqaVc_VhJP-mB1ePGVpiWxwdC6ZcauPHHzW09Sd2evtdegeVEz5aTgJZF-8NN6TZND42Bw4pZceAkVP9IeFh2FYF8tVCAW6E4byAex6pz0z8Kfj3R6ln98wfpgfVv7xAPe4CpXyN59srwlDCiadpWeoOIE-iqpK6cK11dzMOngKJNVGirCRil2nXLFePrTqjfzKUqEfWa0tXj1EJG8559p6u6211G-Tvxy0aORLkeoAO5fjrygEw0d5Rv95VFDqtmMuJHc1X6XekxxD1Zvs6A0KgOskGCrKipt-2mpt8I-8H39iLXlh3taw
+2020-01-22 15:37:58,327 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-1] Policy enforcement is disabled.
+2020-01-22 15:37:58,331 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-22 15:37:58,331 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-01-22 15:37:58,339 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 8 ms
+2020-01-22 15:37:58,365 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Using provider 'secret' for authentication of client 'sealTest'
+2020-01-22 15:37:58,366 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider secret
+2020-01-22 15:37:58,367 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider jwt
+2020-01-22 15:37:58,367 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider secret-jwt
+2020-01-22 15:37:58,368 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider secret
+2020-01-22 15:37:58,369 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider jwt
+2020-01-22 15:37:58,369 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider secret-jwt
+2020-01-22 15:37:58,370 DEBUG org.keycloak.adapters.KeycloakDeployment [http-nio-8080-exec-1] resolveUrls
+2020-01-22 15:37:58,371 DEBUG org.keycloak.adapters.KeycloakDeploymentBuilder [http-nio-8080-exec-1] Use authServerUrl: https://dss1.aegean.gr/auth, tokenUrl: https://dss1.aegean.gr/auth/realms/test/protocol/openid-connect/token, relativeUrls: NEVER
+2020-01-22 15:37:58,371 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-1] adminRequest http://localhost:8080/idp/authenticate?msToken=eyJhbGciOiJSUzI1NiJ9.eyJzZXNzaW9uSWQiOiI4MjJkOWQwOS04ZTBjLTRmNjMtYTIwMC1mNzZjYWMzODc3MDIiLCJzZW5kZXIiOiJBQ01tczAwMSIsInJlY2VpdmVyIjoiQVBtczAwMyIsImlzcyI6IiIsImp0aSI6ImFjN2JlYzA5LTBkMWYtNGY0Zi04YzYyLTlkN2EwNTRlODBhNCIsImlhdCI6MTU3OTYwMTM2OCwiZXhwIjoxNTc5NjAxNjY4fQ.bfLXGseEimFML2kv3CJg8KGKfsPTd3SyqaVc_VhJP-mB1ePGVpiWxwdC6ZcauPHHzW09Sd2evtdegeVEz5aTgJZF-8NN6TZND42Bw4pZceAkVP9IeFh2FYF8tVCAW6E4byAex6pz0z8Kfj3R6ln98wfpgfVv7xAPe4CpXyN59srwlDCiadpWeoOIE-iqpK6cK11dzMOngKJNVGirCRil2nXLFePrTqjfzKUqEfWa0tXj1EJG8559p6u6211G-Tvxy0aORLkeoAO5fjrygEw0d5Rv95VFDqtmMuJHc1X6XekxxD1Zvs6A0KgOskGCrKipt-2mpt8I-8H39iLXlh3taw
+2020-01-22 15:37:58,380 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-1] adminRequest http://localhost:8080/idp/authenticate?msToken=eyJhbGciOiJSUzI1NiJ9.eyJzZXNzaW9uSWQiOiI4MjJkOWQwOS04ZTBjLTRmNjMtYTIwMC1mNzZjYWMzODc3MDIiLCJzZW5kZXIiOiJBQ01tczAwMSIsInJlY2VpdmVyIjoiQVBtczAwMyIsImlzcyI6IiIsImp0aSI6ImFjN2JlYzA5LTBkMWYtNGY0Zi04YzYyLTlkN2EwNTRlODBhNCIsImlhdCI6MTU3OTYwMTM2OCwiZXhwIjoxNTc5NjAxNjY4fQ.bfLXGseEimFML2kv3CJg8KGKfsPTd3SyqaVc_VhJP-mB1ePGVpiWxwdC6ZcauPHHzW09Sd2evtdegeVEz5aTgJZF-8NN6TZND42Bw4pZceAkVP9IeFh2FYF8tVCAW6E4byAex6pz0z8Kfj3R6ln98wfpgfVv7xAPe4CpXyN59srwlDCiadpWeoOIE-iqpK6cK11dzMOngKJNVGirCRil2nXLFePrTqjfzKUqEfWa0tXj1EJG8559p6u6211G-Tvxy0aORLkeoAO5fjrygEw0d5Rv95VFDqtmMuJHc1X6XekxxD1Zvs6A0KgOskGCrKipt-2mpt8I-8H39iLXlh3taw
+2020-01-22 15:37:58,429 INFO gr.uagean.loginWebApp.controllers.RestControllers [http-nio-8080-exec-1] got the token:eyJhbGciOiJSUzI1NiJ9.eyJzZXNzaW9uSWQiOiI4MjJkOWQwOS04ZTBjLTRmNjMtYTIwMC1mNzZjYWMzODc3MDIiLCJzZW5kZXIiOiJBQ01tczAwMSIsInJlY2VpdmVyIjoiQVBtczAwMyIsImlzcyI6IiIsImp0aSI6ImFjN2JlYzA5LTBkMWYtNGY0Zi04YzYyLTlkN2EwNTRlODBhNCIsImlhdCI6MTU3OTYwMTM2OCwiZXhwIjoxNTc5NjAxNjY4fQ.bfLXGseEimFML2kv3CJg8KGKfsPTd3SyqaVc_VhJP-mB1ePGVpiWxwdC6ZcauPHHzW09Sd2evtdegeVEz5aTgJZF-8NN6TZND42Bw4pZceAkVP9IeFh2FYF8tVCAW6E4byAex6pz0z8Kfj3R6ln98wfpgfVv7xAPe4CpXyN59srwlDCiadpWeoOIE-iqpK6cK11dzMOngKJNVGirCRil2nXLFePrTqjfzKUqEfWa0tXj1EJG8559p6u6211G-Tvxy0aORLkeoAO5fjrygEw0d5Rv95VFDqtmMuJHc1X6XekxxD1Zvs6A0KgOskGCrKipt-2mpt8I-8H39iLXlh3taw
+2020-01-22 15:37:59,544 INFO gr.uagean.loginWebApp.controllers.RestControllers [http-nio-8080-exec-1] got the responseCode:ERROR
+2020-01-22 15:38:18,235 INFO org.springframework.boot.StartupInfoLogger [main] Starting TestSessisonManagerConnection on nikos with PID 8220 (started by nikos in /home/nikos/NetBeansProjects/seal.eidas.idp)
+2020-01-22 15:38:18,237 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: test
+2020-01-22 15:38:19,949 INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor [main] Autowired annotation is not supported on static fields: private static final org.slf4j.Logger gr.uagean.loginWebApp.controllers.GRControllers.LOG
+2020-01-22 15:38:19,966 INFO com.google.code.ssm.config.DefaultAddressProvider [main] Defined values 172.17.0.1:11211 will be used as memcached addresses
+2020-01-22 15:38:20,498 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@21eee94f, org.springframework.security.web.context.SecurityContextPersistenceFilter@77bc2e16, org.springframework.security.web.header.HeaderWriterFilter@591a4f8e, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@6bc24e72, org.springframework.security.web.authentication.logout.LogoutFilter@717d7587, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@724aefc3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@20a7953c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5d5b9ecb, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@7cfb4736, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@2a097d77, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@53c1179a, org.springframework.security.web.session.SessionManagementFilter@6ba060f3, org.springframework.security.web.access.ExceptionTranslationFilter@15f35bc3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5edacf20]
+2020-01-22 15:38:21,038 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-22 15:38:21,451 INFO org.springframework.mock.web.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2020-01-22 15:38:21,451 INFO org.springframework.web.servlet.FrameworkServlet [main] Initializing Servlet ''
+2020-01-22 15:38:21,464 INFO org.springframework.web.servlet.FrameworkServlet [main] Completed initialization in 12 ms
+2020-01-22 15:38:21,495 INFO org.springframework.boot.StartupInfoLogger [main] Started TestSessisonManagerConnection in 3.734 seconds (JVM running for 4.729)
+2020-01-22 15:38:23,243 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-22 15:38:23,247 DEBUG org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter [SpringContextShutdownHook] Unregistering deployment
+2020-01-22 15:38:34,556 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-2] adminRequest http://localhost:8080/idp/authenticate?msToken=eyJhbGciOiJSUzI1NiJ9.eyJzZXNzaW9uSWQiOiJmY2JmMGQzNC1hZjYyLTQ0MzYtODY0Mi02NGYzYjgxMjdjMjgiLCJzZW5kZXIiOiJBQ01tczAwMSIsInJlY2VpdmVyIjoiQVBtczAwMyIsImlzcyI6IiIsImp0aSI6IjdkOThhODVmLTY1NzctNDQ0Yy04ZDBkLTQ3ZmFiMzNjYTE5OCIsImlhdCI6MTU3OTcwMDMwMywiZXhwIjoxNTc5NzAwNjAzfQ.aWfliXv00QwMxP42sHgDdTi2OVW3ZfubhcxAhAdvXDlmuBf5uWr0AUZaZ8Tpr_j9-gN7EhB8nYYR5jVvdwM2X-y6q5X_r-cM2q7tZJmELa6WGs72Ebl0OD_nxEw3xIiVbfwvSksOHMbEXFMb8EeOSAgv1ipOJ1_d5ZwBIY3BSUp_PZJY0CVUEpAuA-sOM869EX6ghDHiP-8ClnrjZH442CfDL5M4oozE8cREI62I--wPg5qIopaLJQ28MNEte5KG4mPnR2anPN2p6wTDABadm1LAr1PaV-G87R5BPO48n1fi_Oyc4nYxf5-OpCJCaMONhJHKDK5K_sDCuOoPfUgQLA
+2020-01-22 15:38:34,557 DEBUG org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve [http-nio-8080-exec-2] AuthenticatedActionsValve.invoke /idp/authenticate
+2020-01-22 15:38:34,558 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-2] AuthenticatedActionsValve.invoke http://localhost:8080/idp/authenticate?msToken=eyJhbGciOiJSUzI1NiJ9.eyJzZXNzaW9uSWQiOiJmY2JmMGQzNC1hZjYyLTQ0MzYtODY0Mi02NGYzYjgxMjdjMjgiLCJzZW5kZXIiOiJBQ01tczAwMSIsInJlY2VpdmVyIjoiQVBtczAwMyIsImlzcyI6IiIsImp0aSI6IjdkOThhODVmLTY1NzctNDQ0Yy04ZDBkLTQ3ZmFiMzNjYTE5OCIsImlhdCI6MTU3OTcwMDMwMywiZXhwIjoxNTc5NzAwNjAzfQ.aWfliXv00QwMxP42sHgDdTi2OVW3ZfubhcxAhAdvXDlmuBf5uWr0AUZaZ8Tpr_j9-gN7EhB8nYYR5jVvdwM2X-y6q5X_r-cM2q7tZJmELa6WGs72Ebl0OD_nxEw3xIiVbfwvSksOHMbEXFMb8EeOSAgv1ipOJ1_d5ZwBIY3BSUp_PZJY0CVUEpAuA-sOM869EX6ghDHiP-8ClnrjZH442CfDL5M4oozE8cREI62I--wPg5qIopaLJQ28MNEte5KG4mPnR2anPN2p6wTDABadm1LAr1PaV-G87R5BPO48n1fi_Oyc4nYxf5-OpCJCaMONhJHKDK5K_sDCuOoPfUgQLA
+2020-01-22 15:38:34,559 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-2] Policy enforcement is disabled.
+2020-01-22 15:38:34,560 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-2] adminRequest http://localhost:8080/idp/authenticate?msToken=eyJhbGciOiJSUzI1NiJ9.eyJzZXNzaW9uSWQiOiJmY2JmMGQzNC1hZjYyLTQ0MzYtODY0Mi02NGYzYjgxMjdjMjgiLCJzZW5kZXIiOiJBQ01tczAwMSIsInJlY2VpdmVyIjoiQVBtczAwMyIsImlzcyI6IiIsImp0aSI6IjdkOThhODVmLTY1NzctNDQ0Yy04ZDBkLTQ3ZmFiMzNjYTE5OCIsImlhdCI6MTU3OTcwMDMwMywiZXhwIjoxNTc5NzAwNjAzfQ.aWfliXv00QwMxP42sHgDdTi2OVW3ZfubhcxAhAdvXDlmuBf5uWr0AUZaZ8Tpr_j9-gN7EhB8nYYR5jVvdwM2X-y6q5X_r-cM2q7tZJmELa6WGs72Ebl0OD_nxEw3xIiVbfwvSksOHMbEXFMb8EeOSAgv1ipOJ1_d5ZwBIY3BSUp_PZJY0CVUEpAuA-sOM869EX6ghDHiP-8ClnrjZH442CfDL5M4oozE8cREI62I--wPg5qIopaLJQ28MNEte5KG4mPnR2anPN2p6wTDABadm1LAr1PaV-G87R5BPO48n1fi_Oyc4nYxf5-OpCJCaMONhJHKDK5K_sDCuOoPfUgQLA
+2020-01-22 15:38:34,561 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-2] adminRequest http://localhost:8080/idp/authenticate?msToken=eyJhbGciOiJSUzI1NiJ9.eyJzZXNzaW9uSWQiOiJmY2JmMGQzNC1hZjYyLTQ0MzYtODY0Mi02NGYzYjgxMjdjMjgiLCJzZW5kZXIiOiJBQ01tczAwMSIsInJlY2VpdmVyIjoiQVBtczAwMyIsImlzcyI6IiIsImp0aSI6IjdkOThhODVmLTY1NzctNDQ0Yy04ZDBkLTQ3ZmFiMzNjYTE5OCIsImlhdCI6MTU3OTcwMDMwMywiZXhwIjoxNTc5NzAwNjAzfQ.aWfliXv00QwMxP42sHgDdTi2OVW3ZfubhcxAhAdvXDlmuBf5uWr0AUZaZ8Tpr_j9-gN7EhB8nYYR5jVvdwM2X-y6q5X_r-cM2q7tZJmELa6WGs72Ebl0OD_nxEw3xIiVbfwvSksOHMbEXFMb8EeOSAgv1ipOJ1_d5ZwBIY3BSUp_PZJY0CVUEpAuA-sOM869EX6ghDHiP-8ClnrjZH442CfDL5M4oozE8cREI62I--wPg5qIopaLJQ28MNEte5KG4mPnR2anPN2p6wTDABadm1LAr1PaV-G87R5BPO48n1fi_Oyc4nYxf5-OpCJCaMONhJHKDK5K_sDCuOoPfUgQLA
+2020-01-22 15:38:34,562 INFO gr.uagean.loginWebApp.controllers.RestControllers [http-nio-8080-exec-2] got the token:eyJhbGciOiJSUzI1NiJ9.eyJzZXNzaW9uSWQiOiJmY2JmMGQzNC1hZjYyLTQ0MzYtODY0Mi02NGYzYjgxMjdjMjgiLCJzZW5kZXIiOiJBQ01tczAwMSIsInJlY2VpdmVyIjoiQVBtczAwMyIsImlzcyI6IiIsImp0aSI6IjdkOThhODVmLTY1NzctNDQ0Yy04ZDBkLTQ3ZmFiMzNjYTE5OCIsImlhdCI6MTU3OTcwMDMwMywiZXhwIjoxNTc5NzAwNjAzfQ.aWfliXv00QwMxP42sHgDdTi2OVW3ZfubhcxAhAdvXDlmuBf5uWr0AUZaZ8Tpr_j9-gN7EhB8nYYR5jVvdwM2X-y6q5X_r-cM2q7tZJmELa6WGs72Ebl0OD_nxEw3xIiVbfwvSksOHMbEXFMb8EeOSAgv1ipOJ1_d5ZwBIY3BSUp_PZJY0CVUEpAuA-sOM869EX6ghDHiP-8ClnrjZH442CfDL5M4oozE8cREI62I--wPg5qIopaLJQ28MNEte5KG4mPnR2anPN2p6wTDABadm1LAr1PaV-G87R5BPO48n1fi_Oyc4nYxf5-OpCJCaMONhJHKDK5K_sDCuOoPfUgQLA
+2020-01-22 15:38:35,196 INFO gr.uagean.loginWebApp.controllers.RestControllers [http-nio-8080-exec-2] got the responseCode:OK
+2020-01-22 15:38:36,139 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-3] adminRequest http://localhost:8080/idp/protected
+2020-01-22 15:38:36,140 DEBUG org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve [http-nio-8080-exec-3] AuthenticatedActionsValve.invoke /idp/protected
+2020-01-22 15:38:36,140 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-3] AuthenticatedActionsValve.invoke http://localhost:8080/idp/protected
+2020-01-22 15:38:36,140 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-3] Policy enforcement is disabled.
+2020-01-22 15:38:36,142 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-3] adminRequest http://localhost:8080/idp/protected
+2020-01-22 15:38:36,198 DEBUG org.keycloak.adapters.springsecurity.management.HttpSessionManager [http-nio-8080-exec-3] Session created: CB9BB45B2C255A7244F09A114BE23184
+2020-01-22 15:38:36,201 DEBUG org.keycloak.adapters.springsecurity.authentication.KeycloakAuthenticationEntryPoint [http-nio-8080-exec-3] Redirecting to login URI /sso/login
+2020-01-22 15:38:36,211 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-3] adminRequest http://localhost:8080/sso/login
+2020-01-22 15:38:36,212 DEBUG org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve [http-nio-8080-exec-3] AuthenticatedActionsValve.invoke /sso/login
+2020-01-22 15:38:36,213 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-3] AuthenticatedActionsValve.invoke http://localhost:8080/sso/login
+2020-01-22 15:38:36,214 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-3] Policy enforcement is disabled.
+2020-01-22 15:38:36,214 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-3] adminRequest http://localhost:8080/sso/login
+2020-01-22 15:38:36,215 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-8080-exec-3] Request is to process authentication
+2020-01-22 15:38:36,215 DEBUG org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter [http-nio-8080-exec-3] Attempting Keycloak authentication
+2020-01-22 15:38:36,219 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-3] --> authenticate()
+2020-01-22 15:38:36,221 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-3] try bearer
+2020-01-22 15:38:36,226 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-3] try query paramter auth
+2020-01-22 15:38:36,227 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-3] try oauth
+2020-01-22 15:38:36,227 DEBUG org.keycloak.adapters.springsecurity.token.SpringSecurityTokenStore [http-nio-8080-exec-3] Checking if org.keycloak.adapters.springsecurity.authentication.SpringSecurityRequestAuthenticator@75bf5808 is cached
+2020-01-22 15:38:36,229 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-3] there was no code
+2020-01-22 15:38:36,230 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-3] redirecting to auth server
+2020-01-22 15:38:36,231 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-3] callback uri: http://localhost:8080/sso/login
+2020-01-22 15:38:36,237 DEBUG org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter [http-nio-8080-exec-3] Auth outcome: NOT_ATTEMPTED
+2020-01-22 15:38:36,238 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator$1 [http-nio-8080-exec-3] Sending redirect to login page: https://dss1.aegean.gr/auth/realms/test/protocol/openid-connect/auth?response_type=code&client_id=sealTest&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fsso%2Flogin&state=f1669f89-6c23-4b83-94f8-74f5e8468fbf&login=true&scope=openid
+2020-01-22 15:38:59,565 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-4] adminRequest http://localhost:8080/sso/login?state=f1669f89-6c23-4b83-94f8-74f5e8468fbf&session_state=a0173038-3d7d-4d77-9430-c9d7cd00a72f&code=7d49b351-c370-4e2e-aa2e-d3c69d66e979.a0173038-3d7d-4d77-9430-c9d7cd00a72f.eceda444-e4a7-400e-8d2e-2cd2f59cb242
+2020-01-22 15:38:59,567 DEBUG org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve [http-nio-8080-exec-4] AuthenticatedActionsValve.invoke /sso/login
+2020-01-22 15:38:59,570 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-4] AuthenticatedActionsValve.invoke http://localhost:8080/sso/login?state=f1669f89-6c23-4b83-94f8-74f5e8468fbf&session_state=a0173038-3d7d-4d77-9430-c9d7cd00a72f&code=7d49b351-c370-4e2e-aa2e-d3c69d66e979.a0173038-3d7d-4d77-9430-c9d7cd00a72f.eceda444-e4a7-400e-8d2e-2cd2f59cb242
+2020-01-22 15:38:59,572 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-4] Policy enforcement is disabled.
+2020-01-22 15:38:59,577 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-4] adminRequest http://localhost:8080/sso/login?state=f1669f89-6c23-4b83-94f8-74f5e8468fbf&session_state=a0173038-3d7d-4d77-9430-c9d7cd00a72f&code=7d49b351-c370-4e2e-aa2e-d3c69d66e979.a0173038-3d7d-4d77-9430-c9d7cd00a72f.eceda444-e4a7-400e-8d2e-2cd2f59cb242
+2020-01-22 15:38:59,584 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-8080-exec-4] Request is to process authentication
+2020-01-22 15:38:59,586 DEBUG org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter [http-nio-8080-exec-4] Attempting Keycloak authentication
+2020-01-22 15:38:59,587 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-4] --> authenticate()
+2020-01-22 15:38:59,589 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-4] try bearer
+2020-01-22 15:38:59,590 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-4] try query paramter auth
+2020-01-22 15:38:59,591 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-4] try oauth
+2020-01-22 15:38:59,593 DEBUG org.keycloak.adapters.springsecurity.token.SpringSecurityTokenStore [http-nio-8080-exec-4] Checking if org.keycloak.adapters.springsecurity.authentication.SpringSecurityRequestAuthenticator@3fc1f5cd is cached
+2020-01-22 15:38:59,594 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-4] there was a code, resolving
+2020-01-22 15:38:59,596 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-4] checking state cookie for after code
+2020-01-22 15:38:59,598 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-4] ** reseting application state cookie
+2020-01-22 15:39:00,174 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-4] Verifying tokens
+2020-01-22 15:39:00,200 TRACE org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-4] 		access_token: eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKSVkyNENrb0YzbFAyS0ZBOTZrRnJ6dWp2TDlOQTVyRURSTDJFanlOa3hrIn0.eyJqdGkiOiI2NGJmZGE0MC0xZDZiLTRhZDgtYmVhMy0zZTk5ZjEzMmNmZDIiLCJleHAiOjE1Nzk3MDA2NDAsIm5iZiI6MCwiaWF0IjoxNTc5NzAwMzQwLCJpc3MiOiJodHRwczovL2RzczEuYWVnZWFuLmdyL2F1dGgvcmVhbG1zL3Rlc3QiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMWIzYzIxZDMtMThmOC00ZmE3LWEzZjgtODJjNDhkMGQxNWJiIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic2VhbFRlc3QiLCJhdXRoX3RpbWUiOjE1Nzk3MDAzMzksInNlc3Npb25fc3RhdGUiOiJhMDE3MzAzOC0zZDdkLTRkNzctOTQzMC1jOWQ3Y2QwMGE3MmYiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiLOkc6dzpTOoc6VzpHOoywgQU5EUkVBUyDOoM6VzqTOoc6fzqUsIFBFVFJPVSIsInByZWZlcnJlZF91c2VybmFtZSI6ImdyL2dyL2VybWlzLTExMDc2NjY5IiwiZ2l2ZW5fbmFtZSI6Is6Rzp3OlM6hzpXOkc6jLCBBTkRSRUFTIiwiZmFtaWx5X25hbWUiOiLOoM6VzqTOoc6fzqUsIFBFVFJPVSIsImVtYWlsIjoiZ3IvZ3IvZXJtaXMtMTEwNzY2NjlAZWlkYXMuZ3IifQ.signature
+2020-01-22 15:39:00,203 TRACE org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-4] 		id_token: eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKSVkyNENrb0YzbFAyS0ZBOTZrRnJ6dWp2TDlOQTVyRURSTDJFanlOa3hrIn0.eyJqdGkiOiI0ZmU4MWRkMy1hYWM2LTRmOWItYjdkMy1hNDIzZmRmZWQyZjkiLCJleHAiOjE1Nzk3MDA2NDAsIm5iZiI6MCwiaWF0IjoxNTc5NzAwMzQwLCJpc3MiOiJodHRwczovL2RzczEuYWVnZWFuLmdyL2F1dGgvcmVhbG1zL3Rlc3QiLCJhdWQiOiJzZWFsVGVzdCIsInN1YiI6IjFiM2MyMWQzLTE4ZjgtNGZhNy1hM2Y4LTgyYzQ4ZDBkMTViYiIsInR5cCI6IklEIiwiYXpwIjoic2VhbFRlc3QiLCJhdXRoX3RpbWUiOjE1Nzk3MDAzMzksInNlc3Npb25fc3RhdGUiOiJhMDE3MzAzOC0zZDdkLTRkNzctOTQzMC1jOWQ3Y2QwMGE3MmYiLCJhY3IiOiIxIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiLOkc6dzpTOoc6VzpHOoywgQU5EUkVBUyDOoM6VzqTOoc6fzqUsIFBFVFJPVSIsInByZWZlcnJlZF91c2VybmFtZSI6ImdyL2dyL2VybWlzLTExMDc2NjY5IiwiZ2l2ZW5fbmFtZSI6Is6Rzp3OlM6hzpXOkc6jLCBBTkRSRUFTIiwiZmFtaWx5X25hbWUiOiLOoM6VzqTOoc6fzqUsIFBFVFJPVSIsImVtYWlsIjoiZ3IvZ3IvZXJtaXMtMTEwNzY2NjlAZWlkYXMuZ3IifQ.signature
+2020-01-22 15:39:00,205 TRACE org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-4] 		refresh_token: eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2NGYzNjg4Ny1jMzYwLTQwYjItOTJhMi00ZDRlZDhmY2Q3ZWMifQ.eyJqdGkiOiJiZDg2ZWZmOC0yZWU2LTQyMmEtOTc1ZC0yNTg1YjQzZWFhYTAiLCJleHAiOjE1Nzk3MDIxNDAsIm5iZiI6MCwiaWF0IjoxNTc5NzAwMzQwLCJpc3MiOiJodHRwczovL2RzczEuYWVnZWFuLmdyL2F1dGgvcmVhbG1zL3Rlc3QiLCJhdWQiOiJodHRwczovL2RzczEuYWVnZWFuLmdyL2F1dGgvcmVhbG1zL3Rlc3QiLCJzdWIiOiIxYjNjMjFkMy0xOGY4LTRmYTctYTNmOC04MmM0OGQwZDE1YmIiLCJ0eXAiOiJSZWZyZXNoIiwiYXpwIjoic2VhbFRlc3QiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiJhMDE3MzAzOC0zZDdkLTRkNzctOTQzMC1jOWQ3Y2QwMGE3MmYiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUifQ.signature
+2020-01-22 15:39:00,286 TRACE org.keycloak.adapters.rotation.JWKPublicKeyLocator [http-nio-8080-exec-4] Going to send request to retrieve new set of realm public keys for client sealTest
+2020-01-22 15:39:00,348 DEBUG org.keycloak.adapters.rotation.JWKPublicKeyLocator [http-nio-8080-exec-4] Realm public keys successfully retrieved for client sealTest. New kids: [JIY24CkoF3lP2KFA96kFrzujvL9NA5rEDRL2EjyNkxk]
+2020-01-22 15:39:00,364 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-4] Token Verification succeeded!
+2020-01-22 15:39:00,365 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-4] successful authenticated
+2020-01-22 15:39:00,366 TRACE org.keycloak.adapters.RefreshableKeycloakSecurityContext [http-nio-8080-exec-4] checking whether to refresh.
+2020-01-22 15:39:00,385 TRACE org.keycloak.adapters.AdapterUtils [http-nio-8080-exec-4] use realm role mappings
+2020-01-22 15:39:00,391 TRACE org.keycloak.adapters.AdapterUtils [http-nio-8080-exec-4] Setting roles: 
+2020-01-22 15:39:00,394 TRACE org.keycloak.adapters.AdapterUtils [http-nio-8080-exec-4]    role: offline_access
+2020-01-22 15:39:00,395 TRACE org.keycloak.adapters.AdapterUtils [http-nio-8080-exec-4]    role: uma_authorization
+2020-01-22 15:39:00,401 DEBUG org.keycloak.adapters.springsecurity.token.SpringSecurityTokenStore [http-nio-8080-exec-4] Saving account info org.keycloak.adapters.springsecurity.account.SimpleKeycloakAccount@42ff6e9b
+2020-01-22 15:39:00,403 DEBUG org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-4] User 'gr/gr/ermis-11076669' invoking 'http://localhost:8080/sso/login?state=f1669f89-6c23-4b83-94f8-74f5e8468fbf&session_state=a0173038-3d7d-4d77-9430-c9d7cd00a72f&code=7d49b351-c370-4e2e-aa2e-d3c69d66e979.a0173038-3d7d-4d77-9430-c9d7cd00a72f.eceda444-e4a7-400e-8d2e-2cd2f59cb242' on client 'sealTest'
+2020-01-22 15:39:00,404 DEBUG org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-4] AUTHENTICATED
+2020-01-22 15:39:00,405 DEBUG org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter [http-nio-8080-exec-4] Auth outcome: AUTHENTICATED
+2020-01-22 15:39:00,411 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-8080-exec-4] Authentication success. Updating SecurityContextHolder to contain: org.keycloak.adapters.springsecurity.token.KeycloakAuthenticationToken@c1a4c775: Principal: gr/gr/ermis-11076669; Credentials: [PROTECTED]; Authenticated: true; Details: org.keycloak.adapters.springsecurity.account.SimpleKeycloakAccount@42ff6e9b; Granted Authorities: ROLE_offline_access, ROLE_uma_authorization
+2020-01-22 15:39:00,428 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-6] adminRequest http://localhost:8080/idp/protected
+2020-01-22 15:39:00,428 DEBUG org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve [http-nio-8080-exec-6] AuthenticatedActionsValve.invoke /idp/protected
+2020-01-22 15:39:00,428 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-6] AuthenticatedActionsValve.invoke http://localhost:8080/idp/protected
+2020-01-22 15:39:00,429 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-6] Policy enforcement is disabled.
+2020-01-22 15:39:00,429 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-6] adminRequest http://localhost:8080/idp/protected
+2020-01-22 15:39:00,431 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-6] AuthenticatedActionsValve.invoke http://localhost:8080/idp/protected
+2020-01-22 15:39:00,432 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-6] Policy enforcement is disabled.
+2020-01-22 15:39:00,438 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-6] adminRequest http://localhost:8080/idp/protected
+2020-01-22 15:39:00,450 INFO gr.uagean.loginWebApp.controllers.ProtectedControllers [http-nio-8080-exec-6] Reached protected endpoint with sessionIdfcbf0d34-af62-4436-8642-64f3b8127c28
+2020-01-22 15:39:00,477 ERROR org.thymeleaf.TemplateEngine [http-nio-8080-exec-6] [THYMELEAF][http-nio-8080-exec-6] Exception processing template "fcbf0d34-af62-4436-8642-64f3b8127c28": Error resolving template [fcbf0d34-af62-4436-8642-64f3b8127c28], template might not exist or might not be accessible by any of the configured Template Resolvers
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [fcbf0d34-af62-4436-8642-64f3b8127c28], template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter.doFilter(KeycloakAuthenticatedActionsFilter.java:57)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter.doFilter(KeycloakSecurityContextRequestFilter.java:54)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter.doFilter(KeycloakPreAuthActionsFilter.java:86)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter.doFilter(KeycloakAuthenticatedActionsFilter.java:74)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter.doFilter(KeycloakSecurityContextRequestFilter.java:77)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter.doFilter(KeycloakPreAuthActionsFilter.java:86)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve.invoke(AbstractAuthenticatedActionsValve.java:67)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.keycloak.adapters.tomcat.AbstractKeycloakAuthenticatorValve.invoke(AbstractKeycloakAuthenticatorValve.java:181)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-01-22 15:39:00,482 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-6] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template [fcbf0d34-af62-4436-8642-64f3b8127c28], template might not exist or might not be accessible by any of the configured Template Resolvers] with root cause
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [fcbf0d34-af62-4436-8642-64f3b8127c28], template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter.doFilter(KeycloakAuthenticatedActionsFilter.java:57)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter.doFilter(KeycloakSecurityContextRequestFilter.java:54)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter.doFilter(KeycloakPreAuthActionsFilter.java:86)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter.doFilter(KeycloakAuthenticatedActionsFilter.java:74)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter.doFilter(KeycloakSecurityContextRequestFilter.java:77)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter.doFilter(KeycloakPreAuthActionsFilter.java:86)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve.invoke(AbstractAuthenticatedActionsValve.java:67)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.keycloak.adapters.tomcat.AbstractKeycloakAuthenticatorValve.invoke(AbstractKeycloakAuthenticatorValve.java:181)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-01-22 15:39:00,496 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-6] adminRequest http://localhost:8080/error
+2020-01-22 16:21:55,083 INFO org.springframework.boot.StartupInfoLogger [main] Starting LoginWebAppApplication on nikos with PID 9615 (/home/nikos/NetBeansProjects/seal.eidas.idp/target/classes started by nikos in /home/nikos/NetBeansProjects/seal.eidas.idp)
+2020-01-22 16:21:55,088 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-01-22 16:21:56,978 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2020-01-22 16:21:56,992 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-22 16:21:56,993 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-01-22 16:21:56,994 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-22 16:21:57,099 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-01-22 16:21:57,100 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1894 ms
+2020-01-22 16:21:57,321 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'keycloakSecurityContextRequestFilter' configured for use
+2020-01-22 16:21:57,322 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'keycloakAuthenticationProcessingFilter' configured for use
+2020-01-22 16:21:57,323 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'keycloakPreAuthActionsFilter' configured for use
+2020-01-22 16:21:57,324 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'keycloakAuthenticatedActionsRequestFilter' configured for use
+2020-01-22 16:21:57,326 DEBUG org.keycloak.adapters.tomcat.AbstractKeycloakAuthenticatorValve [main] Using org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver to resolve Keycloak configuration on a per-request basis.
+2020-01-22 16:21:57,440 INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor [main] Autowired annotation is not supported on static fields: private static final org.slf4j.Logger gr.uagean.loginWebApp.controllers.GRControllers.LOG
+2020-01-22 16:21:57,465 INFO com.google.code.ssm.config.DefaultAddressProvider [main] Defined values 172.17.0.1:11211 will be used as memcached addresses
+2020-01-22 16:21:57,843 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e29f4f6, org.springframework.security.web.context.SecurityContextPersistenceFilter@4f486211, org.springframework.security.web.header.HeaderWriterFilter@4a50d04a, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@167381c7, org.springframework.security.web.authentication.logout.LogoutFilter@4b862408, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@697173d9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3a479fda, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2accaec2, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@591a4f8e, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@53ed80d3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@41b64020, org.springframework.security.web.session.SessionManagementFilter@73c31181, org.springframework.security.web.access.ExceptionTranslationFilter@14447be, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2173a742]
+2020-01-22 16:21:57,964 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-22 16:21:58,190 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-01-22 16:21:58,223 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-22 16:21:58,227 INFO org.springframework.boot.StartupInfoLogger [main] Started LoginWebAppApplication in 3.837 seconds (JVM running for 4.231)
+2020-01-22 16:22:06,576 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-1] adminRequest http://localhost:8080/idp/protected
+2020-01-22 16:22:06,586 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Using provider 'secret' for authentication of client 'sealTest'
+2020-01-22 16:22:06,589 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider secret
+2020-01-22 16:22:06,591 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider jwt
+2020-01-22 16:22:06,595 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider secret-jwt
+2020-01-22 16:22:06,597 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider secret
+2020-01-22 16:22:06,598 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider jwt
+2020-01-22 16:22:06,598 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider secret-jwt
+2020-01-22 16:22:06,604 DEBUG org.keycloak.adapters.KeycloakDeployment [http-nio-8080-exec-1] resolveUrls
+2020-01-22 16:22:06,606 DEBUG org.keycloak.adapters.KeycloakDeploymentBuilder [http-nio-8080-exec-1] Use authServerUrl: https://dss1.aegean.gr/auth, tokenUrl: https://dss1.aegean.gr/auth/realms/test/protocol/openid-connect/token, relativeUrls: NEVER
+2020-01-22 16:22:06,614 DEBUG org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve [http-nio-8080-exec-1] AuthenticatedActionsValve.invoke /idp/protected
+2020-01-22 16:22:06,615 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-1] AuthenticatedActionsValve.invoke http://localhost:8080/idp/protected
+2020-01-22 16:22:06,616 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-1] Policy enforcement is disabled.
+2020-01-22 16:22:06,618 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-22 16:22:06,619 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-01-22 16:22:06,626 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 7 ms
+2020-01-22 16:22:06,649 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Using provider 'secret' for authentication of client 'sealTest'
+2020-01-22 16:22:06,650 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider secret
+2020-01-22 16:22:06,651 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider jwt
+2020-01-22 16:22:06,651 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider secret-jwt
+2020-01-22 16:22:06,652 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider secret
+2020-01-22 16:22:06,652 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider jwt
+2020-01-22 16:22:06,653 DEBUG org.keycloak.adapters.authentication.ClientCredentialsProviderUtils [http-nio-8080-exec-1] Loaded clientCredentialsProvider secret-jwt
+2020-01-22 16:22:06,653 DEBUG org.keycloak.adapters.KeycloakDeployment [http-nio-8080-exec-1] resolveUrls
+2020-01-22 16:22:06,654 DEBUG org.keycloak.adapters.KeycloakDeploymentBuilder [http-nio-8080-exec-1] Use authServerUrl: https://dss1.aegean.gr/auth, tokenUrl: https://dss1.aegean.gr/auth/realms/test/protocol/openid-connect/token, relativeUrls: NEVER
+2020-01-22 16:22:06,655 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-1] adminRequest http://localhost:8080/idp/protected
+2020-01-22 16:22:06,693 DEBUG org.keycloak.adapters.springsecurity.management.HttpSessionManager [http-nio-8080-exec-1] Session created: D37073890AA73557AAC10058F2A8F78D
+2020-01-22 16:22:06,696 DEBUG org.keycloak.adapters.springsecurity.authentication.KeycloakAuthenticationEntryPoint [http-nio-8080-exec-1] Redirecting to login URI /sso/login
+2020-01-22 16:22:06,708 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-2] adminRequest http://localhost:8080/sso/login
+2020-01-22 16:22:06,709 DEBUG org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve [http-nio-8080-exec-2] AuthenticatedActionsValve.invoke /sso/login
+2020-01-22 16:22:06,710 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-2] AuthenticatedActionsValve.invoke http://localhost:8080/sso/login
+2020-01-22 16:22:06,710 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-2] Policy enforcement is disabled.
+2020-01-22 16:22:06,711 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-2] adminRequest http://localhost:8080/sso/login
+2020-01-22 16:22:06,711 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-8080-exec-2] Request is to process authentication
+2020-01-22 16:22:06,711 DEBUG org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter [http-nio-8080-exec-2] Attempting Keycloak authentication
+2020-01-22 16:22:06,716 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-2] --> authenticate()
+2020-01-22 16:22:06,718 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-2] try bearer
+2020-01-22 16:22:06,722 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-2] try query paramter auth
+2020-01-22 16:22:06,722 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-2] try oauth
+2020-01-22 16:22:06,723 DEBUG org.keycloak.adapters.springsecurity.token.SpringSecurityTokenStore [http-nio-8080-exec-2] Checking if org.keycloak.adapters.springsecurity.authentication.SpringSecurityRequestAuthenticator@421cb083 is cached
+2020-01-22 16:22:06,725 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-2] there was no code
+2020-01-22 16:22:06,726 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-2] redirecting to auth server
+2020-01-22 16:22:06,727 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-2] callback uri: http://localhost:8080/sso/login
+2020-01-22 16:22:06,732 DEBUG org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter [http-nio-8080-exec-2] Auth outcome: NOT_ATTEMPTED
+2020-01-22 16:22:06,733 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator$1 [http-nio-8080-exec-2] Sending redirect to login page: https://dss1.aegean.gr/auth/realms/test/protocol/openid-connect/auth?response_type=code&client_id=sealTest&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fsso%2Flogin&state=4fce6632-abee-4a62-aa68-a1fdcdb91f92&login=true&scope=openid
+2020-01-22 16:23:01,050 INFO org.springframework.boot.StartupInfoLogger [main] Starting TestSessisonManagerConnection on nikos with PID 9760 (started by nikos in /home/nikos/NetBeansProjects/seal.eidas.idp)
+2020-01-22 16:23:01,053 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: test
+2020-01-22 16:23:02,861 INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor [main] Autowired annotation is not supported on static fields: private static final org.slf4j.Logger gr.uagean.loginWebApp.controllers.GRControllers.LOG
+2020-01-22 16:23:02,881 INFO com.google.code.ssm.config.DefaultAddressProvider [main] Defined values 172.17.0.1:11211 will be used as memcached addresses
+2020-01-22 16:23:03,387 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6d2a2560, org.springframework.security.web.context.SecurityContextPersistenceFilter@5d5b9ecb, org.springframework.security.web.header.HeaderWriterFilter@4e83a98, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@62d1dc3c, org.springframework.security.web.authentication.logout.LogoutFilter@29ebbdf4, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@3811510, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5e5aafc6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7930ffa9, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@24eeac69, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@18539cb1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@748f93bb, org.springframework.security.web.session.SessionManagementFilter@71b639d0, org.springframework.security.web.access.ExceptionTranslationFilter@57c00115, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@21eee94f]
+2020-01-22 16:23:03,857 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-22 16:23:04,265 INFO org.springframework.mock.web.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2020-01-22 16:23:04,266 INFO org.springframework.web.servlet.FrameworkServlet [main] Initializing Servlet ''
+2020-01-22 16:23:04,278 INFO org.springframework.web.servlet.FrameworkServlet [main] Completed initialization in 12 ms
+2020-01-22 16:23:04,308 INFO org.springframework.boot.StartupInfoLogger [main] Started TestSessisonManagerConnection in 3.697 seconds (JVM running for 4.604)
+2020-01-22 16:23:06,476 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-22 16:23:06,477 DEBUG org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter [SpringContextShutdownHook] Unregistering deployment
+2020-01-22 16:23:16,884 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-5] adminRequest http://localhost:8080/idp/authenticate?msToken=eyJhbGciOiJSUzI1NiJ9.eyJzZXNzaW9uSWQiOiI1ODQyY2U3Mi05N2UyLTQ4MmUtYTdiYi1lNGNmYmZkZGExODciLCJzZW5kZXIiOiJBQ01tczAwMSIsInJlY2VpdmVyIjoiQVBtczAwMyIsImlzcyI6IiIsImp0aSI6ImY2YmI2NTE4LWNmYTMtNGNhYS05YzExLTAwMjVlZTk5ZmQyZiIsImlhdCI6MTU3OTcwMjk4NiwiZXhwIjoxNTc5NzAzMjg2fQ.Ae1usGTi2OoamTLL-Nqlcit_gblMoemVTrkeGaQw6bSKLvwWAnZaCWoY7j0oRVNBp5ubIFprv5nF7TR1OJ6lz1VtW6onI_TS8HKvBIINXZUuVgDay_Fnr8Gz6FtnG4Y6jdcjKgdSIvzsmh22vr2PApZ0x0l2lompyoGBaZRq50wdsHf0w7YY2Fazxbglz_qdVMs1ZKAy7kRgfPkm01kpenPjqDGMlb91j56eQKcO4vVSiNkcWZj53i8WMo-PbkbKzYv51rXzOZL7NUV0BCXIc_2cso5di2nwdw_SXfVzu-jdQaa-s1IKxgqeK36O9PTRLzRCK0e2VdMVwRirZIypgA
+2020-01-22 16:23:16,886 DEBUG org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve [http-nio-8080-exec-5] AuthenticatedActionsValve.invoke /idp/authenticate
+2020-01-22 16:23:16,887 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-5] AuthenticatedActionsValve.invoke http://localhost:8080/idp/authenticate?msToken=eyJhbGciOiJSUzI1NiJ9.eyJzZXNzaW9uSWQiOiI1ODQyY2U3Mi05N2UyLTQ4MmUtYTdiYi1lNGNmYmZkZGExODciLCJzZW5kZXIiOiJBQ01tczAwMSIsInJlY2VpdmVyIjoiQVBtczAwMyIsImlzcyI6IiIsImp0aSI6ImY2YmI2NTE4LWNmYTMtNGNhYS05YzExLTAwMjVlZTk5ZmQyZiIsImlhdCI6MTU3OTcwMjk4NiwiZXhwIjoxNTc5NzAzMjg2fQ.Ae1usGTi2OoamTLL-Nqlcit_gblMoemVTrkeGaQw6bSKLvwWAnZaCWoY7j0oRVNBp5ubIFprv5nF7TR1OJ6lz1VtW6onI_TS8HKvBIINXZUuVgDay_Fnr8Gz6FtnG4Y6jdcjKgdSIvzsmh22vr2PApZ0x0l2lompyoGBaZRq50wdsHf0w7YY2Fazxbglz_qdVMs1ZKAy7kRgfPkm01kpenPjqDGMlb91j56eQKcO4vVSiNkcWZj53i8WMo-PbkbKzYv51rXzOZL7NUV0BCXIc_2cso5di2nwdw_SXfVzu-jdQaa-s1IKxgqeK36O9PTRLzRCK0e2VdMVwRirZIypgA
+2020-01-22 16:23:16,887 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-5] Policy enforcement is disabled.
+2020-01-22 16:23:16,889 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-5] adminRequest http://localhost:8080/idp/authenticate?msToken=eyJhbGciOiJSUzI1NiJ9.eyJzZXNzaW9uSWQiOiI1ODQyY2U3Mi05N2UyLTQ4MmUtYTdiYi1lNGNmYmZkZGExODciLCJzZW5kZXIiOiJBQ01tczAwMSIsInJlY2VpdmVyIjoiQVBtczAwMyIsImlzcyI6IiIsImp0aSI6ImY2YmI2NTE4LWNmYTMtNGNhYS05YzExLTAwMjVlZTk5ZmQyZiIsImlhdCI6MTU3OTcwMjk4NiwiZXhwIjoxNTc5NzAzMjg2fQ.Ae1usGTi2OoamTLL-Nqlcit_gblMoemVTrkeGaQw6bSKLvwWAnZaCWoY7j0oRVNBp5ubIFprv5nF7TR1OJ6lz1VtW6onI_TS8HKvBIINXZUuVgDay_Fnr8Gz6FtnG4Y6jdcjKgdSIvzsmh22vr2PApZ0x0l2lompyoGBaZRq50wdsHf0w7YY2Fazxbglz_qdVMs1ZKAy7kRgfPkm01kpenPjqDGMlb91j56eQKcO4vVSiNkcWZj53i8WMo-PbkbKzYv51rXzOZL7NUV0BCXIc_2cso5di2nwdw_SXfVzu-jdQaa-s1IKxgqeK36O9PTRLzRCK0e2VdMVwRirZIypgA
+2020-01-22 16:23:16,890 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-5] adminRequest http://localhost:8080/idp/authenticate?msToken=eyJhbGciOiJSUzI1NiJ9.eyJzZXNzaW9uSWQiOiI1ODQyY2U3Mi05N2UyLTQ4MmUtYTdiYi1lNGNmYmZkZGExODciLCJzZW5kZXIiOiJBQ01tczAwMSIsInJlY2VpdmVyIjoiQVBtczAwMyIsImlzcyI6IiIsImp0aSI6ImY2YmI2NTE4LWNmYTMtNGNhYS05YzExLTAwMjVlZTk5ZmQyZiIsImlhdCI6MTU3OTcwMjk4NiwiZXhwIjoxNTc5NzAzMjg2fQ.Ae1usGTi2OoamTLL-Nqlcit_gblMoemVTrkeGaQw6bSKLvwWAnZaCWoY7j0oRVNBp5ubIFprv5nF7TR1OJ6lz1VtW6onI_TS8HKvBIINXZUuVgDay_Fnr8Gz6FtnG4Y6jdcjKgdSIvzsmh22vr2PApZ0x0l2lompyoGBaZRq50wdsHf0w7YY2Fazxbglz_qdVMs1ZKAy7kRgfPkm01kpenPjqDGMlb91j56eQKcO4vVSiNkcWZj53i8WMo-PbkbKzYv51rXzOZL7NUV0BCXIc_2cso5di2nwdw_SXfVzu-jdQaa-s1IKxgqeK36O9PTRLzRCK0e2VdMVwRirZIypgA
+2020-01-22 16:23:16,923 INFO gr.uagean.loginWebApp.controllers.RestControllers [http-nio-8080-exec-5] got the token:eyJhbGciOiJSUzI1NiJ9.eyJzZXNzaW9uSWQiOiI1ODQyY2U3Mi05N2UyLTQ4MmUtYTdiYi1lNGNmYmZkZGExODciLCJzZW5kZXIiOiJBQ01tczAwMSIsInJlY2VpdmVyIjoiQVBtczAwMyIsImlzcyI6IiIsImp0aSI6ImY2YmI2NTE4LWNmYTMtNGNhYS05YzExLTAwMjVlZTk5ZmQyZiIsImlhdCI6MTU3OTcwMjk4NiwiZXhwIjoxNTc5NzAzMjg2fQ.Ae1usGTi2OoamTLL-Nqlcit_gblMoemVTrkeGaQw6bSKLvwWAnZaCWoY7j0oRVNBp5ubIFprv5nF7TR1OJ6lz1VtW6onI_TS8HKvBIINXZUuVgDay_Fnr8Gz6FtnG4Y6jdcjKgdSIvzsmh22vr2PApZ0x0l2lompyoGBaZRq50wdsHf0w7YY2Fazxbglz_qdVMs1ZKAy7kRgfPkm01kpenPjqDGMlb91j56eQKcO4vVSiNkcWZj53i8WMo-PbkbKzYv51rXzOZL7NUV0BCXIc_2cso5di2nwdw_SXfVzu-jdQaa-s1IKxgqeK36O9PTRLzRCK0e2VdMVwRirZIypgA
+2020-01-22 16:23:18,081 INFO gr.uagean.loginWebApp.controllers.RestControllers [http-nio-8080-exec-5] got the responseCode:OK
+2020-01-22 16:23:19,252 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-4] adminRequest http://localhost:8080/idp/protected
+2020-01-22 16:23:19,253 DEBUG org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve [http-nio-8080-exec-4] AuthenticatedActionsValve.invoke /idp/protected
+2020-01-22 16:23:19,253 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-4] AuthenticatedActionsValve.invoke http://localhost:8080/idp/protected
+2020-01-22 16:23:19,254 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-4] Policy enforcement is disabled.
+2020-01-22 16:23:19,255 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-4] adminRequest http://localhost:8080/idp/protected
+2020-01-22 16:23:19,261 DEBUG org.keycloak.adapters.springsecurity.authentication.KeycloakAuthenticationEntryPoint [http-nio-8080-exec-4] Redirecting to login URI /sso/login
+2020-01-22 16:23:19,275 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-7] adminRequest http://localhost:8080/sso/login
+2020-01-22 16:23:19,276 DEBUG org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve [http-nio-8080-exec-7] AuthenticatedActionsValve.invoke /sso/login
+2020-01-22 16:23:19,276 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-7] AuthenticatedActionsValve.invoke http://localhost:8080/sso/login
+2020-01-22 16:23:19,277 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-7] Policy enforcement is disabled.
+2020-01-22 16:23:19,277 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-7] adminRequest http://localhost:8080/sso/login
+2020-01-22 16:23:19,280 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-8080-exec-7] Request is to process authentication
+2020-01-22 16:23:19,282 DEBUG org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter [http-nio-8080-exec-7] Attempting Keycloak authentication
+2020-01-22 16:23:19,286 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-7] --> authenticate()
+2020-01-22 16:23:19,287 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-7] try bearer
+2020-01-22 16:23:19,289 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-7] try query paramter auth
+2020-01-22 16:23:19,290 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-7] try oauth
+2020-01-22 16:23:19,291 DEBUG org.keycloak.adapters.springsecurity.token.SpringSecurityTokenStore [http-nio-8080-exec-7] Checking if org.keycloak.adapters.springsecurity.authentication.SpringSecurityRequestAuthenticator@18fbe419 is cached
+2020-01-22 16:23:19,292 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-7] there was no code
+2020-01-22 16:23:19,293 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-7] redirecting to auth server
+2020-01-22 16:23:19,293 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-7] callback uri: http://localhost:8080/sso/login
+2020-01-22 16:23:19,295 DEBUG org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter [http-nio-8080-exec-7] Auth outcome: NOT_ATTEMPTED
+2020-01-22 16:23:19,297 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator$1 [http-nio-8080-exec-7] Sending redirect to login page: https://dss1.aegean.gr/auth/realms/test/protocol/openid-connect/auth?response_type=code&client_id=sealTest&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fsso%2Flogin&state=cf160499-3bd5-48b8-9da8-3eb0c89bd2f4&login=true&scope=openid
+2020-01-22 16:23:41,033 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-8] adminRequest http://localhost:8080/sso/login?state=cf160499-3bd5-48b8-9da8-3eb0c89bd2f4&session_state=99521a1a-1b02-457d-8ea2-1662b0695ce7&code=4731cbc3-7791-4262-9470-572fa294f3c0.99521a1a-1b02-457d-8ea2-1662b0695ce7.eceda444-e4a7-400e-8d2e-2cd2f59cb242
+2020-01-22 16:23:41,036 DEBUG org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve [http-nio-8080-exec-8] AuthenticatedActionsValve.invoke /sso/login
+2020-01-22 16:23:41,039 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-8] AuthenticatedActionsValve.invoke http://localhost:8080/sso/login?state=cf160499-3bd5-48b8-9da8-3eb0c89bd2f4&session_state=99521a1a-1b02-457d-8ea2-1662b0695ce7&code=4731cbc3-7791-4262-9470-572fa294f3c0.99521a1a-1b02-457d-8ea2-1662b0695ce7.eceda444-e4a7-400e-8d2e-2cd2f59cb242
+2020-01-22 16:23:41,040 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-8] Policy enforcement is disabled.
+2020-01-22 16:23:41,043 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-8] adminRequest http://localhost:8080/sso/login?state=cf160499-3bd5-48b8-9da8-3eb0c89bd2f4&session_state=99521a1a-1b02-457d-8ea2-1662b0695ce7&code=4731cbc3-7791-4262-9470-572fa294f3c0.99521a1a-1b02-457d-8ea2-1662b0695ce7.eceda444-e4a7-400e-8d2e-2cd2f59cb242
+2020-01-22 16:23:41,049 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-8080-exec-8] Request is to process authentication
+2020-01-22 16:23:41,050 DEBUG org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter [http-nio-8080-exec-8] Attempting Keycloak authentication
+2020-01-22 16:23:41,052 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-8] --> authenticate()
+2020-01-22 16:23:41,054 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-8] try bearer
+2020-01-22 16:23:41,057 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-8] try query paramter auth
+2020-01-22 16:23:41,059 TRACE org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-8] try oauth
+2020-01-22 16:23:41,064 DEBUG org.keycloak.adapters.springsecurity.token.SpringSecurityTokenStore [http-nio-8080-exec-8] Checking if org.keycloak.adapters.springsecurity.authentication.SpringSecurityRequestAuthenticator@622eb0bd is cached
+2020-01-22 16:23:41,066 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-8] there was a code, resolving
+2020-01-22 16:23:41,068 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-8] checking state cookie for after code
+2020-01-22 16:23:41,072 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-8] ** reseting application state cookie
+2020-01-22 16:23:41,736 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-8] Verifying tokens
+2020-01-22 16:23:41,766 TRACE org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-8] 		access_token: eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKSVkyNENrb0YzbFAyS0ZBOTZrRnJ6dWp2TDlOQTVyRURSTDJFanlOa3hrIn0.eyJqdGkiOiI3MDZkMzAxYi1lOGY5LTQ0ZWMtODYyMi05MTU1YWM0OWVkZTMiLCJleHAiOjE1Nzk3MDMzMjEsIm5iZiI6MCwiaWF0IjoxNTc5NzAzMDIxLCJpc3MiOiJodHRwczovL2RzczEuYWVnZWFuLmdyL2F1dGgvcmVhbG1zL3Rlc3QiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMWIzYzIxZDMtMThmOC00ZmE3LWEzZjgtODJjNDhkMGQxNWJiIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic2VhbFRlc3QiLCJhdXRoX3RpbWUiOjE1Nzk3MDMwMjAsInNlc3Npb25fc3RhdGUiOiI5OTUyMWExYS0xYjAyLTQ1N2QtOGVhMi0xNjYyYjA2OTVjZTciLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiLOkc6dzpTOoc6VzpHOoywgQU5EUkVBUyDOoM6VzqTOoc6fzqUsIFBFVFJPVSIsInByZWZlcnJlZF91c2VybmFtZSI6ImdyL2dyL2VybWlzLTExMDc2NjY5IiwiZ2l2ZW5fbmFtZSI6Is6Rzp3OlM6hzpXOkc6jLCBBTkRSRUFTIiwiZmFtaWx5X25hbWUiOiLOoM6VzqTOoc6fzqUsIFBFVFJPVSIsImVtYWlsIjoiZ3IvZ3IvZXJtaXMtMTEwNzY2NjlAZWlkYXMuZ3IifQ.signature
+2020-01-22 16:23:41,768 TRACE org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-8] 		id_token: eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKSVkyNENrb0YzbFAyS0ZBOTZrRnJ6dWp2TDlOQTVyRURSTDJFanlOa3hrIn0.eyJqdGkiOiJhYjFhNTQzYy01NzVmLTQ3YmItYmZlNi05NTBhZTE0MzBiY2UiLCJleHAiOjE1Nzk3MDMzMjEsIm5iZiI6MCwiaWF0IjoxNTc5NzAzMDIxLCJpc3MiOiJodHRwczovL2RzczEuYWVnZWFuLmdyL2F1dGgvcmVhbG1zL3Rlc3QiLCJhdWQiOiJzZWFsVGVzdCIsInN1YiI6IjFiM2MyMWQzLTE4ZjgtNGZhNy1hM2Y4LTgyYzQ4ZDBkMTViYiIsInR5cCI6IklEIiwiYXpwIjoic2VhbFRlc3QiLCJhdXRoX3RpbWUiOjE1Nzk3MDMwMjAsInNlc3Npb25fc3RhdGUiOiI5OTUyMWExYS0xYjAyLTQ1N2QtOGVhMi0xNjYyYjA2OTVjZTciLCJhY3IiOiIxIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiLOkc6dzpTOoc6VzpHOoywgQU5EUkVBUyDOoM6VzqTOoc6fzqUsIFBFVFJPVSIsInByZWZlcnJlZF91c2VybmFtZSI6ImdyL2dyL2VybWlzLTExMDc2NjY5IiwiZ2l2ZW5fbmFtZSI6Is6Rzp3OlM6hzpXOkc6jLCBBTkRSRUFTIiwiZmFtaWx5X25hbWUiOiLOoM6VzqTOoc6fzqUsIFBFVFJPVSIsImVtYWlsIjoiZ3IvZ3IvZXJtaXMtMTEwNzY2NjlAZWlkYXMuZ3IifQ.signature
+2020-01-22 16:23:41,775 TRACE org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-8] 		refresh_token: eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2NGYzNjg4Ny1jMzYwLTQwYjItOTJhMi00ZDRlZDhmY2Q3ZWMifQ.eyJqdGkiOiJmYTg1ZDAwMi0zZTc1LTQzYWMtYjU5OC04ODMxYmIwNGUyYTIiLCJleHAiOjE1Nzk3MDQ4MjEsIm5iZiI6MCwiaWF0IjoxNTc5NzAzMDIxLCJpc3MiOiJodHRwczovL2RzczEuYWVnZWFuLmdyL2F1dGgvcmVhbG1zL3Rlc3QiLCJhdWQiOiJodHRwczovL2RzczEuYWVnZWFuLmdyL2F1dGgvcmVhbG1zL3Rlc3QiLCJzdWIiOiIxYjNjMjFkMy0xOGY4LTRmYTctYTNmOC04MmM0OGQwZDE1YmIiLCJ0eXAiOiJSZWZyZXNoIiwiYXpwIjoic2VhbFRlc3QiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiI5OTUyMWExYS0xYjAyLTQ1N2QtOGVhMi0xNjYyYjA2OTVjZTciLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUifQ.signature
+2020-01-22 16:23:41,889 TRACE org.keycloak.adapters.rotation.JWKPublicKeyLocator [http-nio-8080-exec-8] Going to send request to retrieve new set of realm public keys for client sealTest
+2020-01-22 16:23:41,958 DEBUG org.keycloak.adapters.rotation.JWKPublicKeyLocator [http-nio-8080-exec-8] Realm public keys successfully retrieved for client sealTest. New kids: [JIY24CkoF3lP2KFA96kFrzujvL9NA5rEDRL2EjyNkxk]
+2020-01-22 16:23:41,975 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-8] Token Verification succeeded!
+2020-01-22 16:23:41,976 DEBUG org.keycloak.adapters.OAuthRequestAuthenticator [http-nio-8080-exec-8] successful authenticated
+2020-01-22 16:23:41,982 TRACE org.keycloak.adapters.RefreshableKeycloakSecurityContext [http-nio-8080-exec-8] checking whether to refresh.
+2020-01-22 16:23:41,984 TRACE org.keycloak.adapters.AdapterUtils [http-nio-8080-exec-8] use realm role mappings
+2020-01-22 16:23:41,985 TRACE org.keycloak.adapters.AdapterUtils [http-nio-8080-exec-8] Setting roles: 
+2020-01-22 16:23:41,986 TRACE org.keycloak.adapters.AdapterUtils [http-nio-8080-exec-8]    role: offline_access
+2020-01-22 16:23:41,987 TRACE org.keycloak.adapters.AdapterUtils [http-nio-8080-exec-8]    role: uma_authorization
+2020-01-22 16:23:41,988 DEBUG org.keycloak.adapters.springsecurity.token.SpringSecurityTokenStore [http-nio-8080-exec-8] Saving account info org.keycloak.adapters.springsecurity.account.SimpleKeycloakAccount@699a3431
+2020-01-22 16:23:41,991 DEBUG org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-8] User 'gr/gr/ermis-11076669' invoking 'http://localhost:8080/sso/login?state=cf160499-3bd5-48b8-9da8-3eb0c89bd2f4&session_state=99521a1a-1b02-457d-8ea2-1662b0695ce7&code=4731cbc3-7791-4262-9470-572fa294f3c0.99521a1a-1b02-457d-8ea2-1662b0695ce7.eceda444-e4a7-400e-8d2e-2cd2f59cb242' on client 'sealTest'
+2020-01-22 16:23:41,991 DEBUG org.keycloak.adapters.RequestAuthenticator [http-nio-8080-exec-8] AUTHENTICATED
+2020-01-22 16:23:41,991 DEBUG org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter [http-nio-8080-exec-8] Auth outcome: AUTHENTICATED
+2020-01-22 16:23:41,995 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-8080-exec-8] Authentication success. Updating SecurityContextHolder to contain: org.keycloak.adapters.springsecurity.token.KeycloakAuthenticationToken@98e181e1: Principal: gr/gr/ermis-11076669; Credentials: [PROTECTED]; Authenticated: true; Details: org.keycloak.adapters.springsecurity.account.SimpleKeycloakAccount@699a3431; Granted Authorities: ROLE_offline_access, ROLE_uma_authorization
+2020-01-22 16:23:42,005 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-6] adminRequest http://localhost:8080/idp/protected
+2020-01-22 16:23:42,005 DEBUG org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve [http-nio-8080-exec-6] AuthenticatedActionsValve.invoke /idp/protected
+2020-01-22 16:23:42,005 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-6] AuthenticatedActionsValve.invoke http://localhost:8080/idp/protected
+2020-01-22 16:23:42,006 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-6] Policy enforcement is disabled.
+2020-01-22 16:23:42,007 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-6] adminRequest http://localhost:8080/idp/protected
+2020-01-22 16:23:42,010 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-6] AuthenticatedActionsValve.invoke http://localhost:8080/idp/protected
+2020-01-22 16:23:42,011 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-6] Policy enforcement is disabled.
+2020-01-22 16:23:42,014 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-6] adminRequest http://localhost:8080/idp/protected
+2020-01-22 16:23:42,021 INFO gr.uagean.loginWebApp.controllers.ProtectedControllers [http-nio-8080-exec-6] Reached protected endpoint with sessionId5842ce72-97e2-482e-a7bb-e4cfbfdda187
+2020-01-22 16:24:05,411 ERROR org.thymeleaf.TemplateEngine [http-nio-8080-exec-6] [THYMELEAF][http-nio-8080-exec-6] Exception processing template "5842ce72-97e2-482e-a7bb-e4cfbfdda187": Error resolving template [5842ce72-97e2-482e-a7bb-e4cfbfdda187], template might not exist or might not be accessible by any of the configured Template Resolvers
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [5842ce72-97e2-482e-a7bb-e4cfbfdda187], template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter.doFilter(KeycloakAuthenticatedActionsFilter.java:57)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter.doFilter(KeycloakSecurityContextRequestFilter.java:54)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter.doFilter(KeycloakPreAuthActionsFilter.java:86)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter.doFilter(KeycloakAuthenticatedActionsFilter.java:74)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter.doFilter(KeycloakSecurityContextRequestFilter.java:77)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter.doFilter(KeycloakPreAuthActionsFilter.java:86)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve.invoke(AbstractAuthenticatedActionsValve.java:67)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.keycloak.adapters.tomcat.AbstractKeycloakAuthenticatorValve.invoke(AbstractKeycloakAuthenticatorValve.java:181)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-01-22 16:24:05,420 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-6] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template [5842ce72-97e2-482e-a7bb-e4cfbfdda187], template might not exist or might not be accessible by any of the configured Template Resolvers] with root cause
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [5842ce72-97e2-482e-a7bb-e4cfbfdda187], template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter.doFilter(KeycloakAuthenticatedActionsFilter.java:57)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter.doFilter(KeycloakSecurityContextRequestFilter.java:54)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter.doFilter(KeycloakPreAuthActionsFilter.java:86)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter.doFilter(KeycloakAuthenticatedActionsFilter.java:74)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter.doFilter(KeycloakSecurityContextRequestFilter.java:77)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter.doFilter(KeycloakPreAuthActionsFilter.java:86)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve.invoke(AbstractAuthenticatedActionsValve.java:67)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.keycloak.adapters.tomcat.AbstractKeycloakAuthenticatorValve.invoke(AbstractKeycloakAuthenticatorValve.java:181)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-01-22 16:24:05,451 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-6] adminRequest http://localhost:8080/error
+2020-01-22 16:24:06,157 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-9] adminRequest http://localhost:8080/favicon.ico
+2020-01-22 16:24:06,158 DEBUG org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve [http-nio-8080-exec-9] AuthenticatedActionsValve.invoke /favicon.ico
+2020-01-22 16:24:06,159 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-9] AuthenticatedActionsValve.invoke http://localhost:8080/favicon.ico
+2020-01-22 16:24:06,159 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-9] Policy enforcement is disabled.
+2020-01-22 16:24:06,160 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-9] adminRequest http://localhost:8080/favicon.ico
+2020-01-22 16:24:06,160 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-9] AuthenticatedActionsValve.invoke http://localhost:8080/favicon.ico
+2020-01-22 16:24:06,160 DEBUG org.keycloak.adapters.AuthenticatedActionsHandler [http-nio-8080-exec-9] Policy enforcement is disabled.
+2020-01-22 16:24:06,161 DEBUG org.keycloak.adapters.PreAuthActionsHandler [http-nio-8080-exec-9] adminRequest http://localhost:8080/favicon.ico

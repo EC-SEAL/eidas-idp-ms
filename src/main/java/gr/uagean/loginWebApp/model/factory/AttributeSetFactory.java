@@ -9,10 +9,8 @@ import gr.uagean.loginWebApp.model.enums.TypeEnum;
 import gr.uagean.loginWebApp.model.pojo.AttributeSet;
 import gr.uagean.loginWebApp.model.pojo.AttributeSetStatus;
 import gr.uagean.loginWebApp.model.pojo.AttributeType;
-import gr.uagean.loginWebApp.utils.eIDASResponseParser;
-import static gr.uagean.loginWebApp.utils.eIDASResponseParser.NAME_ID_KEY;
-import gr.uagean.loginWebApp.utils.NoResponseParser;
-import java.io.IOException;
+import gr.uagean.loginWebApp.model.pojo.EidasUser;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,40 +22,35 @@ import java.util.Map;
 public class AttributeSetFactory {
 
     public static String NameID = "NameID";
+    public final static String ATTRIBUTES_KEY = "attributes";
+    public final static String METADATA_KEY = "metadata";
+    public final static String NOT_BEFORE_KEY = "notBefore";
+    public final static String NOT_AFTER_KEY = "notAfter";
+    public final static String NAME_ID_KEY = "NameID";
 
-    public static AttributeSet make(String id, TypeEnum type, String issuer, String recipient, List<AttributeType> attributes, Map<String, String> properties) {
-        AttributeType[] attrArray = new AttributeType[attributes.size()];
-        return new AttributeSet(id, type, issuer, recipient, attributes.toArray(attrArray), properties, null, "low", null, null, null);
-    }
+    public static AttributeSet makeFromEidasResponse(String id, TypeEnum type, String issuer, String recipient, EidasUser user) {
 
-    public static AttributeSet makeFromEidasResponse(String id, TypeEnum type, String issuer, String recipient, String eIDASResponse) {
-        Map<String, Object> parsed = eIDASResponseParser.parseToESMOAttributeSet(eIDASResponse);
-        AttributeType[] attrArray = new AttributeType[((List<AttributeType>) parsed.get(eIDASResponseParser.ATTRIBUTES_KEY)).size()];
+        List<AttributeType> attributes = new ArrayList();
+        attributes.add(makeAttType("FamilyName", "http://eidas.europa.eu/attributes/naturalperson/CurrentFamilyName", user.getCurrentFamilyName()));
+        attributes.add(makeAttType("GivenName", "http://eidas.europa.eu/attributes/naturalperson/CurrentGivenName", user.getCurrentGivenName()));
+        attributes.add(makeAttType("DateOfBirth", "http://eidas.europa.eu/attributes/naturalperson/DateOfBirth", user.getCurrentGivenName()));
+        attributes.add(makeAttType("PersonIdentifier", "http://eidas.europa.eu/attributes/naturalperson/PersonIdentifier", user.getPersonIdentifier()));
+        attributes.add(makeAttType("LevelOfAssurance", "http://eidas.europa.eu/LoA", user.getPersonIdentifier()));
 
         Map<String, String> metadataProperties = new HashMap();
-        metadataProperties.put("levelOfAssurance", (String) parsed.get(eIDASResponseParser.METADATA_KEY));
-        metadataProperties.put("NameID", (String) parsed.get(NAME_ID_KEY));
+        metadataProperties.put("levelOfAssurance", user.getLoa());
+        metadataProperties.put("NameID", user.getPersonIdentifier());
 
         AttributeSetStatus atrSetStatus = new AttributeSetStatus();
         atrSetStatus.setCode(AttributeSetStatus.CodeEnum.OK);
 
-        return new AttributeSet(id, type, issuer, recipient, ((List<AttributeType>) parsed.get(eIDASResponseParser.ATTRIBUTES_KEY)).toArray(attrArray),
-                metadataProperties, null, "low", null, null, atrSetStatus);
-    }
-
-    public static AttributeSet makeFromNoResponse(String id, TypeEnum type, String issuer, String recipient, String noResponse) throws IOException {
-        List<AttributeType> attributes = NoResponseParser.parseNoResponse(noResponse);
         AttributeType[] attrArray = new AttributeType[attributes.size()];
-
-        AttributeSetStatus atrSetStatus = new AttributeSetStatus();
-        atrSetStatus.setCode(AttributeSetStatus.CodeEnum.OK);
-
-        Map<String, String> metadataProperties = new HashMap();
-        metadataProperties.put("levelOfAssurance", "low");
-        metadataProperties.put("NameID", attributes.get(0).getValues()[0]);
-
         return new AttributeSet(id, type, issuer, recipient, attributes.toArray(attrArray),
-                metadataProperties, null, "low", null, null, atrSetStatus);
+                metadataProperties, null, user.getLoa(), null, null, atrSetStatus);
+    }
+
+    public static AttributeType makeAttType(String friendlyName, String name, String value) {
+        return new AttributeType(name, friendlyName, "UTF-8", "N/A", true, new String[]{value});
     }
 
 }

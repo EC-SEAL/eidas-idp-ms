@@ -7,9 +7,6 @@ package gr.uagean.loginWebApp;
 
 import eu.eidas.sp.SpAuthenticationResponseData;
 import eu.eidas.sp.SpEidasSamlTools;
-import gr.uagean.loginWebApp.model.enums.TypeEnum;
-import static gr.uagean.loginWebApp.model.factory.AttributeSetFactory.makeFromEidasResponse;
-import gr.uagean.loginWebApp.model.pojo.AttributeSet;
 import gr.uagean.loginWebApp.model.pojo.AttributeType;
 import gr.uagean.loginWebApp.utils.eIDASResponseParser;
 import java.util.HashMap;
@@ -29,9 +26,8 @@ import org.springframework.test.context.ActiveProfiles;
 public class testEIDASResponseParser {
 
     String testResponse = "'AuthenticationResponse{id='_YLc6H3WhE2mjssJZHnJyOIvuRFBPIHsfszeGwVzAipyXS2csl7SlpVbKjUo4UOp', issuer='http://84.205.248.180:80/EidasNode/ConnectorResponderMetadata', status='ResponseStatus{failure='false', statusCode='urn:oasis:names:tc:SAML:2.0:status:Success', statusMessage='urn:oasis:names:tc:SAML:2.0:status:Success', subStatusCode='null'}', ipAddress='null', inResponseToId='_BJK3gNxljIfI.hOeabwBjO5ZFE54BPHQXmG9gEoXNb.BMgIN4LRZRzY18-ZyG6m', levelOfAssurance='http://eidas.europa.eu/LoA/low', attributes='{AttributeDefinition{nameUri='http://eidas.europa.eu/attributes/naturalperson/CurrentFamilyName', friendlyName='FamilyName', personType=NaturalPerson, required=true, transliterationMandatory=true, uniqueIdentifier=false, xmlType='{http://eidas.europa.eu/attributes/naturalperson}CurrentFamilyNameType', attributeValueMarshaller='eu.eidas.auth.commons.attribute.impl.StringAttributeValueMarshaller'}=[cph8], AttributeDefinition{nameUri='http://eidas.europa.eu/attributes/naturalperson/CurrentGivenName', friendlyName='FirstName', personType=NaturalPerson, required=true, transliterationMandatory=true, uniqueIdentifier=false, xmlType='{http://eidas.europa.eu/attributes/naturalperson}CurrentGivenNameType', attributeValueMarshaller='eu.eidas.auth.commons.attribute.impl.StringAttributeValueMarshaller'}=[cph8], AttributeDefinition{nameUri='http://eidas.europa.eu/attributes/naturalperson/DateOfBirth', friendlyName='DateOfBirth', personType=NaturalPerson, required=true, transliterationMandatory=false, uniqueIdentifier=false, xmlType='{http://eidas.europa.eu/attributes/naturalperson}DateOfBirthType', tributeValueMarshaller='eu.eidas.auth.commons.attribute.impl.DateTimeAttributeValueMarshaller'}=[1966-01-01], AttributeDefinition{nameUri='http://eidas.europa.eu/attributes/naturalperson/PersonIdentifier', friendlyName='PersonIdentifier', personType=NaturalPerson, required=true, transliterationMandatory=false, uniqueIdentifier=true, xmlType='{http://eidas.europa.eu/attributes/naturalperson}PersonIdentifierType',attributeValueMarshaller='eu.eidas.auth.commons.attribute.impl.LiteralStringAttributeValueMarshaller'}=[CA/CA/Cph123456]}', audienceRestriction='http://138.68.103.237:8090/metadata', notOnOrAfter='2017-09-16T08:16:21.191Z', notBefore='2017-09-16T08:11:21.191Z', country='CA', encrypted='false'}'";
-    String testByLingualResponse="AuthenticationResponse{id='_.M45IMdGrcFuK7EINeV7t49B6-_.9-tghVYtensOfmaUAAWp2FQuDZ8nkIHM4jF', issuer='https://eidas.gov.gr/EidasNode/ConnectorResponderMetadata', status='ResponseStatus{failure='false', statusCode='urn:oasis:names:tc:SAML:2.0:status:Success', statusMessage='urn:oasis:names:tc:SAML:2.0:status:Success', subStatusCode='null'}', ipAddress='null', inResponseToId='_F1aqjGskpwJy49w-k7dXbED7oY5KCu_d9nASGt5mJj.8767kB1BFsW3Yga3aFzb', levelOfAssurance='http://eidas.europa.eu/LoA/low', attributes='{AttributeDefinition{nameUri='http://eidas.europa.eu/attributes/naturalperson/CurrentFamilyName', friendlyName='FamilyName', personType=NaturalPerson, required=true, transliterationMandatory=true, uniqueIdentifier=false, xmlType='{http://eidas.europa.eu/attributes/naturalperson}CurrentFamilyNameType', attributeValueMarshaller='eu.eidas.auth.commons.attribute.impl.StringAttributeValueMarshaller'}=[ΠΕΤΡΟΥ, PETROU], AttributeDefinition{nameUri='http://eidas.europa.eu/attributes/naturalperson/CurrentGivenName', friendlyName='FirstName', personType=NaturalPerson, required=true, transliterationMandatory=true, uniqueIdentifier=false, xmlType='{http://eidas.europa.eu/attributes/naturalperson}CurrentGivenNameType', attributeValueMarshaller='eu.eidas.auth.commons.attribute.impl.StringAttributeValueMarshaller'}=[ΑΝΔΡΕΑΣ, ANDREAS], AttributeDefinition{nameUri='http://eidas.europa.eu/attributes/naturalperson/DateOfBirth', friendlyName='DateOfBirth', personType=NaturalPerson, required=true, transliterationMandatory=false, uniqueIdentifier=false, xmlType='{http://eidas.europa.eu/attributes/naturalperson}DateOfBirthType', attributeValueMarshaller='eu.eidas.auth.commons.attribute.impl.DateTimeAttributeValueMarshaller'}=[1980-01-01], AttributeDefinition{nameUri='http://eidas.europa.eu/attributes/naturalperson/PersonIdentifier', friendlyName='PersonIdentifier', personType=NaturalPerson, required=true, transliterationMandatory=false, uniqueIdentifier=true, xmlType='{http://eidas.europa.eu/attributes/naturalperson}PersonIdentifierType', attributeValueMarshaller='eu.eidas.auth.commons.attribute.impl.LiteralStringAttributeValueMarshaller'}=[GR/GR/ERMIS-11076669]}', audienceRestriction='http://dss.aegean.gr:8092/metadata', notOnOrAfter='2019-04-08T11:27:22.841Z', notBefore='2019-04-08T11:22:22.841Z', country='GR', encrypted='false'}";
-    
-    
+    String testByLingualResponse = "AuthenticationResponse{id='_.M45IMdGrcFuK7EINeV7t49B6-_.9-tghVYtensOfmaUAAWp2FQuDZ8nkIHM4jF', issuer='https://eidas.gov.gr/EidasNode/ConnectorResponderMetadata', status='ResponseStatus{failure='false', statusCode='urn:oasis:names:tc:SAML:2.0:status:Success', statusMessage='urn:oasis:names:tc:SAML:2.0:status:Success', subStatusCode='null'}', ipAddress='null', inResponseToId='_F1aqjGskpwJy49w-k7dXbED7oY5KCu_d9nASGt5mJj.8767kB1BFsW3Yga3aFzb', levelOfAssurance='http://eidas.europa.eu/LoA/low', attributes='{AttributeDefinition{nameUri='http://eidas.europa.eu/attributes/naturalperson/CurrentFamilyName', friendlyName='FamilyName', personType=NaturalPerson, required=true, transliterationMandatory=true, uniqueIdentifier=false, xmlType='{http://eidas.europa.eu/attributes/naturalperson}CurrentFamilyNameType', attributeValueMarshaller='eu.eidas.auth.commons.attribute.impl.StringAttributeValueMarshaller'}=[ΠΕΤΡΟΥ, PETROU], AttributeDefinition{nameUri='http://eidas.europa.eu/attributes/naturalperson/CurrentGivenName', friendlyName='FirstName', personType=NaturalPerson, required=true, transliterationMandatory=true, uniqueIdentifier=false, xmlType='{http://eidas.europa.eu/attributes/naturalperson}CurrentGivenNameType', attributeValueMarshaller='eu.eidas.auth.commons.attribute.impl.StringAttributeValueMarshaller'}=[ΑΝΔΡΕΑΣ, ANDREAS], AttributeDefinition{nameUri='http://eidas.europa.eu/attributes/naturalperson/DateOfBirth', friendlyName='DateOfBirth', personType=NaturalPerson, required=true, transliterationMandatory=false, uniqueIdentifier=false, xmlType='{http://eidas.europa.eu/attributes/naturalperson}DateOfBirthType', attributeValueMarshaller='eu.eidas.auth.commons.attribute.impl.DateTimeAttributeValueMarshaller'}=[1980-01-01], AttributeDefinition{nameUri='http://eidas.europa.eu/attributes/naturalperson/PersonIdentifier', friendlyName='PersonIdentifier', personType=NaturalPerson, required=true, transliterationMandatory=false, uniqueIdentifier=true, xmlType='{http://eidas.europa.eu/attributes/naturalperson}PersonIdentifierType', attributeValueMarshaller='eu.eidas.auth.commons.attribute.impl.LiteralStringAttributeValueMarshaller'}=[GR/GR/ERMIS-11076669]}', audienceRestriction='http://dss.aegean.gr:8092/metadata', notOnOrAfter='2019-04-08T11:27:22.841Z', notBefore='2019-04-08T11:22:22.841Z', country='GR', encrypted='false'}";
+
     @Test
     public void testEidasResponseParser() {
         Map<String, String> map = eIDASResponseParser.parse(testResponse);
@@ -54,26 +50,18 @@ public class testEIDASResponseParser {
     }
 
     @Test
-    public void testByLingualResponse(){
+    public void testByLingualResponse() {
         List<AttributeType> attr = eIDASResponseParser.parseToAttributeType(testByLingualResponse.split("attributes='")[1]);
-        assertEquals(attr.get(0).getValues()[0],"ΠΕΤΡΟΥ, PETROU");
-        assertEquals(attr.get(1).getValues()[0],"ΑΝΔΡΕΑΣ, ANDREAS");
+        assertEquals(attr.get(0).getValues()[0], "ΠΕΤΡΟΥ, PETROU");
+        assertEquals(attr.get(1).getValues()[0], "ΑΝΔΡΕΑΣ, ANDREAS");
     }
-    
-    
-    
+
     @Test
     public void testNotBeofre() {
         Map<String, Object> res = eIDASResponseParser.parseToESMOAttributeSet(testResponse);
         System.out.println(res.get(eIDASResponseParser.NOT_BEFORE_KEY));
         assertEquals("2017-09-16T08:11:21.191Z", res.get(eIDASResponseParser.NOT_BEFORE_KEY));
 
-    }
-
-    @Test
-    public void testNameID() {
-        AttributeSet atSet = makeFromEidasResponse("id", TypeEnum.RESPONSE, "issuer", "recipient", testResponse);
-        assertEquals("CA/CA/Cph123456", atSet.getProperties().get("NameID"));
     }
 
 //    @Test
@@ -140,13 +128,10 @@ public class testEIDASResponseParser {
         Map<String, String> env = new HashMap();
         env.put("SP_CONFIG_REPOSITORY", "/configEidas/");
         TestRestControllersConfig.setEnv(env);
-        
+
         String remoteAddress = "https://eidas.gov.gr/SP/metadata";
         SpAuthenticationResponseData data = SpEidasSamlTools.processResponse(encResponse, remoteAddress);
 
     }
-    
-    
-    
 
 }
