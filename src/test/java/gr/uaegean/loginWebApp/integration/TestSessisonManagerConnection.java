@@ -7,7 +7,6 @@ package gr.uaegean.loginWebApp.integration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import gr.uagean.loginWebApp.LoginWebAppApplication;
-import gr.uagean.loginWebApp.MemCacheConfig;
 import gr.uagean.loginWebApp.TestRestControllersConfig;
 import gr.uagean.loginWebApp.model.enums.TypeEnum;
 import gr.uagean.loginWebApp.model.pojo.AttributeSet;
@@ -49,7 +48,7 @@ import org.springframework.test.web.servlet.MockMvc;
  */
 @ActiveProfiles("test")
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = {LoginWebAppApplication.class, TestRestControllersConfig.class, MemCacheConfig.class})
+@SpringBootTest(classes = {LoginWebAppApplication.class, TestRestControllersConfig.class})
 @AutoConfigureMockMvc
 public class TestSessisonManagerConnection {
 

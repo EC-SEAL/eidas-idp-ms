@@ -7,7 +7,6 @@ package gr.uagean.loginWebApp.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import gr.uagean.loginWebApp.model.pojo.SessionMngrResponse;
-import gr.uagean.loginWebApp.service.EidasPropertiesService;
 import gr.uagean.loginWebApp.service.EsmoMetadataService;
 import gr.uagean.loginWebApp.service.HttpSignatureService;
 import gr.uagean.loginWebApp.service.KeyStoreService;
@@ -31,7 +30,6 @@ import org.apache.commons.httpclient.NameValuePair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.CacheManager;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -51,12 +49,6 @@ import org.thymeleaf.util.StringUtils;
 @Controller
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.PUT, RequestMethod.POST})
 public class RestControllers {
-
-    @Autowired
-    private EidasPropertiesService propServ;
-
-    @Autowired
-    private CacheManager cacheManager;
 
     @Autowired
     private ParameterService paramServ;

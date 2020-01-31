@@ -8,7 +8,6 @@ package gr.uagean.loginWebApp.controllers;
 import gr.uagean.loginWebApp.model.pojo.LinkedInAuthAccessToken;
 import gr.uagean.loginWebApp.service.CountryService;
 import gr.uagean.loginWebApp.service.EidasPropertiesService;
-import gr.uagean.loginWebApp.service.KeyStoreService;
 import gr.uagean.loginWebApp.service.ParameterService;
 import gr.uagean.loginWebApp.utils.LinkedInResponseParser;
 import java.util.Map;
@@ -19,7 +18,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cache.CacheManager;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -63,12 +61,6 @@ public class ViewControllers {
     private String EIDAS_CONSENT_ERROR;
     @Value("${eidas.error.qaa}")
     private String EIDAS_QAA_ERROR;
-    @Value("${eidas.error.missing}")
-    private String EIDAS_MISSING_ATTRIBUTE_ERROR;
-    @Value("${eidas.error.consent.gr}")
-    private String EIDAS_CONSENT_ERROR_GR;
-    @Value("${eidas.error.qaa.gr}")
-    private String EIDAS_QAA_ERROR_GR;
     @Value("${eidas.error.missing.gr}")
     private String EIDAS_MISSING_ATTRIBUTE_ERROR_GR;
 
@@ -81,13 +73,7 @@ public class ViewControllers {
     private CountryService countryServ;
 
     @Autowired
-    private KeyStoreService keyServ;
-
-    @Autowired
     private ParameterService paramServ;
-
-    @Autowired
-    private CacheManager cacheManager;
 
     @RequestMapping(value = {"/login", "/idp/login", "gr/idp/login"}, method = {RequestMethod.GET, RequestMethod.POST})
     public ModelAndView loginView(HttpServletRequest request, @RequestParam(value = "sessionId", required = true) String idpMsSession) {
