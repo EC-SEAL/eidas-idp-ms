@@ -28,7 +28,7 @@ public class AttributeSetFactory {
     public final static String NOT_AFTER_KEY = "notAfter";
     public final static String NAME_ID_KEY = "NameID";
 
-    public static AttributeSet makeFromEidasResponse(String id, TypeEnum type, String issuer, String recipient, EidasUser user) {
+    public static AttributeSet makeFromEidasResponse(String sessionId, String id, TypeEnum type, String issuer, String recipient, EidasUser user) {
 
         List<AttributeType> attributes = new ArrayList();
         attributes.add(makeAttType("FamilyName", "http://eidas.europa.eu/attributes/naturalperson/CurrentFamilyName", user.getCurrentFamilyName()));
@@ -46,7 +46,7 @@ public class AttributeSetFactory {
 
         AttributeType[] attrArray = new AttributeType[attributes.size()];
         return new AttributeSet(id, type, issuer, recipient, attributes.toArray(attrArray),
-                metadataProperties, null, user.getLoa(), null, null, atrSetStatus);
+                metadataProperties, sessionId, user.getLoa(), null, null, atrSetStatus);
     }
 
     public static AttributeType makeAttType(String friendlyName, String name, String value) {

@@ -39,6 +39,9 @@
                 <Env.SEAL_SUPPORTED_ENC_ALGORITHMS>RSA</Env.SEAL_SUPPORTED_ENC_ALGORITHMS>
                 <Env.RESPONSE_SENDER_ID>eIDAS-IdP</Env.RESPONSE_SENDER_ID>
                 <Env.RESPONSE_RECEIVER>API_GW</Env.RESPONSE_RECEIVER>
+                <Env.SEAL_EXPOSE_URL>/as/authenticate</Env.SEAL_EXPOSE_URL>
+                <Env.SEAL_ENTITY_ID>https://seal.eu/eidas-idp</Env.SEAL_ENTITY_ID>
+                <Env.SEAL_DEFAULT_NAME>SEAL_EIDAS_IDP</Env.SEAL_DEFAULT_NAME>
                 
                 
                 

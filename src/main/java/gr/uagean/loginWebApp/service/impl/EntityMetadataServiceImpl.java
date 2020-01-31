@@ -44,7 +44,7 @@ public class EntityMetadataServiceImpl implements EsmoMetadataService {
         this.paramServ = paramServ;
 
         displayNames = new HashMap();
-        displayNames.put("en", paramServ.getParam("ESMO_SERVICE_DESCRIPTION"));
+        displayNames.put("en", paramServ.getParam("SEAL_SERVICE_DESCRIPTION"));
 
         keyTypes = new SecurityKeyType[2];
         String httpSigKey = new String(keyServ.getHttpSigPublicKey().getEncoded(), StandardCharsets.UTF_8);
@@ -55,7 +55,7 @@ public class EntityMetadataServiceImpl implements EsmoMetadataService {
             SecurityKeyType jwtKeyType = new SecurityKeyType("RSAPublicKey", EsmoSecurityUsage.signing, jwtKey);
             keyTypes[1] = jwtKeyType;
         }
-        EndpointType endpoint = new EndpointType("POST", "POST", paramServ.getParam("ESMO_EXPOSE_URL"));
+        EndpointType endpoint = new EndpointType("GET", "GET", paramServ.getParam("SEAL_EXPOSE_URL"));
         endpoints = new EndpointType[]{endpoint};
     }
 
@@ -67,8 +67,8 @@ public class EntityMetadataServiceImpl implements EsmoMetadataService {
         String encodedImage = Base64
                 .getEncoder()
                 .encodeToString(fileContent);
-        return new EntityMetadata("https://aegean.gr/esmo/gw/idp/metadata", paramServ.getParam("ESMO_DEFAULT_NAME"), this.displayNames, encodedImage,
-                new String[]{"Greece"}, "SAML", new String[]{"ACM"}, paramServ.getParam("EIDAS_PROPERTIES").split(","),
+        return new EntityMetadata(paramServ.getParam("SEAL_ENTITY_ID"), paramServ.getParam("SEAL_DEFAULT_NAME"), this.displayNames, encodedImage,
+                new String[]{"Greece"}, "OIDC/SAML", new String[]{"api-gw"}, paramServ.getParam("EIDAS_PROPERTIES").split(","),
                 this.endpoints, keyTypes, true, paramServ.getParam("SEAL_SUPPORTED_SIG_ALGORITHMS").split(","), true, paramServ.getParam("SEAL_SUPPORTED_ENC_ALGORITHMS").split(","), null);
     }
 
