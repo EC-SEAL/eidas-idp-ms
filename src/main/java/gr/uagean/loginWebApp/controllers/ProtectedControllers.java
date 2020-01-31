@@ -97,7 +97,7 @@ public class ProtectedControllers {
         this.netServ = new NetworkServiceImpl(this.keyServ);
     }
 
-    @RequestMapping(value = "/as/protected", method = {RequestMethod.POST, RequestMethod.GET})
+    @RequestMapping(value = {"/as/protected", "/is/query"}, method = {RequestMethod.POST, RequestMethod.GET})
     public ModelAndView authenticate(@RequestParam(value = "sessionId") String sessionId,
             HttpServletRequest request,
             RedirectAttributes redirectAttrs, Model model, Principal principal
@@ -149,6 +149,7 @@ public class ProtectedControllers {
                         1. UC101, eidas-idpms reads from SM IdPRequest,IdPMetadata and sets dataStore in SM -->  Dashboard
                         2. UC801, reads from SM IdRequest, IdPMetadata and sets dsResponse and dsMetadata --> RM
                         3. UC802, reads from SM apRequest, apMetadata and sets dsResponse and dsMetadata --> RM
+                        4. UC302, reads from SM apRequest, apMetadata and sets and sets dataStore in SM  --> Dashboard
 
                         match the “rm/response” string stored in the in the ClientCallbackAddr to determine if the response is for the RM
 
@@ -174,47 +175,94 @@ public class ProtectedControllers {
                 }
             } else {
 
-                // Case UC101
-                String dataStoreString = (String) resp.getSessionData().getSessionVariables().get("dataStore");
-                DataStore ds = new DataStore();
-                List<DataSet> dsArrayList = new ArrayList();
-                if (!StringUtils.isEmpty(dataStoreString)) {
-                    ds = mapper.readValue(dataStoreString, DataStore.class);
-                    DataSet[] OldDataSet = ds.getClearData();
-                    Arrays.stream(OldDataSet).forEach(dataSet -> {
-                        dsArrayList.add(dataSet);
-                    });
+                if (!StringUtils.isEmpty((String) resp.getSessionData().getSessionVariables().get("IdPMetadata"))) {
+                    // Case UC302
+                    String dataStoreString = (String) resp.getSessionData().getSessionVariables().get("dataStore");
+                    DataStore ds = new DataStore();
+                    List<DataSet> dsArrayList = new ArrayList();
+                    if (!StringUtils.isEmpty(dataStoreString)) {
+                        ds = mapper.readValue(dataStoreString, DataStore.class);
+                        DataSet[] OldDataSet = ds.getClearData();
+                        Arrays.stream(OldDataSet).forEach(dataSet -> {
+                            dsArrayList.add(dataSet);
+                        });
+                    } else {
+                        String dsId = UUID.randomUUID().toString();
+                        ds.setId(dsId);
+                    }
+
+                    //IdP Connector updates the session with the variables received from the user authentication by calling the SM, with post, “/sm/updateSessionData”
+                    // to store the received attributes
+                    //create the dataset from the received attributes
+                    String id = UUID.randomUUID().toString();
+                    AttributeSet receivedAttributes = AttributeSetFactory.makeFromEidasResponse(sessionId, id, TypeEnum.AUTHRESPONSE, "issuer", "recipient", user);
+                    DataSet dataSet = new DataSet();
+                    dataSet.setId(id);
+                    dataSet.setLoa(user.getLoa());
+                    dataSet.setIssued(id);
+                    dataSet.setIssuerId("eIDAS");
+                    dataSet.setTypes("eIDAS");
+                    Date date = new Date();
+                    SimpleDateFormat formatter = new SimpleDateFormat("EEE, d MMM YYYY HH:mm:ss z", Locale.US);
+                    formatter.setTimeZone(TimeZone.getTimeZone("GMT"));
+                    String nowDate = formatter.format(date);
+                    dataSet.setIssued(nowDate);
+                    dataSet.setAttributes(receivedAttributes.getAttributes());
+                    //add them to the data store
+                    dsArrayList.add(dataSet);
+                    DataSet[] newDataSet = new DataSet[dsArrayList.size()];
+                    for (int i = 0; i < newDataSet.length; i++) {
+                        newDataSet[i] = dsArrayList.get(i);
+                    }
+                    ds.setClearData(newDataSet);
+                    //store them in the session manager
+                    updatSessionVariables(sessionMngrUrl, sessionId, "dataStore", ds);
+
                 } else {
-                    String dsId = UUID.randomUUID().toString();
-                    ds.setId(dsId);
+                    // Case UC101
+                    String dataStoreString = (String) resp.getSessionData().getSessionVariables().get("dataStore");
+                    DataStore ds = new DataStore();
+                    List<DataSet> dsArrayList = new ArrayList();
+                    if (!StringUtils.isEmpty(dataStoreString)) {
+                        ds = mapper.readValue(dataStoreString, DataStore.class);
+                        DataSet[] OldDataSet = ds.getClearData();
+                        Arrays.stream(OldDataSet).forEach(dataSet -> {
+                            dsArrayList.add(dataSet);
+                        });
+                    } else {
+                        String dsId = UUID.randomUUID().toString();
+                        ds.setId(dsId);
+                    }
+
+                    //IdP Connector updates the session with the variables received from the user authentication by calling the SM, with post, “/sm/updateSessionData”
+                    // to store the received attributes
+                    //create the dataset from the received attributes
+                    String id = UUID.randomUUID().toString();
+                    AttributeSet receivedAttributes = AttributeSetFactory.makeFromEidasResponse(sessionId, id, TypeEnum.AUTHRESPONSE, "issuer", "recipient", user);
+                    DataSet dataSet = new DataSet();
+                    dataSet.setId(id);
+                    dataSet.setLoa(user.getLoa());
+                    dataSet.setIssued(id);
+                    dataSet.setIssuerId("eIDAS");
+                    dataSet.setTypes("eIDAS");
+                    Date date = new Date();
+                    SimpleDateFormat formatter = new SimpleDateFormat("EEE, d MMM YYYY HH:mm:ss z", Locale.US);
+                    formatter.setTimeZone(TimeZone.getTimeZone("GMT"));
+                    String nowDate = formatter.format(date);
+                    dataSet.setIssued(nowDate);
+                    dataSet.setAttributes(receivedAttributes.getAttributes());
+                    //add them to the data store
+                    dsArrayList.add(dataSet);
+                    DataSet[] newDataSet = new DataSet[dsArrayList.size()];
+                    for (int i = 0; i < newDataSet.length; i++) {
+                        newDataSet[i] = dsArrayList.get(i);
+                    }
+                    ds.setClearData(newDataSet);
+                    //store them in the session manager
+                    updatSessionVariables(sessionMngrUrl, sessionId, "dataStore", ds);
+
                 }
 
-                //IdP Connector updates the session with the variables received from the user authentication by calling the SM, with post, “/sm/updateSessionData”
-                // to store the received attributes
-                //create the dataset from the received attributes
-                String id = UUID.randomUUID().toString();
-                AttributeSet receivedAttributes = AttributeSetFactory.makeFromEidasResponse(sessionId, id, TypeEnum.AUTHRESPONSE, "issuer", "recipient", user);
-                DataSet dataSet = new DataSet();
-                dataSet.setId(id);
-                dataSet.setLoa(user.getLoa());
-                dataSet.setIssued(id);
-                dataSet.setIssuerId("eIDAS");
-                dataSet.setTypes("eIDAS");
-                Date date = new Date();
-                SimpleDateFormat formatter = new SimpleDateFormat("EEE, d MMM YYYY HH:mm:ss z", Locale.US);
-                formatter.setTimeZone(TimeZone.getTimeZone("GMT"));
-                String nowDate = formatter.format(date);
-                dataSet.setIssued(nowDate);
-                dataSet.setAttributes(receivedAttributes.getAttributes());
-                //add them to the data store
-                dsArrayList.add(dataSet);
-                DataSet[] newDataSet = new DataSet[dsArrayList.size()];
-                for (int i = 0; i < newDataSet.length; i++) {
-                    newDataSet[i] = dsArrayList.get(i);
-                }
-                ds.setClearData(newDataSet);
-                //store them in the session manager
-                updatSessionVariables(sessionMngrUrl, sessionId, "dataStore", ds);
             }
 
             Log.info("session " + sessionId + " updated succesfully with user attributes " + user.toString());
