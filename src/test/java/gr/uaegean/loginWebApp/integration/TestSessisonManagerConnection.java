@@ -137,7 +137,7 @@ public class TestSessisonManagerConnection {
         System.out.println(token);
     }
 
-    @Test
+//    @Test
     public void getEndpointFromMSConfig() throws InvalidKeySpecException, IOException, KeyStoreException, UnrecoverableKeyException, NoSuchAlgorithmException {
         MSConfigurationService msConf = new MSConfigurationServiceImpl(paramServ, netServ, keyServ);
         assertEquals(msConf.getMsEndpointByIdAndApiCall("ACMms001", "acmRequest"), "https://dss1.aegean.gr:8073/acm/request");

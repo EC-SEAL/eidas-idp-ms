@@ -6,6 +6,7 @@
 package gr.uagean.loginWebApp.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import gr.uagean.loginWebApp.model.pojo.EntityMetadata;
 import gr.uagean.loginWebApp.model.pojo.SessionMngrResponse;
 import gr.uagean.loginWebApp.service.EsmoMetadataService;
 import gr.uagean.loginWebApp.service.HttpSignatureService;
@@ -37,6 +38,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -79,7 +81,7 @@ public class RestControllers {
         this.netServ = new NetworkServiceImpl(this.keyServ);
     }
 
-    @RequestMapping(value = "/as/authenticate", method = {RequestMethod.POST, RequestMethod.GET})
+    @RequestMapping(value = {"/as/authenticate", "/is/query"}, method = {RequestMethod.POST, RequestMethod.GET})
     public ModelAndView authenticate(@RequestParam(value = "msToken", required = true) String token,
             HttpServletRequest request,
             RedirectAttributes redirectAttrs, Model model
@@ -119,6 +121,13 @@ public class RestControllers {
         }
 
         return null;
+    }
+
+    @RequestMapping(value = "/meta", method = {RequestMethod.POST, RequestMethod.GET})
+    public @ResponseBody
+    EntityMetadata getMetadata() throws IOException, KeyStoreException {
+        EntityMetadata metadata = this.metadataServ.getMetadata();
+        return metadata;
     }
 
 }

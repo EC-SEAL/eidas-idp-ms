@@ -4,45 +4,28 @@ services:
     
     
     IdPMS:
-        image: endimion13/esmo-idp-gr-no:0.1.9
+        image: endimion13/seal-eidas-idp
         environment:
-            - KEYSTORE_PATH=/resources/testKeys/keystore.jks
-            - KEY_PASS=selfsignedpass
-            - STORE_PASS=keystorepass
-            - JWT_CERT_ALIAS=selfsigned
-            - HTTPSIG_CERT_ALIAS=1
-            - SIGNING_SECRET=QjG+wP1CbAH2z4PWlWIDkxP4oRlgK2vos5/jXFfeBw8=
-            - ASYNC_SIGNATURE=true
-            - EXPIRES=5
-            - CONFIG_JSON=/resources/configurationResponse.json
-            - ACM_ID=ACMms001
-            - SESSION_MANAGER_URL=http://dss1.aegean.gr:8090
-#            - SESSION_MANAGER_URL=http://5.79.83.118:8090
-            - CONFIGURATION_MANAGER_URL=http://dss1.aegean.gr:8080
-#            - CONFIGURATION_MANAGER_URL=http://5.79.83.118:8080
-            - MEMCACHED_HOST=172.17.0.1
-            - MEMCACHED_PORT=11211
-            - ESMO_SUPPORTED_SIG_ALGORITHMS=RSA
-            - ESMO_SUPPORTED_ENC_ALGORITHMS=RSA
-            - REDIRECT_JWT_SENDER=IdPms001
-            - REDIRECT_JWT_RECEIVER=ACMms001
-            - SP_CONFIG_REPOSITORY=/configEidas/
-            - EIDAS_NODE_URL=https://pre.eidas.gov.gr/EidasNode/ServiceProvider
             - EIDAS_PROPERTIES=CurrentFamilyName,CurrentGivenName,DateOfBirth,PersonIdentifier
-            - NO_EIDAS_PROPERTIES=CurrentFamilyName,CurrentGivenName,DateOfBirth,PersonIdentifier
-            - NO_AUTH_URL=https://auth.dataporten-test.uninett.no/oauth/authorization?
-            - NO_TOKEN_URL=https://auth.dataporten-test.uninett.no/oauth/token
-            - NO_RETURN_URL=http://dss.aegean.gr:8092/idp/oidc
-            - NO_CLIENT_ID=0383672b-b749-4d13-8f37-ef0892d5d439
-            - NO_CLIENT_SECRET=fc1556d5-2a49-44f8-90ac-7be62516922b
-            - NO_USER_INFO_URL=https://auth.dataporten-test.uninett.no/openid/userinfo
             - SP_COUNTRY=GR
-
-        volumes:
-            - /home/nikos/NetBeansProjects/esmo.gr.idp/src/test/resources:/resources
-            - /webappConfig:/webappConfig
-            - /home/nikos/esmo-ap-logs:/logs
-            - /configEidas:/configEidas
+            - SP_LOGO=img/logo.png
+            - SP_CONFIG_REPOSITORY=/configEidas/
+            - SP_SECRET=secret
+            - AUTH_DURATION=1800
+            - SESSION_MANAGER_URL=https://esmo-gateway.eu
+            - KEY_PASS=selfsignedpass
+            - JWT_CERT_ALIAS=selfsigned
+            - ASYNC_SIGNATURE=true
+            - HTTPSIG_CERT_ALIAS=1
+            - KEYSTORE_PATH=/home/nikos/NetBeansProjects/seal.eidas.idp/src/test/resources/testKeys/keystore.jks
+            - STORE_PASS=keystorepass
+            - SEAL_SUPPORTED_SIG_ALGORITHMS=RSA
+            - SEAL_SUPPORTED_ENC_ALGORITHMS=RSA
+            - RESPONSE_SENDER_ID=eIDAS-IdP
+            - RESPONSE_RECEIVER=API_GW
+            - SEAL_EXPOSE_URL=/as/authenticate
+            - SEAL_ENTITY_ID=https://seal.eu/eidas-idp
+            - SEAL_DEFAULT_NAME=SEAL_EIDAS_IDP
         ports:
           - 8091:8080
           - 8443:8443

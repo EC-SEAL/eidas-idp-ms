@@ -97,7 +97,7 @@ public class ProtectedControllers {
         this.netServ = new NetworkServiceImpl(this.keyServ);
     }
 
-    @RequestMapping(value = {"/as/protected", "/is/query"}, method = {RequestMethod.POST, RequestMethod.GET})
+    @RequestMapping(value = {"/as/protected", "/protected"}, method = {RequestMethod.POST, RequestMethod.GET})
     public ModelAndView authenticate(@RequestParam(value = "sessionId") String sessionId,
             HttpServletRequest request,
             RedirectAttributes redirectAttrs, Model model, Principal principal
