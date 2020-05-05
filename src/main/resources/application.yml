@@ -1,0 +1,29 @@
+## YAML Template.
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: 'seal-eidas'
+            client-secret: '72de51ea-221a-4667-ac2f-9dd78b087d26'
+            authorizationGrantType: authorization_code
+            redirect-uri: '{baseUrl}/login/oauth2/code/{registrationId}'
+#            redirect-uri: '{baseUrl}/eidas-idp/login/oauth2/code/{registrationId}'
+            scope: openid
+        provider:
+          keycloak:
+            issuerUri: https://esmo-gateway.eu/auth/realms/eidas
+            user-name-attribute: preferred_username
+
+
+# Keycloak Config
+#server.session.tracking-modes=cookie
+#spring.main.allow-bean-definition-overriding=true
+#keycloak.realm=eidas
+#keycloak.auth-server-url=https://esmo-gateway.eu/auth
+#keycloak.resource=seal-eidas
+#keycloak.credentials.secret=72de51ea-221a-4667-ac2f-9dd78b087d26
+#keycloak.principal-attribute=preferred_username
+##keycloak.redirect-uri-template=eidas-idp/sso/login
+#logging.level.org.keycloak=TRACE---

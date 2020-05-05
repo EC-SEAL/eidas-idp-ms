@@ -1,0 +1,39 @@
+2020-03-27 17:57:24,033 INFO org.springframework.boot.StartupInfoLogger [main] Starting TestSessisonManagerConnection on nikos with PID 22406 (started by nikos in /home/nikos/NetBeansProjects/seal.eidas.idp)
+2020-03-27 17:57:24,035 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: test
+2020-03-27 17:57:26,947 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@13e5d243, org.springframework.security.web.context.SecurityContextPersistenceFilter@3472947a, org.springframework.security.web.header.HeaderWriterFilter@3069a360, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@35ef439e, org.springframework.security.web.authentication.logout.LogoutFilter@80b122b, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@4997552e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3a3ed300, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@27a09971, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@7bcecef6, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@46046c06, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@93824eb, org.springframework.security.web.session.SessionManagementFilter@7885776b, org.springframework.security.web.access.ExceptionTranslationFilter@7cfac39f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6dd36ab6]
+2020-03-27 17:57:27,653 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-27 17:57:28,121 INFO org.springframework.mock.web.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2020-03-27 17:57:28,121 INFO org.springframework.web.servlet.FrameworkServlet [main] Initializing Servlet ''
+2020-03-27 17:57:28,133 INFO org.springframework.web.servlet.FrameworkServlet [main] Completed initialization in 11 ms
+2020-03-27 17:57:28,162 INFO org.springframework.boot.StartupInfoLogger [main] Started TestSessisonManagerConnection in 4.605 seconds (JVM running for 6.296)
+2020-03-27 17:57:30,453 INFO gr.uagean.loginWebApp.utils.NoResponseParser [main] Response from Norway::{
+    "sub": "6f71b1d9-8f43-4761-9ad0-43976c3f602c",
+    "connect-userid_sec": [
+        "eidas:SE/NO/199008199391"
+    ],
+    "dataporten-userid_sec": [
+        "eidas:SE/NO/199008199391"
+    ],
+    "name": "Mohamed Al Samed",
+    "picture": "https://api.dataporten-test.uninett.no/userinfo/v1/user/media/p:442f87ff-7311-448f-85ce-fb55aff78120"
+}
+2020-03-27 17:57:30,468 INFO gr.uagean.loginWebApp.utils.NoResponseParser [main] Response from Norway::{
+    "user": {
+        "userid_sec": [
+            "eidas:EE/NO/49311086012"
+        ],
+        "userid": "e91a6752-999e-4f98-938d-1b2a34891173",
+        "name": "TRIIN PUUSAAR",
+        "profilephoto": "p:c048174c-056b-432c-adb8-2b0c5cff1fc9"
+    },
+    "audience": "843a3f7b-1575-467f-a696-00efff753076"
+}
+2020-03-27 17:57:30,563 INFO org.springframework.boot.StartupInfoLogger [main] Starting LoginWebAppApplicationTests on nikos with PID 22406 (started by nikos in /home/nikos/NetBeansProjects/seal.eidas.idp)
+2020-03-27 17:57:30,564 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: test
+2020-03-27 17:57:31,136 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1e2445f6, org.springframework.security.web.context.SecurityContextPersistenceFilter@49c1e294, org.springframework.security.web.header.HeaderWriterFilter@5c448ef, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@17ec335a, org.springframework.security.web.authentication.logout.LogoutFilter@124eb83d, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@284990de, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7741ae1b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@50e5032c, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@565d7d2f, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@6aea99e7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1c6a0103, org.springframework.security.web.session.SessionManagementFilter@703e8050, org.springframework.security.web.access.ExceptionTranslationFilter@1ee40b5c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3079c26a]
+2020-03-27 17:57:31,387 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-27 17:57:31,620 INFO org.springframework.boot.StartupInfoLogger [main] Started LoginWebAppApplicationTests in 1.14 seconds (JVM running for 9.753)
+2020-03-27 17:57:31,659 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-27 17:57:31,659 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-27 17:57:31,660 DEBUG org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter [SpringContextShutdownHook] Unregistering deployment
+2020-03-27 17:57:31,661 DEBUG org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter [SpringContextShutdownHook] Unregistering deployment

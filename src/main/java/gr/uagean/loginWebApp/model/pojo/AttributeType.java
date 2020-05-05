@@ -10,15 +10,13 @@ package gr.uagean.loginWebApp.model.pojo;
  * @author nikos
  */
 public class AttributeType {
-    
+
     private String name;
     private String friendlyName;
     private String encoding;
     private String language;
-    private boolean isMandatory;
+    private boolean mandatory;
     private String[] values;
-    
-    
 
     public AttributeType() {
     }
@@ -28,8 +26,16 @@ public class AttributeType {
         this.friendlyName = friendlyName;
         this.encoding = encoding;
         this.language = language;
-        this.isMandatory = isMandatory;
+        this.mandatory = isMandatory;
         this.values = values;
+    }
+
+    public boolean setMandatory() {
+        return mandatory;
+    }
+
+    public void setMandatory(boolean mandatory) {
+        this.mandatory = mandatory;
     }
 
     public String getName() {
@@ -64,14 +70,6 @@ public class AttributeType {
         this.language = language;
     }
 
-    public boolean isIsMandatory() {
-        return isMandatory;
-    }
-
-    public void setIsMandatory(boolean isMandatory) {
-        this.isMandatory = isMandatory;
-    }
-
     public String[] getValues() {
         return values;
     }
@@ -79,9 +77,5 @@ public class AttributeType {
     public void setValues(String[] values) {
         this.values = values;
     }
-    
-    
-    
-    
-    
+
 }

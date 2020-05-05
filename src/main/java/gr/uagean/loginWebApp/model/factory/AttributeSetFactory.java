@@ -33,9 +33,9 @@ public class AttributeSetFactory {
         List<AttributeType> attributes = new ArrayList();
         attributes.add(makeAttType("FamilyName", "http://eidas.europa.eu/attributes/naturalperson/CurrentFamilyName", user.getCurrentFamilyName()));
         attributes.add(makeAttType("GivenName", "http://eidas.europa.eu/attributes/naturalperson/CurrentGivenName", user.getCurrentGivenName()));
-        attributes.add(makeAttType("DateOfBirth", "http://eidas.europa.eu/attributes/naturalperson/DateOfBirth", user.getCurrentGivenName()));
+        attributes.add(makeAttType("DateOfBirth", "http://eidas.europa.eu/attributes/naturalperson/DateOfBirth", user.getDateOfBirth()));
         attributes.add(makeAttType("PersonIdentifier", "http://eidas.europa.eu/attributes/naturalperson/PersonIdentifier", user.getPersonIdentifier()));
-        attributes.add(makeAttType("LevelOfAssurance", "http://eidas.europa.eu/LoA", user.getPersonIdentifier()));
+        attributes.add(makeAttType("LevelOfAssurance", "http://eidas.europa.eu/LoA", user.getLoa()));
 
         Map<String, String> metadataProperties = new HashMap();
         metadataProperties.put("levelOfAssurance", user.getLoa());

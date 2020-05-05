@@ -25,7 +25,9 @@ import java.security.UnrecoverableKeyException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.httpclient.NameValuePair;
 import org.slf4j.Logger;
@@ -42,7 +44,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.thymeleaf.util.StringUtils;
 
 /**
  *
@@ -81,9 +82,12 @@ public class RestControllers {
         this.netServ = new NetworkServiceImpl(this.keyServ);
     }
 
-    @RequestMapping(value = {"/as/authenticate", "/is/query"}, method = {RequestMethod.POST, RequestMethod.GET})
-    public ModelAndView authenticate(@RequestParam(value = "msToken", required = true) String token,
+    @CrossOrigin
+    @RequestMapping(value = {"/as/authenticate", "/is/query", "/eidas-idp/as/authenticate", "/eidas-idp/is/query"},
+            method = {RequestMethod.POST, RequestMethod.GET})
+    public ModelAndView authenticate(@RequestParam String msToken,
             HttpServletRequest request,
+            HttpServletResponse response,
             RedirectAttributes redirectAttrs, Model model
     ) {
 
@@ -91,20 +95,20 @@ public class RestControllers {
         ObjectMapper mapper = new ObjectMapper();
         String sessionMngrUrl = paramServ.getParam("SESSION_MANAGER_URL");
         List<NameValuePair> getParams = new ArrayList();
-        getParams.add(new NameValuePair("token", token));
+        getParams.add(new NameValuePair("token", msToken));
 
-        Log.info("got the token:" + token);
+        Log.info("got the token:" + msToken);
         try {
             //calls SM, get /sm/validateToken, to validate the received token and get the sessionId
             SessionMngrResponse resp = mapper.readValue(netServ.sendGet(sessionMngrUrl, "/sm/validateToken", getParams, 1), SessionMngrResponse.class);
             Log.info("got the responseCode:" + resp.getCode().toString());
-            if (resp.getCode().toString().equals("OK") && StringUtils.isEmpty(resp.getError())) {
+            if (resp.getCode().toString().equals("OK")) {
                 String sessionId = resp.getSessionData().getSessionId();
-
+                Log.info("will continue to redirect view:: sessionId" + sessionId);
                 getParams.clear();
                 getParams.add(new NameValuePair("sessionId", sessionId));
                 // get the session data that are stored on the session manager
-                resp = mapper.readValue(netServ.sendGet(sessionMngrUrl, "/sm/getSessionData", getParams, 1), SessionMngrResponse.class);
+//                resp = mapper.readValue(netServ.sendGet(sessionMngrUrl, "/sm/getSessionData", getParams, 1), SessionMngrResponse.class);
 //                String spOrigin = (String) resp.getSessionData().getSessionVariables().get("SP_ORIGIN");
 //                Log.info("got SP origin:" + spOrigin);
 
@@ -113,6 +117,13 @@ public class RestControllers {
                 // and will picked up on response, so we can continue with the ESMO session
                 model.addAttribute("login", "protected"); // the idp ms url to redirect to in the protectedRedirectForm
                 model.addAttribute("sessionId", sessionId); // the sessionId that should be passed as state
+
+                Cookie cookie = new Cookie("seal", sessionId);
+                cookie.setMaxAge(5 * 60); // expires in 7 days
+//                cookie.setSecure(true);
+                cookie.setHttpOnly(true);
+                cookie.setPath("/"); // global cookie accessible every where
+                response.addCookie(cookie);
                 return new ModelAndView("protectedRedirect");
 
             }

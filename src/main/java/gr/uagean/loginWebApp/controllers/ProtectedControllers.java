@@ -28,7 +28,6 @@ import java.io.UnsupportedEncodingException;
 import java.security.Key;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
-import java.security.Principal;
 import java.security.UnrecoverableKeyException;
 import java.security.spec.InvalidKeySpecException;
 import java.text.SimpleDateFormat;
@@ -37,23 +36,24 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.TimeZone;
 import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.httpclient.NameValuePair;
 import org.apache.commons.lang3.StringUtils;
-import org.keycloak.KeycloakSecurityContext;
-import org.keycloak.representations.IDToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -97,26 +97,30 @@ public class ProtectedControllers {
         this.netServ = new NetworkServiceImpl(this.keyServ);
     }
 
-    @RequestMapping(value = {"/as/protected", "/protected"}, method = {RequestMethod.POST, RequestMethod.GET})
-    public ModelAndView authenticate(@RequestParam(value = "sessionId") String sessionId,
+    @RequestMapping(value = {"/", "/eidas-idp", "/is/protected", "/as/protected", "/protected", "/eidas-idp/as/protected", "/eidas-idp/protected",
+        "/eidas-idp/is/protected"}, method = {RequestMethod.POST, RequestMethod.GET})
+    public ModelAndView authenticate(@CookieValue(value = "seal") String sessionId,
             HttpServletRequest request,
-            RedirectAttributes redirectAttrs, Model model, Principal principal
+            RedirectAttributes redirectAttrs, Model model, @AuthenticationPrincipal OAuth2User principal
     ) throws KeyStoreException {
 
         try {
             Log.info("Reached protected endpoint with sessionId" + sessionId);
 
+            String referer = request.getHeader("Referer"); //Get previous URL before call '/login'
+
             String eId = principal.getName();
 
-            IDToken idToken = ((KeycloakSecurityContext) request.getAttribute(KeycloakSecurityContext.class.getName())).getIdToken();
+//            IDToken idToken = ((KeycloakSecurityContext) request.getAttribute(KeycloakSecurityContext.class.getName())).getIdToken();
+            Map<String, Object> idToken = principal.getAttributes();
 
             EidasUser user = new EidasUser();
-            user.setCurrentFamilyName(idToken.getFamilyName());
-            user.setCurrentGivenName(idToken.getName());
-            user.setDateOfBirth((String) idToken.getOtherClaims().get("date_of_birth"));
-            user.setProfileName(idToken.getGivenName());
+            user.setCurrentFamilyName((String) idToken.get("family_name"));
+            user.setCurrentGivenName((String) idToken.get("name"));
+            user.setDateOfBirth((String) idToken.get("date_of_birth"));
+            user.setProfileName((String) idToken.get("given_name"));
             user.setEid(eId);
-            user.setPersonIdentifier((String) idToken.getOtherClaims().get("person_identifier"));
+            user.setPersonIdentifier((String) idToken.get("preferred_username"));
 
             String sessionMngrUrl = paramServ.getParam("SESSION_MANAGER_URL");
             List<NameValuePair> requestParams = new ArrayList();
@@ -201,7 +205,7 @@ public class ProtectedControllers {
                     dataSet.setLoa(user.getLoa());
                     dataSet.setIssued(id);
                     dataSet.setIssuerId("eIDAS");
-                    dataSet.setTypes("eIDAS");
+                    dataSet.setType("eIDAS");
                     Date date = new Date();
                     SimpleDateFormat formatter = new SimpleDateFormat("EEE, d MMM YYYY HH:mm:ss z", Locale.US);
                     formatter.setTimeZone(TimeZone.getTimeZone("GMT"));
@@ -226,9 +230,12 @@ public class ProtectedControllers {
                     if (!StringUtils.isEmpty(dataStoreString)) {
                         ds = mapper.readValue(dataStoreString, DataStore.class);
                         DataSet[] OldDataSet = ds.getClearData();
-                        Arrays.stream(OldDataSet).forEach(dataSet -> {
-                            dsArrayList.add(dataSet);
-                        });
+                        if (OldDataSet != null) {
+                            Arrays.stream(OldDataSet).forEach(dataSet -> {
+                                dsArrayList.add(dataSet);
+                            });
+                        }
+
                     } else {
                         String dsId = UUID.randomUUID().toString();
                         ds.setId(dsId);
@@ -244,7 +251,7 @@ public class ProtectedControllers {
                     dataSet.setLoa(user.getLoa());
                     dataSet.setIssued(id);
                     dataSet.setIssuerId("eIDAS");
-                    dataSet.setTypes("eIDAS");
+                    dataSet.setType("eIDAS");
                     Date date = new Date();
                     SimpleDateFormat formatter = new SimpleDateFormat("EEE, d MMM YYYY HH:mm:ss z", Locale.US);
                     formatter.setTimeZone(TimeZone.getTimeZone("GMT"));
