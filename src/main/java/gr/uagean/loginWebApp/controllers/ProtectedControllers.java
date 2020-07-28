@@ -13,6 +13,7 @@ import gr.uagean.loginWebApp.model.pojo.DataSet;
 import gr.uagean.loginWebApp.model.pojo.DataStore;
 import gr.uagean.loginWebApp.model.pojo.EidasUser;
 import gr.uagean.loginWebApp.model.pojo.EntityMetadata;
+import gr.uagean.loginWebApp.model.pojo.NewUpdateDataRequest;
 import gr.uagean.loginWebApp.model.pojo.SessionMngrResponse;
 import gr.uagean.loginWebApp.model.pojo.UpdateDataRequest;
 import gr.uagean.loginWebApp.service.EsmoMetadataService;
@@ -108,10 +109,7 @@ public class ProtectedControllers {
             Log.info("Reached protected endpoint with sessionId" + sessionId);
 
             String referer = request.getHeader("Referer"); //Get previous URL before call '/login'
-
             String eId = principal.getName();
-
-//            IDToken idToken = ((KeycloakSecurityContext) request.getAttribute(KeycloakSecurityContext.class.getName())).getIdToken();
             Map<String, Object> idToken = principal.getAttributes();
 
             EidasUser user = new EidasUser();
@@ -158,24 +156,23 @@ public class ProtectedControllers {
                         match the “rm/response” string stored in the in the ClientCallbackAddr to determine if the response is for the RM
 
              */
+            String id = UUID.randomUUID().toString();
+            AttributeSet receivedAttributes = AttributeSetFactory.makeFromEidasResponse(sessionId, id, TypeEnum.AUTHRESPONSE, "issuer", "recipient", user);
+            String objectId = "eIDAS" + user.getPersonIdentifier();
+
             if (callbackUrl.contains("rm/response")) {
                 EntityMetadata metadata = this.metadataServ.getMetadata();
                 //UC801
                 if (!StringUtils.isEmpty((String) resp.getSessionData().getSessionVariables().get("IdPMetadata"))) {
                     //attributeSet
-                    String id = UUID.randomUUID().toString();
-                    AttributeSet receivedAttributes = AttributeSetFactory.makeFromEidasResponse(sessionId, id, TypeEnum.AUTHRESPONSE, "issuer", "recipient", user);
                     //store them in the session manager
-                    updatSessionVariables(sessionMngrUrl, sessionId, "dsResponse", receivedAttributes);
-                    updatSessionVariables(sessionMngrUrl, sessionId, "dsMetadata", metadata);
+                    updatSessionVariables(sessionMngrUrl, sessionId, objectId, "dsResponse", receivedAttributes);
+                    updatSessionVariables(sessionMngrUrl, sessionId, objectId, "dsMetadata", metadata);
                 } else {
                     //UC802
-                    //attributeSet
-                    String id = UUID.randomUUID().toString();
-                    AttributeSet receivedAttributes = AttributeSetFactory.makeFromEidasResponse(sessionId, id, TypeEnum.AUTHRESPONSE, "issuer", "recipient", user);
                     //store them in the session manager
-                    updatSessionVariables(sessionMngrUrl, sessionId, "dsResponse", receivedAttributes);
-                    updatSessionVariables(sessionMngrUrl, sessionId, "dsMetadata", metadata);
+                    updatSessionVariables(sessionMngrUrl, sessionId, objectId, "dsResponse", receivedAttributes);
+                    updatSessionVariables(sessionMngrUrl, sessionId, objectId, "dsMetadata", metadata);
                 }
             } else {
 
@@ -198,8 +195,6 @@ public class ProtectedControllers {
                     //IdP Connector updates the session with the variables received from the user authentication by calling the SM, with post, “/sm/updateSessionData”
                     // to store the received attributes
                     //create the dataset from the received attributes
-                    String id = UUID.randomUUID().toString();
-                    AttributeSet receivedAttributes = AttributeSetFactory.makeFromEidasResponse(sessionId, id, TypeEnum.AUTHRESPONSE, "issuer", "recipient", user);
                     DataSet dataSet = new DataSet();
                     dataSet.setId(id);
                     dataSet.setLoa(user.getLoa());
@@ -220,7 +215,7 @@ public class ProtectedControllers {
                     }
                     ds.setClearData(newDataSet);
                     //store them in the session manager
-                    updatSessionVariables(sessionMngrUrl, sessionId, "dataStore", ds);
+                    updatSessionVariables(sessionMngrUrl, sessionId, objectId, "dataStore", ds);
 
                 } else {
                     // Case UC101
@@ -244,8 +239,6 @@ public class ProtectedControllers {
                     //IdP Connector updates the session with the variables received from the user authentication by calling the SM, with post, “/sm/updateSessionData”
                     // to store the received attributes
                     //create the dataset from the received attributes
-                    String id = UUID.randomUUID().toString();
-                    AttributeSet receivedAttributes = AttributeSetFactory.makeFromEidasResponse(sessionId, id, TypeEnum.AUTHRESPONSE, "issuer", "recipient", user);
                     DataSet dataSet = new DataSet();
                     dataSet.setId(id);
                     dataSet.setLoa(user.getLoa());
@@ -266,7 +259,7 @@ public class ProtectedControllers {
                     }
                     ds.setClearData(newDataSet);
                     //store them in the session manager
-                    updatSessionVariables(sessionMngrUrl, sessionId, "dataStore", ds);
+                    updatSessionVariables(sessionMngrUrl, sessionId, objectId, "dataStore", ds);
 
                 }
 
@@ -278,7 +271,11 @@ public class ProtectedControllers {
             requestParams.clear();
             requestParams.add(new NameValuePair("sessionId", sessionId));
             requestParams.add(new NameValuePair("sender", paramServ.getParam("RESPONSE_SENDER_ID"))); //[TODO] add correct sender "IdPms001"
-            requestParams.add(new NameValuePair("receiver", paramServ.getParam("RESPONSE_RECEOVER_ID"))); //"ACMms001"
+            if (callbackUrl.contains("rm/response")) {
+                requestParams.add(new NameValuePair("receiver", "RMms001")); //"ACMms001"
+            } else {
+                requestParams.add(new NameValuePair("receiver", paramServ.getParam("RESPONSE_RECEIVER_ID"))); //"ACMms001"
+            }
             resp = mapper.readValue(netServ.sendGet(sessionMngrUrl, "/sm/generateToken", requestParams, 1), SessionMngrResponse.class);
             if (!resp.getCode().toString().equals("NEW")) {
                 Log.error("ERROR: " + resp.getError());
@@ -299,7 +296,7 @@ public class ProtectedControllers {
         return null;
     }
 
-    public String updatSessionVariables(String sessionMngrUrl, String sessionId, String variableName, Object updateObject) throws IOException, NoSuchAlgorithmException {
+    public String updatSessionVariables(String sessionMngrUrl, String sessionId, String objectId, String variableName, Object updateObject) throws IOException, NoSuchAlgorithmException {
         ObjectMapper mapper = new ObjectMapper();
         String stringifiedObject = mapper.writeValueAsString(updateObject);
 
@@ -310,7 +307,23 @@ public class ProtectedControllers {
             Log.error("ERROR: " + resp.getError());
             return "error";
         }
-        Log.info("session " + sessionId + " updated Session succesfully  with user attributes " + stringifiedObject);
+        Log.info("session " + sessionId + " updated LEGACY API Session succesfully  with user attributes " + stringifiedObject);
+
+        if (variableName.equals("dsResponse")) {
+            NewUpdateDataRequest newReq = new NewUpdateDataRequest();
+            newReq.setId(objectId);
+            newReq.setSessionId(sessionId);
+            newReq.setType("dataSet");
+            newReq.setData(stringifiedObject);
+            resp = mapper.readValue(netServ.sendPostBody(sessionMngrUrl, "/sm/new/add", newReq, "application/json", 1), SessionMngrResponse.class);
+            Log.info("updateSessionData " + resp.getCode().toString());
+            if (!resp.getCode().toString().equals("OK")) {
+                Log.error("ERROR: " + resp.getError());
+                return "error";
+            }
+            Log.info("session " + sessionId + " updated NEW API Session succesfully  with objectID" + objectId + "  with user attributes " + stringifiedObject);
+        }
+
         return "ok";
     }
 

@@ -1,0 +1,38 @@
+2020-06-04 14:53:13,911 INFO org.springframework.boot.StartupInfoLogger [main] Starting TestSessisonManagerConnection on nikos with PID 34874 (started by nikos in /home/nikos/NetBeansProjects/seal.eidas.idp)
+2020-06-04 14:53:13,913 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: test
+2020-06-04 14:53:17,353 INFO org.eclipse.jetty.util.log.Log [main] Logging initialized @5762ms to org.eclipse.jetty.util.log.Slf4jLog
+2020-06-04 14:53:18,071 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-04 14:53:18,813 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7dbae40, org.springframework.security.web.context.SecurityContextPersistenceFilter@39652a30, org.springframework.security.web.header.HeaderWriterFilter@377dfb8d, org.springframework.security.web.csrf.CsrfFilter@10817f46, org.springframework.security.web.authentication.logout.LogoutFilter@1c3b6963, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@7f22687e, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@9408857, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@1bee0085, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@78d92eef, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@34f7b44f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@40c8067, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@34c76167, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5403907, org.springframework.security.oauth2.client.web.OAuth2AuthorizationCodeGrantFilter@646d810b, org.springframework.security.web.session.SessionManagementFilter@477523ba, org.springframework.security.web.access.ExceptionTranslationFilter@45c80312, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@99a8de3]
+2020-06-04 14:53:18,959 INFO org.springframework.mock.web.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2020-06-04 14:53:18,959 INFO org.springframework.web.servlet.FrameworkServlet [main] Initializing Servlet ''
+2020-06-04 14:53:18,973 INFO org.springframework.web.servlet.FrameworkServlet [main] Completed initialization in 13 ms
+2020-06-04 14:53:19,003 INFO org.springframework.boot.StartupInfoLogger [main] Started TestSessisonManagerConnection in 5.794 seconds (JVM running for 7.413)
+2020-06-04 14:53:20,490 INFO gr.uagean.loginWebApp.utils.NoResponseParser [main] Response from Norway::{
+    "sub": "6f71b1d9-8f43-4761-9ad0-43976c3f602c",
+    "connect-userid_sec": [
+        "eidas:SE/NO/199008199391"
+    ],
+    "dataporten-userid_sec": [
+        "eidas:SE/NO/199008199391"
+    ],
+    "name": "Mohamed Al Samed",
+    "picture": "https://api.dataporten-test.uninett.no/userinfo/v1/user/media/p:442f87ff-7311-448f-85ce-fb55aff78120"
+}
+2020-06-04 14:53:20,494 INFO gr.uagean.loginWebApp.utils.NoResponseParser [main] Response from Norway::{
+    "user": {
+        "userid_sec": [
+            "eidas:EE/NO/49311086012"
+        ],
+        "userid": "e91a6752-999e-4f98-938d-1b2a34891173",
+        "name": "TRIIN PUUSAAR",
+        "profilephoto": "p:c048174c-056b-432c-adb8-2b0c5cff1fc9"
+    },
+    "audience": "843a3f7b-1575-467f-a696-00efff753076"
+}
+2020-06-04 14:53:20,619 INFO org.springframework.boot.StartupInfoLogger [main] Starting LoginWebAppApplicationTests on nikos with PID 34874 (started by nikos in /home/nikos/NetBeansProjects/seal.eidas.idp)
+2020-06-04 14:53:20,623 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: test
+2020-06-04 14:53:21,692 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-04 14:53:22,095 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5f883d90, org.springframework.security.web.context.SecurityContextPersistenceFilter@4586a8aa, org.springframework.security.web.header.HeaderWriterFilter@1d8e9d3e, org.springframework.security.web.csrf.CsrfFilter@7cc1f72c, org.springframework.security.web.authentication.logout.LogoutFilter@46d1b59, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@23afc725, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@561d88ee, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@2c34402, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@819fb19, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@7e58f697, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3dc82e6a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@54463380, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@44384b4a, org.springframework.security.oauth2.client.web.OAuth2AuthorizationCodeGrantFilter@5d3f99d7, org.springframework.security.web.session.SessionManagementFilter@360d41d0, org.springframework.security.web.access.ExceptionTranslationFilter@7b7068d8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3e2d44f3]
+2020-06-04 14:53:22,173 INFO org.springframework.boot.StartupInfoLogger [main] Started LoginWebAppApplicationTests in 1.677 seconds (JVM running for 10.583)
+2020-06-04 14:53:22,237 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-04 14:53:22,237 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'

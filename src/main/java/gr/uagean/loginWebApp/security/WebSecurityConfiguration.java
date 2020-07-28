@@ -53,6 +53,13 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .userInfoEndpoint()
                 .userAuthoritiesMapper(userAuthoritiesMapper());
 
+        http
+                .csrf()
+                .ignoringAntMatchers("/eidas-idp/is/query")
+                .ignoringAntMatchers("/eidas-idp/as/authenticate")
+                .ignoringAntMatchers("/is/query")
+                .ignoringAntMatchers("/as/authenticate");
+
     }
 
     private GrantedAuthoritiesMapper userAuthoritiesMapper() {

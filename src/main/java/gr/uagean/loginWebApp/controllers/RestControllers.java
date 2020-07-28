@@ -82,7 +82,7 @@ public class RestControllers {
         this.netServ = new NetworkServiceImpl(this.keyServ);
     }
 
-    @CrossOrigin
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = {"/as/authenticate", "/is/query", "/eidas-idp/as/authenticate", "/eidas-idp/is/query"},
             method = {RequestMethod.POST, RequestMethod.GET})
     public ModelAndView authenticate(@RequestParam String msToken,
