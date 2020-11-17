@@ -1,0 +1,43 @@
+2020-10-06 14:17:21,110 INFO org.springframework.boot.StartupInfoLogger [main] Starting TestSessisonManagerConnection on nikos with PID 34863 (started by nikos in /home/nikos/NetBeansProjects/seal.eidas.idp)
+2020-10-06 14:17:21,113 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: test
+2020-10-06 14:17:23,908 INFO org.eclipse.jetty.util.log.Log [main] Logging initialized @4897ms to org.eclipse.jetty.util.log.Slf4jLog
+2020-10-06 14:17:24,529 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-06 14:17:25,228 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3f68a7f8, org.springframework.security.web.context.SecurityContextPersistenceFilter@3869a6e5, org.springframework.security.web.header.HeaderWriterFilter@255d9277, org.springframework.security.web.csrf.CsrfFilter@3e43f049, org.springframework.security.web.authentication.logout.LogoutFilter@4b4969ea, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@621f23ac, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@2f4d32bf, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@2bf2d6eb, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@125f16b2, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@4faf1f4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7d484fcd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@26b3c9a2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4f811029, org.springframework.security.oauth2.client.web.OAuth2AuthorizationCodeGrantFilter@4b3a01d8, org.springframework.security.web.session.SessionManagementFilter@7e191fda, org.springframework.security.web.access.ExceptionTranslationFilter@24d8f87a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6321a5aa]
+2020-10-06 14:17:25,344 INFO org.springframework.mock.web.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2020-10-06 14:17:25,345 INFO org.springframework.web.servlet.FrameworkServlet [main] Initializing Servlet ''
+2020-10-06 14:17:25,356 INFO org.springframework.web.servlet.FrameworkServlet [main] Completed initialization in 11 ms
+2020-10-06 14:17:25,379 INFO org.springframework.boot.StartupInfoLogger [main] Started TestSessisonManagerConnection in 4.877 seconds (JVM running for 6.369)
+2020-10-06 14:17:26,013 INFO gr.uagean.loginWebApp.service.impl.NetworkServiceImpl [main] sending request at http://vm.project-seal.eu:9090/sm/updateSessionData
+2020-10-06 14:17:26,134 INFO gr.uagean.loginWebApp.service.impl.NetworkServiceImpl [main] sending request at http://vm.project-seal.eu:9090/sm/updateSessionData
+2020-10-06 14:17:26,262 INFO gr.uagean.loginWebApp.service.impl.NetworkServiceImpl [main] sending request at http://vm.project-seal.eu:9090/sm/updateSessionData
+2020-10-06 14:17:26,399 INFO gr.uagean.loginWebApp.service.impl.NetworkServiceImpl [main] sending request at http://vm.project-seal.eu:9090/sm/updateSessionData
+2020-10-06 14:17:26,552 INFO gr.uagean.loginWebApp.service.impl.NetworkServiceImpl [main] sending request at http://vm.project-seal.eu:9090/sm/new/add
+2020-10-06 14:17:27,001 INFO gr.uagean.loginWebApp.utils.NoResponseParser [main] Response from Norway::{
+    "sub": "6f71b1d9-8f43-4761-9ad0-43976c3f602c",
+    "connect-userid_sec": [
+        "eidas:SE/NO/199008199391"
+    ],
+    "dataporten-userid_sec": [
+        "eidas:SE/NO/199008199391"
+    ],
+    "name": "Mohamed Al Samed",
+    "picture": "https://api.dataporten-test.uninett.no/userinfo/v1/user/media/p:442f87ff-7311-448f-85ce-fb55aff78120"
+}
+2020-10-06 14:17:27,014 INFO gr.uagean.loginWebApp.utils.NoResponseParser [main] Response from Norway::{
+    "user": {
+        "userid_sec": [
+            "eidas:EE/NO/49311086012"
+        ],
+        "userid": "e91a6752-999e-4f98-938d-1b2a34891173",
+        "name": "TRIIN PUUSAAR",
+        "profilephoto": "p:c048174c-056b-432c-adb8-2b0c5cff1fc9"
+    },
+    "audience": "843a3f7b-1575-467f-a696-00efff753076"
+}
+2020-10-06 14:17:27,075 INFO org.springframework.boot.StartupInfoLogger [main] Starting LoginWebAppApplicationTests on nikos with PID 34863 (started by nikos in /home/nikos/NetBeansProjects/seal.eidas.idp)
+2020-10-06 14:17:27,075 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: test
+2020-10-06 14:17:27,775 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-06 14:17:28,133 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7e050be1, org.springframework.security.web.context.SecurityContextPersistenceFilter@6b2ef50e, org.springframework.security.web.header.HeaderWriterFilter@b55f5b7, org.springframework.security.web.csrf.CsrfFilter@141aba65, org.springframework.security.web.authentication.logout.LogoutFilter@1426370c, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@a9a8ec3, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@40016ce1, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@203765b2, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@54be6213, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@1b47b7f5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6f867b0c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b5ad306, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@506aa618, org.springframework.security.oauth2.client.web.OAuth2AuthorizationCodeGrantFilter@6d0114c0, org.springframework.security.web.session.SessionManagementFilter@2aa6bbad, org.springframework.security.web.access.ExceptionTranslationFilter@3356ff58, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@376af784]
+2020-10-06 14:17:28,199 INFO org.springframework.boot.StartupInfoLogger [main] Started LoginWebAppApplicationTests in 1.177 seconds (JVM running for 9.189)
+2020-10-06 14:17:28,250 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-06 14:17:28,252 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'

@@ -1,0 +1,39 @@
+# requires a memcached instance!
+
+version: '2'
+services:
+    IdPMS:
+        image:  endimion13/seal-eidas-idp:0.0.9e1 
+        environment:
+            - EIDAS_PROPERTIES=CurrentFamilyName,CurrentGivenName,DateOfBirth,PersonIdentifier
+            - SP_COUNTRY=GR
+            - SP_LOGO=img/logo.png
+            - SP_CONFIG_REPOSITORY=/configEidas/
+            - SP_SECRET=secret
+            - AUTH_DURATION=1800
+            - SESSION_MANAGER_URL=https://esmo-gateway.eu
+            - KEY_PASS=AtosCert1
+            - JWT_CERT_ALIAS=atoscert
+            - ASYNC_SIGNATURE=true
+            - HTTPSIG_CERT_ALIAS=atoscert
+            - KEYSTORE_PATH=/certs/keystore.jks
+            - STORE_PASS=AtosCert1
+            - SEAL_SUPPORTED_SIG_ALGORITHMS=RSA
+            - SEAL_SUPPORTED_ENC_ALGORITHMS=RSA
+            - RESPONSE_SENDER_ID=IdPms001
+            - RESPONSE_RECEIVER=IdPms001
+            - SEAL_EXPOSE_URL=/as/authenticate
+            - SEAL_ENTITY_ID=https://seal.eu/eidas-idp
+            - SEAL_DEFAULT_NAME= SEAL_EIDAS_IDP
+            - SSL_STORE_PATH=/certs/keystore_april.jks
+            - SSL_STORE_PASS=AtosCert1
+            - SSL_KEY_ALIAS=atoscert
+            - SSL_KEY_PASSWORD=AtosCert1
+            - ISSUER_URI=https://dss1.aegean.gr/auth/realms/grnetEidas
+        volumes: 
+            - /home/nikos/NetBeansProjects/seal.eidas.idp/testKeys/:/certs/    
+        ports:
+          - 8091:8080
+          - 8443:8443
+          
+          

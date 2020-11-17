@@ -13,6 +13,14 @@ import java.util.Map;
  */
 public class DataSet {
 
+    /*
+   {"id":"a0e3012a-23c0-4909-96ae-d887c0314dbd",
+    "encryptedData":null,
+    "signature":null,
+    "signatureAlgorithm":null,
+    "encryptionAlgorithm":null,
+    "clearData":[{"id":"e95150ae-4852-444a-ad14-043f81586953","type":"eIDAS","categories":null,"issuerId":"eIDAS","subjectId":null,"loa":null,"issued":"Fri, 30 Oct 2020 14:39:47 GMT","expiration":null,"attributes":[{"name":"http://eidas.europa.eu/attributes/naturalperson/CurrentFamilyName","friendlyName":"FamilyName","encoding":"UTF-8","language":"N/A","values":["ΠΑΛΙΟΚΩΣΤΑ PALIOKOSTA"]},{"name":"http://eidas.europa.eu/attributes/naturalperson/CurrentGivenName","friendlyName":"GivenName","encoding":"UTF-8","language":"N/A","values":["ΧΡΙΣΤΙΝΑ CHRISTINA"]},{"name":"http://eidas.europa.eu/attributes/naturalperson/DateOfBirth","friendlyName":"DateOfBirth","encoding":"UTF-8","language":"N/A","values":["1980-01-01"]},{"name":"http://eidas.europa.eu/attributes/naturalperson/PersonIdentifier","friendlyName":"PersonIdentifier","encoding":"UTF-8","language":"N/A","values":["GR/GR/ERMIS-58333947"]},{"name":"http://eidas.europa.eu/LoA","friendlyName":"LevelOfAssurance","encoding":"UTF-8","language":"N/A","values":[null]}],"properties":null}]}
+     */
     private String id; //Unique identifier of the set
     private String type; //To define different kinds of datasets, to establish classifications
     private String[] categories; //To define multiple classes where the data set can be grouped.

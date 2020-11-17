@@ -46,7 +46,7 @@ public class LoginController {
                         authorizationRequestBaseUri + "/" + registration.getRegistrationId()));
         model.addAttribute("urls", oauth2AuthenticationUrls);
 
-        return new ModelAndView("redirect:" + oauth2AuthenticationUrls.get("https://esmo-gateway.eu/auth/realms/eidas"));
+        return new ModelAndView("redirect:" + oauth2AuthenticationUrls.get("https://dss1.aegean.gr/auth/realms/grnetEidas"));
 
 //        return "oauth_login";
     }

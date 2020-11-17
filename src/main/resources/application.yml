@@ -6,16 +6,24 @@ spring:
         registration:
           keycloak:
             client-id: 'seal-eidas'
-            client-secret: '72de51ea-221a-4667-ac2f-9dd78b087d26'
+            client-secret: 'b1d36f30-5c77-4dff-bcde-aab0f0ce6169'
             authorizationGrantType: authorization_code
             redirect-uri: '{baseUrl}/login/oauth2/code/{registrationId}'
 #            redirect-uri: '{baseUrl}/eidas-idp/login/oauth2/code/{registrationId}'
             scope: openid
         provider:
           keycloak:
-            issuerUri: https://esmo-gateway.eu/auth/realms/eidas
-            user-name-attribute: preferred_username
-
+            issuerUri: https://dss1.aegean.gr/auth/realms/grnetEidas
+#            user-name-attribute: preferred_username
+#server:
+#  port: 8443  
+#  ssl:
+#    enabled:
+#      true  
+#    key-store: ./testKeys/keystore_april.jks
+#    key-store-password: AtosCert1
+#    key-alias: atoscert
+#    key-password: AtosCert1
 
 # Keycloak Config
 #server.session.tracking-modes=cookie
@@ -27,3 +35,50 @@ spring:
 #keycloak.principal-attribute=preferred_username
 ##keycloak.redirect-uri-template=eidas-idp/sso/login
 #logging.level.org.keycloak=TRACE---
+---
+spring:
+  profiles: container
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: ${CLIENT_ID}
+            client-secret: ${CLIENT_SECRET}
+            authorizationGrantType: authorization_code
+            redirect-uri: '{baseUrl}/login/oauth2/code/{registrationId}'
+            scope: openid
+        provider:
+          keycloak:
+            issuerUri: ${ISSUER_URI}
+            user-name-attribute: preferred_username
+  datasource:
+    url: jdbc:mysql://${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}?autoReconnect=true
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+    initialize: true
+server:
+  profiles: container
+  port: 
+    8443  
+  ssl:
+    enabled:
+      true  
+    key-store: ${SSL_STORE_PATH}
+    key-store-password: ${SSL_STORE_PASS}
+    key-alias: ${SSL_KEY_ALIAS}
+    key-password: ${SSL_KEY_PASSWORD}
+#    key-store: /certs/keystore_april.jks
+#    key-store-password: AtosCert1
+#    key-alias: atoscert
+#    key-password: AtosCert1
+  
+#    http:
+#      port:
+#        8080
+
+
+#- SSL_STORE_PATH=/certs/keystore_april.jks
+#- SSL_KEY_ALIAS=atoscert
+#- SSL_STORE_PASS=AtosCert1
+#- SSL_KEY_PASSWORD=AtosCert1

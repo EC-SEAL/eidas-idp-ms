@@ -36,6 +36,7 @@ public class AttributeSetFactory {
         attributes.add(makeAttType("DateOfBirth", "http://eidas.europa.eu/attributes/naturalperson/DateOfBirth", user.getDateOfBirth()));
         attributes.add(makeAttType("PersonIdentifier", "http://eidas.europa.eu/attributes/naturalperson/PersonIdentifier", user.getPersonIdentifier()));
         attributes.add(makeAttType("LevelOfAssurance", "http://eidas.europa.eu/LoA", user.getLoa()));
+        attributes.add(makeAttType("eidasDatasetIssuer", "eidasDatasetIssuer", "eIDAS_" + user.getPersonIdentifier().split("/")[0]));
 
         Map<String, String> metadataProperties = new HashMap();
         metadataProperties.put("levelOfAssurance", user.getLoa());

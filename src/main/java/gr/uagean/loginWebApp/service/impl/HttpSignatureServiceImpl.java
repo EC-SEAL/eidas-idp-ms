@@ -11,6 +11,7 @@ import gr.uagean.loginWebApp.service.HttpSignatureService;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.Key;
 import java.security.KeyStoreException;
@@ -92,7 +93,7 @@ public class HttpSignatureServiceImpl implements HttpSignatureService {
         if (postParams != null && contentType.contains("application/json")) {
             ObjectMapper mapper = new ObjectMapper();
             String updateString = mapper.writeValueAsString(postParams);
-            digest = MessageDigest.getInstance("SHA-256").digest(updateString.getBytes());
+            digest = MessageDigest.getInstance("SHA-256").digest(updateString.getBytes(StandardCharsets.UTF_8));
         } else {
             if (postParams != null && contentType.contains("x-www-form-urlencoded") && postParams instanceof Map) {
                 digest = MessageDigest.getInstance("SHA-256").digest(getParamsString((Map<String, String>) postParams).getBytes());

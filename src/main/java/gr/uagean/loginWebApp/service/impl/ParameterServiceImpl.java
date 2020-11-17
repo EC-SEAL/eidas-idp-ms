@@ -22,7 +22,7 @@ import org.springframework.util.StringUtils;
  * @author nikos
  */
 @Service
-public class ParameterServiceImpl implements ParameterService{
+public class ParameterServiceImpl implements ParameterService {
 
     private final Logger log = LoggerFactory.getLogger(ParameterServiceImpl.class);
 
@@ -51,13 +51,13 @@ public class ParameterServiceImpl implements ParameterService{
                 map.put((String) key, (String) value);
             });
         } catch (IOException ex) {
-            log.info("Properties file not found in /webappConfig/config.properties", ex);
+            log.debug("Properties file not found in /webappConfig/config.properties", ex);
         } finally {
             if (input != null) {
                 try {
                     input.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    log.debug(e.getLocalizedMessage());
                 }
             }
         }
