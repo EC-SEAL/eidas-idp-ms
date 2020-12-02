@@ -1,5 +1,6 @@
 ## YAML Template.
 spring:
+  profiles: test
   security:
     oauth2:
       client:
@@ -9,11 +10,31 @@ spring:
             client-secret: 'b1d36f30-5c77-4dff-bcde-aab0f0ce6169'
             authorizationGrantType: authorization_code
             redirect-uri: '{baseUrl}/login/oauth2/code/{registrationId}'
-#            redirect-uri: '{baseUrl}/eidas-idp/login/oauth2/code/{registrationId}'
+            #            redirect-uri: '{baseUrl}/eidas-idp/login/oauth2/code/{registrationId}'
             scope: openid
         provider:
           keycloak:
             issuerUri: https://dss1.aegean.gr/auth/realms/grnetEidas
+
+
+
+---
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: ${CLIENT_ID}
+            client-secret: ${CLIENT_SECRET}
+            authorizationGrantType: authorization_code
+            redirect-uri: '{baseUrl}/login/oauth2/code/{registrationId}'
+#            redirect-uri: '{baseUrl}/eidas-idp/login/oauth2/code/{registrationId}'
+            scope: openid
+        provider:
+          keycloak:
+            issuerUri: ${ISSUER_URI}
+            #https://dss1.aegean.gr/auth/realms/grnetEidas
 #            user-name-attribute: preferred_username
 #server:
 #  port: 8443  

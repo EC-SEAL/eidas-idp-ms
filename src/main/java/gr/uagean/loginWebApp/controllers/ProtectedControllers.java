@@ -27,6 +27,7 @@ import gr.uagean.loginWebApp.service.NetworkService;
 import gr.uagean.loginWebApp.service.ParameterService;
 import gr.uagean.loginWebApp.service.impl.HttpSignatureServiceImpl;
 import gr.uagean.loginWebApp.service.impl.NetworkServiceImpl;
+
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -46,6 +47,8 @@ import java.util.Map;
 import java.util.TimeZone;
 import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
+
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.httpclient.NameValuePair;
 import org.apache.commons.lang3.StringUtils;
@@ -64,18 +67,18 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
- *
  * @author nikos
  */
 @Controller
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.PUT, RequestMethod.POST})
+@Slf4j
 public class ProtectedControllers {
 
     @Autowired
     private ParameterService paramServ;
 
-    private NetworkService netServ;
-    private KeyStoreService keyServ;
+    private final NetworkService netServ;
+    private final KeyStoreService keyServ;
 
     @Autowired
     private EsmoMetadataService metadataServ;
@@ -83,35 +86,26 @@ public class ProtectedControllers {
     @Autowired
     private MSConfigurationService configServ;
 
-    private final static Logger Log = LoggerFactory.getLogger(ProtectedControllers.class);
 
-    final static String UAEGEAN_LOGIN = "UAEGEAN_LOGIN";
-    final static String LINKED_IN_SECRET = "LINKED_IN_SECRET";
-
-    final static String CLIENT_ID = "CLIENT_ID";
-    final static String REDIRECT_URI = "REDIRECT_URI";
-    final static String HTTP_HEADER = "HTTP_HEADER";
-    final static String URL_ENCODED = "URL_ENCODED";
-    final static String URL_PREFIX = "URL_PREFIX";
 
     @Autowired
     public ProtectedControllers(KeyStoreService keyServ) throws KeyStoreException, NoSuchAlgorithmException, UnrecoverableKeyException, UnsupportedEncodingException, InvalidKeySpecException, IOException {
         this.keyServ = keyServ;
-        Key signingKey = this.keyServ.getHttpSigningKey();
-        String fingerPrint = DigestUtils.sha256Hex(this.keyServ.getHttpSigPublicKey().getEncoded());
-        HttpSignatureService httpSigServ = new HttpSignatureServiceImpl(fingerPrint, signingKey);
+//        Key signingKey = this.keyServ.getHttpSigningKey();
+//        String fingerPrint = DigestUtils.sha256Hex(this.keyServ.getHttpSigPublicKey().getEncoded());
+//        HttpSignatureService httpSigServ = new HttpSignatureServiceImpl(fingerPrint, signingKey);
         this.netServ = new NetworkServiceImpl(this.keyServ);
     }
 
     @RequestMapping(value = {"/", "/eidas-idp", "/is/protected", "/as/protected", "/protected", "/eidas-idp/as/protected", "/eidas-idp/protected",
-        "/eidas-idp/is/protected"}, method = {RequestMethod.POST, RequestMethod.GET})
+            "/eidas-idp/is/protected"}, method = {RequestMethod.POST, RequestMethod.GET})
     public ModelAndView authenticate(@CookieValue(value = "seal") String sessionId,
-            HttpServletRequest request,
-            RedirectAttributes redirectAttrs, Model model, @AuthenticationPrincipal OAuth2User principal
+                                     HttpServletRequest request,
+                                     RedirectAttributes redirectAttrs, Model model, @AuthenticationPrincipal OAuth2User principal
     ) throws KeyStoreException {
 
         try {
-            Log.info("Reached protected endpoint with sessionId" + sessionId);
+            log.info("Reached protected endpoint with sessionId" + sessionId);
 
             String referer = request.getHeader("Referer"); //Get previous URL before call '/login'
             String eId = principal.getName();
@@ -124,6 +118,7 @@ public class ProtectedControllers {
             user.setProfileName((String) idToken.get("preferred_username"));
             user.setEid(eId);
             user.setPersonIdentifier((String) idToken.get("PersonIdentifier"));
+            user.setLoa((String)idToken.get("acr"));
 
             String sessionMngrUrl = paramServ.getParam("SESSION_MANAGER_URL");
             List<NameValuePair> requestParams = new ArrayList();
@@ -135,7 +130,7 @@ public class ProtectedControllers {
             requestParams.add(new NameValuePair("sessionId", sessionId));
             SessionMngrResponse resp = mapper.readValue(netServ.sendGet(sessionMngrUrl, "/sm/getSessionData", requestParams, 1), SessionMngrResponse.class);
             if (!resp.getCode().toString().equals("OK")) {
-                Log.error("ERROR: " + resp.getError());
+                log.error("ERROR: " + resp.getError());
                 return new ModelAndView("error");
             }
 
@@ -143,14 +138,14 @@ public class ProtectedControllers {
             requestParams.clear();
             requestParams.add(new NameValuePair("sessionId", sessionId));
             resp = mapper.readValue(netServ.sendGet(sessionMngrUrl, "/sm/getSessionData", requestParams, 1), SessionMngrResponse.class);
-            Log.info("tried to retrieve session for " + sessionId);
-            Log.info("getSession " + resp.getCode().toString());
+            log.info("tried to retrieve session for " + sessionId);
+            log.info("getSession " + resp.getCode().toString());
             if (!resp.getCode().toString().equals("OK")) {
-                Log.error("ERROR: " + resp.getError());
+                log.error("ERROR: " + resp.getError());
                 return new ModelAndView("error");
             }
             String callbackUrl = (String) resp.getSessionData().getSessionVariables().get("ClientCallbackAddr");
-            Log.info("the callbackUrl for sessionId " + sessionId + " is " + callbackUrl + "!!!!!!!!!!!!");
+            log.info("the callbackUrl for sessionId " + sessionId + " is " + callbackUrl + "!!!!!!!!!!!!");
 
 
             /*
@@ -164,30 +159,31 @@ public class ProtectedControllers {
              */
             String id = UUID.randomUUID().toString();
             AttributeSet receivedAttributes = AttributeSetFactory.makeFromEidasResponse(sessionId, id, TypeEnum.AUTHRESPONSE, "issuer", "recipient", user);
+
             String objectId = "urn:mace:project-seal.eu:id:dataset:eIDAS-IdP:" + "eIDAS_" + user.getPersonIdentifier().split("/")[0] + ":" + URLEncoder.encode(user.getPersonIdentifier(), StandardCharsets.UTF_8.toString());
 
             if (callbackUrl.contains("rm/response")) {
                 EntityMetadata metadata = this.metadataServ.getMetadata();
                 //UC801
                 if (!StringUtils.isEmpty((String) resp.getSessionData().getSessionVariables().get("IdPMetadata"))) {
-                    //attributeSet
-                    //store them in the session manager
-//                    String dataStoreString = (String) resp.getSessionData().getSessionVariables().get("dataStore");
-//                    DataStore ds = makeNewDataStore(dataStoreString,
-//                            id, user.getLoa(), receivedAttributes.getAttributes());
-                    Log.info("@@@@@updating dsResponse with " + receivedAttributes.toString());
+                    log.info("@@@@@updating dsResponse with " + receivedAttributes.toString());
                     updatSessionVariables(sessionMngrUrl, sessionId, objectId, "dsResponse", receivedAttributes);
                     updatSessionVariables(sessionMngrUrl, sessionId, objectId, "dsMetadata", metadata);
                 } else {
                     //UC802
                     //store them in the session manager
-//                    String dataStoreString = (String) resp.getSessionData().getSessionVariables().get("dataStore");
-//                    DataStore ds = makeNewDataStore(dataStoreString,
-//                            id, user.getLoa(), receivedAttributes.getAttributes());
                     //TODO dsResponse needs to be an attributeSet
-                    Log.info("@@@@@updating dsResponse with " + receivedAttributes.toString());
+                    log.info("@@@@@updating dsResponse with " + receivedAttributes.toString());
+                    receivedAttributes.setType(TypeEnum.DATASET);
+                    receivedAttributes.setIssuer("issuerId");
+//                    receivedAttributes.setSu
+
                     updatSessionVariables(sessionMngrUrl, sessionId, objectId, "dsResponse", receivedAttributes);
                     updatSessionVariables(sessionMngrUrl, sessionId, objectId, "dsMetadata", metadata);
+                    String dataStoreString = (String) resp.getSessionData().getSessionVariables().get("dataStore");
+                    DataStore ds = makeNewDataStore(dataStoreString,
+                            id, user.getLoa(), receivedAttributes.getAttributes());
+                    updatSessionVariables(sessionMngrUrl, sessionId, objectId, "dataStore", ds);
                 }
             } else {
 
@@ -210,7 +206,7 @@ public class ProtectedControllers {
 
             }
 
-            Log.info("session " + sessionId + " updated succesfully with user attributes " + user.toString());
+            log.info("session " + sessionId + " updated succesfully with user attributes " + user.toString());
 
             //IdP Connector generates a new security token to send to the Client, by calling get “/sm/generateToken”
             requestParams.clear();
@@ -223,7 +219,7 @@ public class ProtectedControllers {
             }
             resp = mapper.readValue(netServ.sendGet(sessionMngrUrl, "/sm/generateToken", requestParams, 1), SessionMngrResponse.class);
             if (!resp.getCode().toString().equals("NEW")) {
-                Log.error("ERROR: " + resp.getError());
+                log.error("ERROR: " + resp.getError());
                 return new ModelAndView("error");
             }
 
@@ -233,74 +229,78 @@ public class ProtectedControllers {
             model.addAttribute("token", resp.getAdditionalData());
             return new ModelAndView("clientRedirect");
         } catch (IOException ex) {
-            Log.error(ex.getLocalizedMessage());
+            log.error(ex.getLocalizedMessage());
         } catch (NoSuchAlgorithmException ex) {
-            Log.error(ex.getLocalizedMessage());
+            log.error(ex.getLocalizedMessage());
         }
 
         return null;
     }
 
     public String updatSessionVariables(String sessionMngrUrl, String sessionId,
-            String objectId, String variableName,
-            Object updateObject) throws IOException, NoSuchAlgorithmException {
+                                        String objectId, String variableName,
+                                        Object updateObject) throws IOException, NoSuchAlgorithmException {
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         String stringifiedObject = mapper.writeValueAsString(updateObject);
 
         UpdateDataRequest updateReq = new UpdateDataRequest(sessionId, variableName, stringifiedObject);
-        SessionMngrResponse resp = mapper.readValue(netServ.sendPostBody(sessionMngrUrl, "/sm/updateSessionData", updateReq, "application/json", 1), SessionMngrResponse.class);
-        Log.info("updateSessionData " + resp.getCode().toString());
+        SessionMngrResponse resp;
+
+        //update actual requested variable
+        resp = mapper.readValue(netServ.sendPostBody(sessionMngrUrl, "/sm/updateSessionData", updateReq, "application/json", 1), SessionMngrResponse.class);
+        log.info("updateSessionData " + resp.getCode().toString());
         if (!resp.getCode().toString().equals("OK")) {
-            Log.error("ERROR: " + resp.getError());
+            log.error("ERROR: " + resp.getError());
             return "error";
         }
-        Log.info("session " + sessionId + " updated LEGACY API Session succesfully  with user attributes " + stringifiedObject);
+        log.info("session " + sessionId + " updated LEGACY API Session succesfully  with user attributes " + stringifiedObject);
+
 
         if (variableName.equals("dsResponse") || variableName.equals("dataStore")) {
+            //update new api
             NewUpdateDataRequest newReq = new NewUpdateDataRequest();
             newReq.setId(objectId);
             newReq.setSessionId(sessionId);
             newReq.setType("dataSet");
-
-            Log.info(stringifiedObject);
-
             DataSet ds = mapper.readValue(stringifiedObject, DataSet.class);
             String dataSet = mapper.writeValueAsString(ds);
             newReq.setData(dataSet);
-
             if (ds.getAttributes() == null) {
                 //object was not parsed ok, should reparse it
                 DataStore dstore = mapper.readValue(stringifiedObject, DataStore.class);
                 String newDataSet = mapper.writeValueAsString(dstore.getClearData()[0]);
                 newReq.setData(newDataSet);
             }
-
             resp = mapper.readValue(netServ.sendPostBody(sessionMngrUrl, "/sm/new/add",
                     newReq, "application/json", 1), SessionMngrResponse.class);
-            Log.info("updateSessionData " + resp.getCode().toString());
+            log.info("updateSessionData " + resp.getCode().toString());
             if (!resp.getCode().toString().equals("OK")) {
-                Log.error("ERROR: " + resp.getError());
+                log.error("ERROR: " + resp.getError());
                 return "error";
             }
-            Log.info("session " + sessionId + " updated NEW API Session succesfully  with objectID" + objectId + "  with user attributes " + stringifiedObject);
-
+            log.info("session " + sessionId + " updated NEW API Session succesfully  with objectID" + objectId + "  with user attributes " + stringifiedObject);
+            // update authenticated subject
             updateReq = new UpdateDataRequest(sessionId, "authenticatedSubject", newReq.getData());
             resp = mapper.readValue(netServ.sendPostBody(sessionMngrUrl, "/sm/updateSessionData", updateReq, "application/json", 1), SessionMngrResponse.class);
             if (!resp.getCode().toString().equals("OK")) {
-                Log.error("ERROR: " + resp.getError());
+                log.error("ERROR: " + resp.getError());
                 return "error";
             }
-            Log.info("session " + sessionId + " updated LEGACY API variable  authenticatedSubject with" + stringifiedObject);
+            log.info("session " + sessionId + " updated LEGACY API variable  authenticatedSubject with" + stringifiedObject);
+
 
         }
+
+
+
 
         return "ok";
     }
 
     public DataStore makeNewDataStore(String dataStoreString,
-            String id, String loa, AttributeType[] attributes) throws JsonProcessingException {
+                                      String id, String loa, AttributeType[] attributes) throws JsonProcessingException {
 //        String dataStoreString = (String) resp.getSessionData().getSessionVariables().get("dataStore");
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);

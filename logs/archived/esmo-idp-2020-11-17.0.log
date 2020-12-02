@@ -1,0 +1,86 @@
+2020-11-12 11:00:53,450 INFO org.springframework.boot.StartupInfoLogger [main] Starting LoginWebAppApplicationTests on nikos with PID 16694 (started by nikos in /home/nikos/NetBeansProjects/seal.eidas.idp)
+2020-11-12 11:00:53,453 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: test
+2020-11-12 11:00:56,678 INFO org.eclipse.jetty.util.log.Log [main] Logging initialized @5319ms to org.eclipse.jetty.util.log.Slf4jLog
+2020-11-12 11:00:57,380 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-12 11:00:58,103 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@54495935, org.springframework.security.web.context.SecurityContextPersistenceFilter@7d133fb7, org.springframework.security.web.header.HeaderWriterFilter@224d86d2, org.springframework.security.web.csrf.CsrfFilter@129c4d19, org.springframework.security.web.authentication.logout.LogoutFilter@7b9e25bd, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@79195c22, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@935493d, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@3de79067, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@545d2560, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@67c6f4d8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7eb27768, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7741ae1b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3a6e9856, org.springframework.security.oauth2.client.web.OAuth2AuthorizationCodeGrantFilter@11c581a0, org.springframework.security.web.session.SessionManagementFilter@2aea717c, org.springframework.security.web.access.ExceptionTranslationFilter@3e53c4ad, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@527937d0]
+2020-11-12 11:00:58,206 INFO org.springframework.boot.StartupInfoLogger [main] Started LoginWebAppApplicationTests in 5.283 seconds (JVM running for 6.848)
+2020-11-12 11:00:58,274 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-17 16:00:57,809 INFO org.springframework.boot.StartupInfoLogger [main] Starting LoginWebAppApplicationTests on ni-dev with PID 52812 (started by ni in /home/ni/code/java/eidas-idp-ms)
+2020-11-17 16:00:57,811 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: test
+2020-11-17 16:01:00,161 INFO org.eclipse.jetty.util.log.Log [main] Logging initialized @3846ms to org.eclipse.jetty.util.log.Slf4jLog
+2020-11-17 16:01:00,516 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-17 16:01:00,866 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@13f2d42c, org.springframework.security.web.context.SecurityContextPersistenceFilter@53e166ad, org.springframework.security.web.header.HeaderWriterFilter@43ee1cf7, org.springframework.security.web.csrf.CsrfFilter@1df9f7c6, org.springframework.security.web.authentication.logout.LogoutFilter@24c84e65, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@73a116d, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@6c49ea0c, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@417bfebd, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@ca60688, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@1071ae7c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@17a7d6c8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@d677be9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@dd9de63, org.springframework.security.oauth2.client.web.OAuth2AuthorizationCodeGrantFilter@20155dae, org.springframework.security.web.session.SessionManagementFilter@4a29fe2e, org.springframework.security.web.access.ExceptionTranslationFilter@674e4c82, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4a2653a0]
+2020-11-17 16:01:00,928 INFO org.springframework.boot.StartupInfoLogger [main] Started LoginWebAppApplicationTests in 3.419 seconds (JVM running for 4.613)
+2020-11-17 16:01:00,949 INFO gr.uagean.loginWebApp.utils.NoResponseParser [main] Response from Norway::{
+    "sub": "6f71b1d9-8f43-4761-9ad0-43976c3f602c",
+    "connect-userid_sec": [
+        "eidas:SE/NO/199008199391"
+    ],
+    "dataporten-userid_sec": [
+        "eidas:SE/NO/199008199391"
+    ],
+    "name": "Mohamed Al Samed",
+    "picture": "https://api.dataporten-test.uninett.no/userinfo/v1/user/media/p:442f87ff-7311-448f-85ce-fb55aff78120"
+}
+2020-11-17 16:01:00,952 INFO gr.uagean.loginWebApp.utils.NoResponseParser [main] Response from Norway::{
+    "user": {
+        "userid_sec": [
+            "eidas:EE/NO/49311086012"
+        ],
+        "userid": "e91a6752-999e-4f98-938d-1b2a34891173",
+        "name": "TRIIN PUUSAAR",
+        "profilephoto": "p:c048174c-056b-432c-adb8-2b0c5cff1fc9"
+    },
+    "audience": "843a3f7b-1575-467f-a696-00efff753076"
+}
+2020-11-17 16:01:00,959 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-17 16:04:14,498 INFO org.springframework.boot.StartupInfoLogger [main] Starting LoginWebAppApplication on ni-dev with PID 53082 (/home/ni/code/java/eidas-idp-ms/target/classes started by ni in /home/ni/code/java/eidas-idp-ms)
+2020-11-17 16:04:14,501 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-11-17 16:04:15,492 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2020-11-17 16:04:15,500 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-17 16:04:15,501 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-11-17 16:04:15,501 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-11-17 16:04:15,562 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-11-17 16:04:15,562 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1016 ms
+2020-11-17 16:04:16,654 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'protectedControllers' defined in file [/home/ni/code/java/eidas-idp-ms/target/classes/gr/uagean/loginWebApp/controllers/ProtectedControllers.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [gr.uagean.loginWebApp.controllers.ProtectedControllers]: Constructor threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "String.getBytes(String)" because "secretKey" is null
+2020-11-17 16:04:16,657 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping service [Tomcat]
+2020-11-17 16:04:16,669 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-11-17 16:04:16,671 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'protectedControllers' defined in file [/home/ni/code/java/eidas-idp-ms/target/classes/gr/uagean/loginWebApp/controllers/ProtectedControllers.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [gr.uagean.loginWebApp.controllers.ProtectedControllers]: Constructor threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "String.getBytes(String)" because "secretKey" is null
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:314)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:295)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1358)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at gr.uagean.loginWebApp.LoginWebAppApplication.main(LoginWebAppApplication.java:18)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [gr.uagean.loginWebApp.controllers.ProtectedControllers]: Constructor threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "String.getBytes(String)" because "secretKey" is null
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:213)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:310)
+	... 19 common frames omitted
+Caused by: java.lang.NullPointerException: Cannot invoke "String.getBytes(String)" because "secretKey" is null
+	at gr.uagean.loginWebApp.service.impl.KeyStoreServiceImpl.getHttpSigningKey(KeyStoreServiceImpl.java:80)
+	at gr.uagean.loginWebApp.controllers.ProtectedControllers.<init>(ProtectedControllers.java:100)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:200)
+	... 21 common frames omitted

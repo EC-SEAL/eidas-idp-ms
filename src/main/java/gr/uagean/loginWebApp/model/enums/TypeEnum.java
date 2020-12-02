@@ -15,7 +15,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum TypeEnum {
     REQUEST("Request"),
     RESPONSE("Response"),
-    AUTHRESPONSE("AuthResponse");
+    AUTHRESPONSE("AuthResponse"),
+    DATASET("dataSet");
 
     private String value;
 
